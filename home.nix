@@ -47,18 +47,20 @@
   };
 
   # polybar
-  home.file.".config/polybar" = {
-    source = ./dots/config/polybar;
-    recursive = true;
-    executable = true;
-  };
+  # home.file.".config/polybar" = {
+  #   source = ./dots/config/polybar;
+  #   recursive = true;
+  #   executable = true;
+  # };
+  #
+  # # picom
+  # home.file.".config/picom" = {
+  #   source = ./dots/config/picom;
+  #   executable = true;
+  #   recursive = true;
+  # };
 
-  # picom
-  home.file.".config/picom" = {
-    source = ./dots/config/picom;
-    executable = true;
-    recursive = true;
-  };
+  # if i ever need xorg again, i dont.
 
   # Xresources
   #home.file.".Xresources" = {
