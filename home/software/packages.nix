@@ -28,6 +28,8 @@
 
     # Desktop stuff
     gnome.nautilus
+    gnome.gnome-boxes
+    kvmtool
     gtklock
     kitty
     rofi-wayland

@@ -145,6 +145,8 @@
   # Env packages
   environment.systemPackages = with pkgs; [
     git
+    btrfs-progs
+    btrfs-snap
     curl
     wget
     jq
