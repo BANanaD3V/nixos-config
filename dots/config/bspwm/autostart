@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+xrandr --output DP-4 --mode 3440x1440 --rate 144
+xrandr --output DP-0 --mode 2560x1440 --rate 144
+xrandr --output DP-4 --primary --left-of DP-0
+xrdb ~/.Xresources
+#spoof-dpi &
+~/.fehbg &
+sxhkd &
+xsetroot -cursor_name left_ptr &
+flameshot &
+dunst &
+/home/banana/mouse-sens.sh &
+setxkbmap -layout us,ru -option grp:alt_shift_toggle &
+~/.config/scripts/launch_polybar.sh &
+picom &
+#imwheel &
+/home/banana/.config/scripts/greenclip daemon &
+export GTK_THEME=Catppuccin-Mocha-Standard-Lavender-Dark &
+
+
