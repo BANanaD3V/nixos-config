@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./drives.nix
     ../../modules/drivers.nix
     # ../../home/wayland
     # ../../home/shell

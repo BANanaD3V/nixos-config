@@ -89,11 +89,14 @@
     heroic-unwrapped
     gamemode
     lutris
+    mangohud
+    gamescope
     prismlauncher
-    wine
+    wineWowPackages.stable
     winetricks
     # inputs.nix-gaming.packages.${pkgs.system}.star-citizen
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+    dxvk
 
     # Sound
     pipewire

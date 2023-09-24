@@ -82,6 +82,7 @@
   networking = {
     networkmanager.enable = true;
     firewall.enable = false;
+    extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
   };
 
   # XDG Desktop Portal stuff
@@ -100,6 +101,7 @@
   # Printing support
   services.printing = {
     enable = true;
+    drivers = [ pkgs.epson-escpr ];
   };
 
   # Sound
