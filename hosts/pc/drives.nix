@@ -3,7 +3,7 @@
 {
   # Main ssd
   fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-label/NIXOS";
     fsType = "btrfs";
     options = [ "subvol=@" ];
   };

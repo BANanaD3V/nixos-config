@@ -4,6 +4,7 @@
   config,
   inputs,
   system,
+  nix-gaming,
   ...
 }:
 
@@ -32,11 +33,16 @@
       };
     };
 
-    # overlays = {
-    #     (self: super: {
-    #       discord = super.discord-ptb.override { withOpenASAR = true; withVencord = true; };
-    #     });
-    # };
+    overlays = [
+        # (self: super: {
+        #   discord-ptb = super.discord-ptb.override { withOpenASAR = true; withVencord = true; };
+        # })
+        (self: super: {
+        steam = super.steam.override {
+            extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";
+          };
+        })
+    ];
   };
 
   # User
@@ -73,7 +79,9 @@
 
   # Gtklock
   security.pam.services.gtklock = {};
-
+  
+  # Bash shebang
+  services.envfs.enable = true;
   # Hardware
   hardware.opengl.enable = true;
   hardware.bluetooth.enable = true;

@@ -23,7 +23,7 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Mocha-Standard-Lavender-dark";
+        name = "Catppuccin-Mocha-Standard-Lavender-Dark";
         package = pkgs.catppuccin-gtk.override {
           accents = [ "lavender" ];
           size = "standard";

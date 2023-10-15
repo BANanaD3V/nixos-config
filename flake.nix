@@ -35,15 +35,17 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, spicetify-nix, home-manager, hyprland-contrib, hyprland, hyprland-desktop-portal, catppuccinifier, ... }: {
+  outputs = { nixpkgs, spicetify-nix, home-manager, hyprland-contrib, hyprland, hyprland-desktop-portal, catppuccinifier, nix-gaming, ... }@inputs: {
   # outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       # TODO please change the hostname to your own
       banana-pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./hosts/pc
           ./modules/base.nix
+          ./modules/steam.nix
           ./pkgs
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

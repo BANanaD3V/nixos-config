@@ -10,7 +10,7 @@
 
       (pkgs.libsForQt5.callPackage ./sddm-theme { })
 
-      (pkgs.callPackage ./yunfaavatar.nix { })
+      (pkgs.callPackage ./wallpaperengine { })
 
       (pkgs.callPackage ./star-citizen.nix { })
 

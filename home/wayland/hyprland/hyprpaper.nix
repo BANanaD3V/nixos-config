@@ -1,6 +1,6 @@
 let
   wallpaper = "/home/banana/.config/wallpapers/spaceman.png";
-  # wallpaper = "/home/banana/.config/wallpapers/waterplane.png";
+  # wallpaper = "/home/banana/.config/wallpapers/policia.png";
   # wallpaper = "/home/banana/.config/wallpapers/motorcycle.jpeg";
 in {
   xdg.configFile."hypr/hyprpaper.conf".text = ''

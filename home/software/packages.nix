@@ -38,6 +38,10 @@
     waybar
     wl-clipboard
     cliphist
+    keepass
+    keepassxc
+    keepass-diff
+    keepmenu
     wl-clip-persist
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
@@ -45,6 +49,8 @@
     grim
     slurp
     dunst
+    libreoffice
+    ydotool
 
     # Gui apps
     firefox
@@ -55,9 +61,12 @@
     qdirstat
     jellyfin-mpv-shim
     mpv
+    libreoffice
+    zathura
 
     # Development
     python3
+    insomnia
     unityhub
     jetbrains.rider
     nodejs_20
@@ -69,7 +78,17 @@
     mongodb-compass
     docker
     docker-compose
-
+    distrobox
+    libglibutil
+    glib
+    glibc
+    figma-linux
+    vscode
+    conda
+    youtube-dl
+    tinycc
+     	nur.repos.ataraxiasjel.ceserver
+     	nur.repos.ataraxiasjel.protonhax
     # Dev envs
     (pkgs.buildFHSUserEnv {
       name = "cppfhs";
@@ -85,6 +104,7 @@
     openscad
 
     # Gaming
+    bottles
     steam
     heroic-unwrapped
     gamemode
@@ -92,11 +112,15 @@
     mangohud
     gamescope
     prismlauncher
-    wineWowPackages.stable
+    wine
+    # wineWowPackages.stable
     winetricks
     # inputs.nix-gaming.packages.${pkgs.system}.star-citizen
-    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+    # inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     dxvk
+    chromedriver
+    geckodriver
+    scanmem
 
     # Sound
     pipewire

@@ -64,6 +64,7 @@ in {
         shadow_range = 4;
         shadow_render_power = 3;
         dim_special = 0;
+        multisample_edges = true;
         "col.shadow" = "rgba(1a1a1aee)";
       };
 
