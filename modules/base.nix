@@ -31,12 +31,15 @@
           inherit pkgs;
         };
       };
+      permittedInsecurePackages = [
+        "electron-24.8.6"
+      ];
     };
 
     overlays = [
-        # (self: super: {
-        #   discord-ptb = super.discord-ptb.override { withOpenASAR = true; withVencord = true; };
-        # })
+        (self: super: {
+          discord-ptb = super.discord-ptb.override { withOpenASAR = true; withVencord = true; };
+        })
         (self: super: {
         steam = super.steam.override {
             extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";
@@ -79,12 +82,15 @@
 
   # Gtklock
   security.pam.services.gtklock = {};
-  
+
   # Bash shebang
   services.envfs.enable = true;
   # Hardware
   hardware.opengl.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Networking
   networking = {
@@ -92,17 +98,17 @@
     firewall.enable = false;
     extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
   };
+  services.blueman.enable = true;
 
   # XDG Desktop Portal stuff
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 
   # X server
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
     excludePackages = with pkgs; [ xterm ];
   };
 
@@ -162,7 +168,7 @@
     jq
     polkit
     polkit_gnome
-    libsForQt5.sddm
+    greetd.tuigreet
   ];
 
   # Fonts

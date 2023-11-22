@@ -18,16 +18,12 @@
       url = "github:hyprwm/Hyprland";
     };
 
-    hyprland-desktop-portal = {
+    xdg-desktop-portal-hyprland = {
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
     };
 
     spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
-    };
-    catppuccinifier = {
-      url = "github:lighttigerXIV/catppuccinifier";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:MichaelPachec0/spicetify-nix";
     };
 
     nix-gaming = {
@@ -35,7 +31,7 @@
     };
   };
 
-  outputs = { nixpkgs, spicetify-nix, home-manager, hyprland-contrib, hyprland, hyprland-desktop-portal, catppuccinifier, nix-gaming, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, hyprland-contrib, self, ... }@inputs: {
   # outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       # TODO please change the hostname to your own
@@ -45,26 +41,15 @@
         modules = [
           ./hosts/pc
           ./modules/base.nix
+          ./modules/greetd.nix
           ./modules/steam.nix
           ./pkgs
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
+         home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            # TODO replace ryan with your own username
-            # home-manager.users.banana = {
-            #   imports = [
-            #     ./home
-            #   ];
-            # };
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
             home-manager.extraSpecialArgs = {
-              inherit inputs hyprland-contrib;
-	            inherit nixpkgs catppuccinifier;
+              inherit inputs;
 	          };
           }
         ];

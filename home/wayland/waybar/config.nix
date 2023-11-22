@@ -9,22 +9,25 @@ _: {
     modules-left = [
       "custom/media"
       "custom/cava"
-      "pulseaudio"
+      "group/group-audio"
     ];
     modules-center = ["hyprland/workspaces"];
     modules-right = [
+      "network"
       "cpu"
       "memory"
       "hyprland/language"
       "clock"
+      "privacy"
       "tray"
+      "group/group-power"
     ];
 
     "hyprland/workspaces" = {
       format = "{icon}";
       # format = "<span font='13'>{icon}</span>";
       format-icons = {
-        persistent = "<span font='11' rise='-3000'>󰑊</span>";
+        empty = "<span font='11' rise='-3000'>󰑊</span>";
         active = "<span font='13' rise='-3000'>󰮯</span>";
         default = "<span font='13' rise='-3000'>󰊠</span>";
       };
@@ -81,6 +84,21 @@ _: {
       format = "<span font='14' rise='-2500' color='#b4befe'>󰥔</span> {:%I:%M %p}";
     };
 
+
+
+    network = {
+      interface = "wlp2s0";
+      format = "{ifname}";
+      format-wifi = "{essid} ({signalStrength}%) ";
+      format-ethernet = "󰊗 {ipaddr}/{cidr}";
+      format-disconnected = "";
+      tooltip-format = "󰊗 {ifname} via {gwaddr}";
+      tooltip-format-wifi = " {essid} ({signalStrength}%)";
+      tooltip-format-ethernet = " {ifname}";
+      tooltip-format-disconnected = "Disconnected";
+      max-length = 50;
+    };
+
     cpu = {
       format = "<span font='14' rise='-2500' color='#b4befe'></span> {usage}%";
       tooltip = false;
@@ -88,6 +106,19 @@ _: {
 
     memory = {
       format = "<span font='14' rise='-2500' color='#b4befe'></span> {}%";
+    };
+
+    "group/group-audio" = {
+      orientation = "inherit";
+      drawer = {
+        transition-duration = 500;
+        children-class = "";
+        transition-left-to-right = true;
+      };
+      modules = [
+        "pulseaudio"
+        "pulseaudio/slider"
+      ];
     };
 
     pulseaudio = {
@@ -98,6 +129,74 @@ _: {
       };
       on-click = "pamixer -t";
       ignored-sinks = ["Pro X Wireless Gaming Headset" "Starship/Matisse HD Audio Controller Digital Stereo (IEC958)" "PRO X Wireless Gaming Headset Analog Stereo"];
+    };
+
+    "pulseaudio/slider" = {
+      min = 0;
+      max = 100;
+      orientation = "horizontal";
+    };
+
+    privacy = {
+	    icon-spacing = 4;
+	    icon-size = 18;
+	    transition-duration = 250;
+	    modules = [
+		    {
+			    type = "screenshare";
+			    tooltip = true;
+			    tooltip-icon-size = 24;
+		    }
+		    {
+			    type = "audio-out";
+			    tooltip = true;
+			    tooltip-icon-size = 24;
+		    }
+		    {
+			    type = "audio-in";
+			    tooltip = true;
+			    tooltip-icon-size = 24;
+		    }
+	    ];
+    };
+
+    "group/group-power" = {
+      orientation = "inherit";
+      drawer = {
+        transition-duration = 500;
+        children-class = "child-power";
+        transition-left-to-right = false;
+      };
+      modules = [
+        "custom/power"
+        "custom/quit"
+        "custom/lock"
+        "custom/reboot"
+      ];
+    };
+
+    "custom/quit" = {
+      format = "<span font='14' rise='-3000'>󰗼</span>";
+      tooltip = false;
+      on-click = "hyprctl dispatch exit";
+    };
+
+    "custom/lock" = {
+      format = "<span font='14' rise='-3000'>󰍁</span>";
+      tooltip = false;
+      on-click = "gtklock";
+    };
+
+    "custom/power" = {
+      format = "<span font='14' rise='-3000'></span>";
+      tooltip = false;
+      on-click = "shutdown now";
+    };
+
+    "custom/reboot" = {
+      format = "<span font='14' rise='-3000'>󰜉</span>";
+      tooltip = false;
+      on-click = "reboot";
     };
 
     "custom/media" = {

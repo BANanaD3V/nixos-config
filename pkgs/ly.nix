@@ -111,7 +111,7 @@ in {
       }
     ];
 
-    services.xserver.displayManager.lightdm.enable = false;
+    services.xserver.displayManager.sddm.enable = false;
 
     environment.systemPackages = [cfg.package];
     environment.etc."ly/config.ini" = {

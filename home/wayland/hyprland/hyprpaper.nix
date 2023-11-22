@@ -1,5 +1,5 @@
 let
-  wallpaper = "/home/banana/.config/wallpapers/spaceman.png";
+  wallpaper = "/home/banana/.config/wallpapers/invasion_of_vryn.jpg";
   # wallpaper = "/home/banana/.config/wallpapers/policia.png";
   # wallpaper = "/home/banana/.config/wallpapers/motorcycle.jpeg";
 in {

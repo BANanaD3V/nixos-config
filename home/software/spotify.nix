@@ -5,7 +5,7 @@ let
   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
   officialThemes = pkgs.fetchgit {
     url = "https://github.com/spicetify/spicetify-themes";
-    sha256 = "sha256-L96pvObgRNjnvbaHM8dXEZaZ0O/AvBOMo6Iom0ZdXbw=";
+    sha256 = "sha256-PHEpYG/q9VBKxGNY1LZpTlJuoI2FsD77epWltj/Rb5w=";
   };
 in
 {
@@ -33,6 +33,9 @@ in
     # colorScheme = "lavender";
     enabledExtensions = with spicePkgs.extensions; [
       autoSkipVideo
+      shuffle
+      playlistIcons
+      genre
       seekSong
       adblock
       fullAppDisplay

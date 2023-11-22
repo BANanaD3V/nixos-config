@@ -19,19 +19,24 @@
     thefuck
     starship
     neofetch
-    inputs.catppuccinifier.packages.${pkgs.system}.cli
     unrar
     openvpn
-    ffmpeg
+    ffmpeg-full
     appimage-run
     maven
 
     # Desktop stuff
+    qbittorrent
+    kdenlive
+    davinci-resolve
+    anydesk
+    gimp
     gnome.nautilus
     gnome.gnome-boxes
     kvmtool
     gtklock
-    kitty
+    eww
+    tmux
     rofi-wayland
     rofimoji
     hyprpaper
@@ -47,13 +52,18 @@
     hyprpicker
     imagemagick
     grim
+    # inputs.watershot.packages.${pkgs.system}.default
     slurp
-    dunst
+    flameshot
+    # dunst
     libreoffice
+    wpsoffice
     ydotool
 
     # Gui apps
     firefox
+    chromium
+    element-desktop
     discord-ptb
     webcord-vencord
     telegram-desktop
@@ -63,6 +73,8 @@
     mpv
     libreoffice
     zathura
+    todoist-electron
+    obsidian
 
     # Development
     python3
@@ -82,13 +94,16 @@
     libglibutil
     glib
     glibc
-    figma-linux
+    # figma-linux
     vscode
     conda
     youtube-dl
     tinycc
-     	nur.repos.ataraxiasjel.ceserver
-     	nur.repos.ataraxiasjel.protonhax
+    ngrok
+    bspwm
+    polybar
+    sxhkd
+    hollywood
     # Dev envs
     (pkgs.buildFHSUserEnv {
       name = "cppfhs";
@@ -113,10 +128,8 @@
     gamescope
     prismlauncher
     wine
-    # wineWowPackages.stable
     winetricks
-    # inputs.nix-gaming.packages.${pkgs.system}.star-citizen
-    # inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     dxvk
     chromedriver
     geckodriver

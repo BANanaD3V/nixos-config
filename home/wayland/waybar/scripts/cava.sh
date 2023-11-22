@@ -2,7 +2,7 @@
 
 set -e
 
-pid_file="cavash.pid"
+# pid_file="/var/run/cavash.pid"
 
 # ensure only one instance of script is running
 #if [ -f "$pid_file" ] && ps -p $(cat "$pid_file") > /dev/null
@@ -12,7 +12,7 @@ pid_file="cavash.pid"
 #fi
 
 # write script's PID to pid-file
-printf "$$" > "$pid_file"
+# printf "$$" > "$pid_file"
 
 bar="▁▂▃▄▅▆▇█"
 dict="s/;//g;"

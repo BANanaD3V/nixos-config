@@ -26,7 +26,7 @@
     # Only available on driver 515.43.04+
     open = false;
 
-    package = config.boot.kernelPackages.nvidiaPackages.beta; #config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.production; #config.boot.kernelPackages.nvidiaPackages.beta;
 
     # Enable the nvidia settings menu
     nvidiaSettings = true;

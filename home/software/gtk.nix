@@ -32,8 +32,8 @@
         };
       };
       iconTheme = {
-        name = "Numix-Circle";
-        package = pkgs.numix-icon-theme-circle;
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
       };
       font = {
         name = "JetBrainsMono Nerd Font";

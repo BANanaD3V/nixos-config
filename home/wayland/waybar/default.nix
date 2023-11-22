@@ -16,9 +16,14 @@ in {
     executable = true;
   };
 
+  home.packages = with pkgs; [
+    networkmanagerapplet
+    blueman
+  ];
+
   programs.waybar = {
     enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
+    # package = inputs.waybar.packages.${pkgs.system}.default;
     settings = config;
     style = style;
   };

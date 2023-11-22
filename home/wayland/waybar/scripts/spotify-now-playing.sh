@@ -7,4 +7,5 @@ do
 	else
     		echo "Nothing is playing"
 	fi
+	sleep 0.1
 done

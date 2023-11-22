@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  home.file.".config/kitty" = {
-    source = ./dots/config/kitty;
-    recursive = true;   # link recursively
-    executable = true;  # make all files executable
-  };
+  # home.file.".config/kitty" = {
+  #   source = ./dots/config/kitty;
+  #   recursive = true;   # link recursively
+  #   executable = true;  # make all files executable
+  # };
 
   # Starship config
   home.file.".config/starship.toml".source = ./dots/config/starship.toml;
@@ -33,6 +33,24 @@
   # Pipewire
   home.file.".config/pipewire" = {
     source = ./dots/config/pipewire;
+    recursive = true;
+    executable = true;
+  };
+
+   home.file.".config/bspwm" = {
+    source = ./dots/config/bspwm;
+    recursive = true;
+    executable = true;
+  };
+
+ home.file.".config/sxhkd" = {
+    source = ./dots/config/sxhkd;
+    recursive = true;
+    executable = true;
+  };
+
+ home.file.".config/polybar" = {
+    source = ./dots/config/polybar;
     recursive = true;
     executable = true;
   };

@@ -11,7 +11,7 @@
   ];
 
   home.packages = with pkgs; [
-    # hyprland
+    swaynotificationcenter
   ];
 
   # Import scripts
@@ -26,8 +26,9 @@
   home.file.".config/wallpapers" = {
     source = ./wallpapers;
     recursive = true;
-    executable = true;
+    executable = false;
   };
+
   # start swayidle as part of hyprland, not sway
   # systemd.user.services.swayidle.Install.WantedBy = lib.mkForce ["hyprland-session.target"];
 

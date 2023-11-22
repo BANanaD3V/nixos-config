@@ -64,7 +64,7 @@ button:hover {
     padding: 5px;
 }
 
-#workspaces button.persistent {
+#workspaces button.empty {
     color: #cdd6f4;
 }
 
@@ -77,7 +77,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+    color: #f38ba8;
 }
 
 #mode {
@@ -93,7 +93,7 @@ button:hover {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
+#group-audio,
 #wireplumber,
 #custom-media,
 #custom-cava,
@@ -102,6 +102,7 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#group-power,
 #mpd {
     border-radius: 5px;
     padding: 0 10px;
@@ -205,10 +206,46 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
+#pulseaudio, #pulseaudio-slider {
     background-color: #1e1e2e;
     color: #cdd6f4;
-    padding: 5px;
+    border-radius: 5px;
+}
+
+#pulseaudio-slider {
+    margin-right: 10px;
+    padding: 0;
+    min-width: 100px;
+}
+
+trough {
+    min-height: 7px;
+    min-width: 80px;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    background-color: #6c7086;
+}
+
+highlight {
+    margin: 0;
+    padding: 0;
+    min-width: 10px;
+    border-radius: 5px;
+}
+
+slider {
+    margin: 0;
+    padding: 0;
+    min-height: 0px;
+    min-width: 0px;
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: #b4befe;
+}
+
+#group-audio {
+    background-color: #1e1e2e;
     padding-left: 10px;
     padding-right: 10px;
     margin: 10px;
@@ -219,6 +256,10 @@ label:focus {
 
 }
 
+#privacy {
+    background-color: #FFF;
+}
+
 #wireplumber {
     background-color: #fff0f5;
     color: #000000;
@@ -226,6 +267,39 @@ label:focus {
 
 #wireplumber.muted {
     background-color: #f53c3c;
+}
+
+#custom-reboot,
+#custom-lock,
+#custom-quit {
+    color: #ccd6f4;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 2px;
+    background-color: #1e1e2e;
+}
+#custom-reboot:hover,
+#custom-lock:hover,
+#custom-quit:hover {
+    color: #f9e2af;
+}
+
+#custom-power {
+    color: #f38ba8;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 2px;
+    background-color: #1e1e2e;
+}
+
+#group-power {
+    background-color: #1e1e2e;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 #custom-media {
@@ -274,7 +348,7 @@ label:focus {
     padding-right: 10px;
     margin: 10px;
     margin-left: 0px;
-    margin-right: 10px;
+    margin-right: 0px;
 
 }
 

@@ -11,7 +11,7 @@
   ];
 
   home-manager.users.banana.imports = [
-    ../../home/home.nix
+    ../../home
     ../../home/wayland
     ../../home/shell
     ../../home/software
@@ -19,7 +19,9 @@
   networking.hostName = "banana-pc"; # Define your hostname.
 
   # Hyprland and nvidia
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+  };
 
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";

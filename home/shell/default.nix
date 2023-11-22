@@ -4,6 +4,7 @@
   imports = [
     ./zsh
     ./nvim
+    ./kitty
   ];
 
 }

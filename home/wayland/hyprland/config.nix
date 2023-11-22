@@ -48,7 +48,6 @@ in {
         border_size = 3;
         "col.active_border" = "rgb(b4befe) rgb(89b4fa) 45deg";
         "col.inactive_border" = "rgb(313244)";
-
         layout = "dwindle";
       };
 
@@ -64,7 +63,7 @@ in {
         shadow_range = 4;
         shadow_render_power = 3;
         dim_special = 0;
-        multisample_edges = true;
+        # multisample_edges = true;
         "col.shadow" = "rgba(1a1a1aee)";
       };
 
@@ -118,6 +117,7 @@ in {
 
         ",PRINT, exec, grimblast --freeze copy area"
         "$mainMod, Return, exec, kitty"
+        "$mainMod, N, exec, swaync-client -t"
         "$mainMod, Q, killactive,"
         "$mainMod, T, togglefloating,"
         "$mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/config.rasi"
@@ -162,7 +162,7 @@ in {
         "$mainMod SHIFT, 9, exec, ~/.config/hypr/scripts/move_window.sh 9"
         "$mainMod SHIFT, 0, exec, ~/.config/hypr/scripts/move_window.sh 10"
 
-        "$mainMod, Space, exec, ~/.config/hypr/scripts/move_window.sh special"
+        "$mainMod SHIFT, Space, exec, ~/.config/hypr/scripts/move_window.sh special"
         # Scroll through workspaces
 
         "$mainMod, mouse_down, workspace, e+1"
@@ -228,6 +228,7 @@ in {
 
       layerrule = [
         "blur, waybar"
+        "blur, kitty"
       ];
 
       # Autostart
