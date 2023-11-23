@@ -1,12 +1,12 @@
-{ stdenv
-, lib
-, fetchurl
-, dpkg
-, autoPatchelfHook
-, libGLU
-, wrapQtAppsHook
+{
+  stdenv,
+  lib,
+  fetchurl,
+  dpkg,
+  autoPatchelfHook,
+  libGLU,
+  wrapQtAppsHook,
 }:
-
 stdenv.mkDerivation {
   pname = "flashprint";
   version = "5.6.1";
@@ -15,10 +15,10 @@ stdenv.mkDerivation {
     hash = "sha256-lvK4igv/L1zrqNtqbWtCyZrSZbkY8Ak/Li3NeVAH1YU=";
   };
 
-  nativeBuildInputs = [ autoPatchelfHook dpkg wrapQtAppsHook ];
-  buildInputs = [ libGLU ];
+  nativeBuildInputs = [autoPatchelfHook dpkg wrapQtAppsHook];
+  buildInputs = [libGLU];
 
-  qtWrapperArgs = [ "--prefix QT_QPA_PLATFORM : xcb" ];
+  qtWrapperArgs = ["--prefix QT_QPA_PLATFORM : xcb"];
 
   installPhase = ''
     runHook preInstall
@@ -37,8 +37,8 @@ stdenv.mkDerivation {
     description = "The 3d printing slicer by Flashforge";
     homepage = "https://www.flashforge.com/download-center/63";
     license = licenses.unfree;
-    maintainers = with maintainers; [ annaaurora ];
-    platforms = [ "x86_64-linux" ];
+    maintainers = with maintainers; [annaaurora];
+    platforms = ["x86_64-linux"];
     mainProgram = "FlashPrint";
   };
 }

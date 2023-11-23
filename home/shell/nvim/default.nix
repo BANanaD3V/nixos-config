@@ -5,7 +5,6 @@
   self,
   ...
 }: {
-
   home.packages = with pkgs; [
     neovim
     lazygit

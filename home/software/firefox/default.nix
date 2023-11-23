@@ -1,5 +1,8 @@
-{ config, default, ... }:
-let
+{
+  config,
+  default,
+  ...
+}: let
   inherit (default) colors;
   userchrome = import ./userchrome.nix;
   usercontent = import ./usercontent.nix;

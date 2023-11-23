@@ -1,22 +1,24 @@
-{ config, pkgs, ... }:
 {
-    users.users.banana.packages = with pkgs; [
-      # instant repl with automatic flake loading
-      # repl = pkgs.callPackage ./repl { };
+  config,
+  pkgs,
+  ...
+}: {
+  users.users.banana.packages = with pkgs; [
+    # instant repl with automatic flake loading
+    # repl = pkgs.callPackage ./repl { };
 
-      (pkgs.libsForQt5.callPackage ./xwaylandvideobridge { })
+    (pkgs.libsForQt5.callPackage ./xwaylandvideobridge {})
 
-      (pkgs.libsForQt5.callPackage ./flashprint { })
+    (pkgs.libsForQt5.callPackage ./flashprint {})
 
-      (pkgs.libsForQt5.callPackage ./sddm-theme { })
+    (pkgs.libsForQt5.callPackage ./sddm-theme {})
 
-      (pkgs.callPackage ./wallpaperengine { })
+    (pkgs.callPackage ./wallpaperengine {})
 
-      (pkgs.callPackage ./star-citizen.nix { })
+    (pkgs.callPackage ./star-citizen.nix {})
 
-      # nvchad = pkgs.callPackage ./nvchad { };
+    # nvchad = pkgs.callPackage ./nvchad { };
 
-      # kodo = pkgs.callPackage ./kodo { };
-
-    ];
+    # kodo = pkgs.callPackage ./kodo { };
+  ];
 }

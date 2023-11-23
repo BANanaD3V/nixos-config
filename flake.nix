@@ -31,12 +31,16 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, hyprland-contrib, self, ... }@inputs: {
-  # outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    hyprland-contrib,
+    self,
+    ...
+  } @ inputs: {
+    # outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      # TODO please change the hostname to your own
       banana-pc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
           ./hosts/pc
@@ -44,13 +48,32 @@
           ./modules/greetd.nix
           ./modules/steam.nix
           ./pkgs
-         home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
               inherit inputs;
-	          };
+            };
+          }
+        ];
+      };
+
+      banana-laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = inputs;
+        modules = [
+          ./hosts/laptop
+          ./modules/base.nix
+          ./modules/greetd.nix
+          ./modules/steam.nix
+          ./pkgs
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
           }
         ];
       };

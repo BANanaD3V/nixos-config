@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # home.file.".config/kitty" = {
   #   source = ./dots/config/kitty;
   #   recursive = true;   # link recursively
@@ -37,19 +39,19 @@
     executable = true;
   };
 
-   home.file.".config/bspwm" = {
+  home.file.".config/bspwm" = {
     source = ./dots/config/bspwm;
     recursive = true;
     executable = true;
   };
 
- home.file.".config/sxhkd" = {
+  home.file.".config/sxhkd" = {
     source = ./dots/config/sxhkd;
     recursive = true;
     executable = true;
   };
 
- home.file.".config/polybar" = {
+  home.file.".config/polybar" = {
     source = ./dots/config/polybar;
     recursive = true;
     executable = true;

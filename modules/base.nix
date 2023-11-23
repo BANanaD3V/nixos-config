@@ -6,12 +6,10 @@
   system,
   nix-gaming,
   ...
-}:
-
-{
+}: {
   # Nix
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
     substituters = [
       "https://nix-gaming.cachix.org"
       "https://isabelroses.cachix.org"
@@ -27,7 +25,7 @@
     config = {
       allowUnfree = true;
       packageOverrides = pkgs: {
-          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+        nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
           inherit pkgs;
         };
       };
@@ -37,21 +35,24 @@
     };
 
     overlays = [
-        (self: super: {
-          discord-ptb = super.discord-ptb.override { withOpenASAR = true; withVencord = true; };
-        })
-        (self: super: {
+      (self: super: {
+        discord-ptb = super.discord-ptb.override {
+          withOpenASAR = true;
+          withVencord = true;
+        };
+      })
+      (self: super: {
         steam = super.steam.override {
-            extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";
-          };
-        })
+          extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";
+        };
+      })
     ];
   };
 
   # User
   users.users.banana = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.zsh;
   };
 
@@ -103,19 +104,19 @@
   # XDG Desktop Portal stuff
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   };
 
   # X server
   services.xserver = {
     enable = true;
-    excludePackages = with pkgs; [ xterm ];
+    excludePackages = with pkgs; [xterm];
   };
 
   # Printing support
   services.printing = {
     enable = true;
-    drivers = [ pkgs.epson-escpr ];
+    drivers = [pkgs.epson-escpr];
   };
 
   # Sound
@@ -173,7 +174,7 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     font-awesome
     material-design-icons
     meslo-lg
@@ -199,6 +200,3 @@
   # System stateversion
   system.stateVersion = "23.05";
 }
-
-
-

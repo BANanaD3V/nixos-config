@@ -8,7 +8,7 @@
   imports = [
     ./config.nix
   ];
-  
+
   home.packages = with pkgs; [
     zsh
     zsh-autocomplete

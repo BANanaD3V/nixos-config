@@ -1,7 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Make sure opengl is enabled
   hardware.opengl = {
     enable = true;
@@ -11,14 +13,13 @@
       vaapiVdpau
       libvdpau-va-gl
       nvidia-vaapi-driver
- ];
+    ];
   };
 
   # Tell Xorg to use the nvidia driver (also valid for Wayland)
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     # Modesetting is needed for most Wayland compositors
     modesetting.enable = true;
 

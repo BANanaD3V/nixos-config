@@ -1,24 +1,24 @@
-{ lib
-, cmake
-, fetchFromGitHub
-, ffmpeg
-, freeglut
-, glew
-, glm
-, glfw
-, libGL
-, libXpm
-, libXrandr
-, libXxf86vm
-, lz4
-, pkg-config
-, SDL
-, SDL_mixer
-, stdenv
-, zlib
-, freeimage
+{
+  lib,
+  cmake,
+  fetchFromGitHub,
+  ffmpeg,
+  freeglut,
+  glew,
+  glm,
+  glfw,
+  libGL,
+  libXpm,
+  libXrandr,
+  libXxf86vm,
+  lz4,
+  pkg-config,
+  SDL,
+  SDL_mixer,
+  stdenv,
+  zlib,
+  freeimage,
 }:
-
 stdenv.mkDerivation rec {
   pname = "linux-wallpaperengine";
   version = "unstable-2022-10-31";
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
     ./sdl-path.patch
   ];
 
-  nativeBuildInputs = [ cmake pkg-config ];
+  nativeBuildInputs = [cmake pkg-config];
   buildInputs = [
     freeimage
     ffmpeg
@@ -60,7 +60,6 @@ stdenv.mkDerivation rec {
 
     runHook postInstall
   '';
-
 
   meta = with lib; {
     description = "Wallpaper engine compatible with linux";

@@ -1,5 +1,8 @@
-{ config, default, ... }:
-let
+{
+  config,
+  default,
+  ...
+}: let
   inherit (default) colors;
 in {
   wayland.windowManager.hyprland = {
@@ -90,7 +93,6 @@ in {
       };
 
       bind = [
-
         # Media keys
 
         ",XF86AudioRaiseVolume,exec,pamixer -i 2"
@@ -166,7 +168,6 @@ in {
         "$mainMod SHIFT, down, movewindow, d"
       ];
       bindm = [
-
         # Move / Resize windows
 
         "$mainMod, mouse:272, movewindow"
@@ -229,4 +230,3 @@ in {
     };
   };
 }
-

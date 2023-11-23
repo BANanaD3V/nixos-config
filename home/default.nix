@@ -1,6 +1,9 @@
-{ pkgs, lib, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   home = {
     username = "banana";
     homeDirectory = "/home/banana";
@@ -11,8 +14,7 @@
     ./wayland
     ./shell
     ./software
-   ];
-
+  ];
 
   programs.home-manager.enable = true;
 }

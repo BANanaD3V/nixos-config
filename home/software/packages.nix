@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     # Archives
     zip
@@ -104,13 +106,19 @@
     polybar
     sxhkd
     hollywood
+    alejandra
+
     # Dev envs
     (pkgs.buildFHSUserEnv {
       name = "cppfhs";
       runScript = "zsh";
-      targetPkgs = pkgs: with pkgs; [
-        clang_8 gdb llvm_8 valgrind
-      ];
+      targetPkgs = pkgs:
+        with pkgs; [
+          clang_8
+          gdb
+          llvm_8
+          valgrind
+        ];
     })
 
     # 3D modeling

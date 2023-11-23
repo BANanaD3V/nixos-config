@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./drives.nix
@@ -24,27 +26,27 @@
   };
 
   home-manager.users.banana.programs.waybar.settings.mainBar."hyprland/workspaces".persistent_workspaces = {
-        "1" = ["DP-3"];
-		    "2" = ["DP-3"];
-		    "3" = ["DP-3"];
-		    "4" = ["DP-3"];
-		    "5" = ["DP-3"];
-		    "6" = ["DP-3"];
-		    "7" = ["DP-3"];
-		    "8" = ["DP-3"];
-		    "9" = ["DP-3"];
-        "10" = ["DP-3"];
-		    "11" = ["DP-1"];
-        "12" = ["DP-1"];
-        "13" = ["DP-1"];
-        "14" = ["DP-1"];
-        "15" = ["DP-1"];
-        "16" = ["DP-1"];
-        "17" = ["DP-1"];
-        "18" = ["DP-1"];
-        "19" = ["DP-1"];
-        "20" = ["DP-1"];
-      };
+    "1" = ["DP-3"];
+    "2" = ["DP-3"];
+    "3" = ["DP-3"];
+    "4" = ["DP-3"];
+    "5" = ["DP-3"];
+    "6" = ["DP-3"];
+    "7" = ["DP-3"];
+    "8" = ["DP-3"];
+    "9" = ["DP-3"];
+    "10" = ["DP-3"];
+    "11" = ["DP-1"];
+    "12" = ["DP-1"];
+    "13" = ["DP-1"];
+    "14" = ["DP-1"];
+    "15" = ["DP-1"];
+    "16" = ["DP-1"];
+    "17" = ["DP-1"];
+    "18" = ["DP-1"];
+    "19" = ["DP-1"];
+    "20" = ["DP-1"];
+  };
 
   home-manager.users.banana.wayland.windowManager.hyprland.settings = {
     monitor = [

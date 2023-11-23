@@ -1,6 +1,9 @@
-{ config, default, pkgs, ... }:
-
 {
+  config,
+  default,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -12,17 +15,17 @@
       cat = "bat";
       v = "nvim";
       vim = "nvim";
-      update = "
-      pushd /home/banana/nixos-config/ >/dev/null
+      update = ''
+        pushd /home/banana/nixos-config/ >/dev/null
 
-      untracked_files=$(git ls-files --exclude-standard --others .)
-      if [ -n \"$untracked_files\" ]; then
-        git add \"$untracked_files\" >/dev/null
-      fi
+        untracked_files=$(git ls-files --exclude-standard --others .)
+        if [ -n \"$untracked_files\" ]; then
+          git add \"$untracked_files\" >/dev/null
+        fi
 
-      sudo nixos-rebuild switch --flake ~/nixos-config --impure
-      popd >/dev/null
-      ";
+        sudo nixos-rebuild switch --flake . --impure
+        popd >/dev/null
+      '';
     };
 
     history = {

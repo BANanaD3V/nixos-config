@@ -61,8 +61,6 @@ _: {
       format = "<span font='14' rise='-2500' color='#b4befe'>󰥔</span> {:%I:%M %p}";
     };
 
-
-
     network = {
       interface = "wlp2s0";
       format = "{ifname}";
@@ -115,26 +113,26 @@ _: {
     };
 
     privacy = {
-	    icon-spacing = 4;
-	    icon-size = 18;
-	    transition-duration = 250;
-	    modules = [
-		    {
-			    type = "screenshare";
-			    tooltip = true;
-			    tooltip-icon-size = 24;
-		    }
-		    {
-			    type = "audio-out";
-			    tooltip = true;
-			    tooltip-icon-size = 24;
-		    }
-		    {
-			    type = "audio-in";
-			    tooltip = true;
-			    tooltip-icon-size = 24;
-		    }
-	    ];
+      icon-spacing = 4;
+      icon-size = 18;
+      transition-duration = 250;
+      modules = [
+        {
+          type = "screenshare";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+        {
+          type = "audio-out";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+        {
+          type = "audio-in";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+      ];
     };
 
     "group/group-power" = {

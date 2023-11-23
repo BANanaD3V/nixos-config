@@ -1,6 +1,9 @@
-{ pkgs, lib, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     # ./firefox
     ./spotify.nix
@@ -9,5 +12,4 @@
     ../../tmpimports.nix
     ./obs.nix
   ];
-
 }
