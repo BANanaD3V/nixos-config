@@ -14,16 +14,6 @@ in {
     settings = {
       "$mainMod" = "SUPER";
 
-      monitor = [
-        "DP-3,3440x1440@165,0x0,1.25"
-        "DP-1,2560x1440@144,2752x0,1.25"
-      ];
-
-      env = [
-        "XCURSOR_SIZE,24"
-        "GDK_SCALE,2"
-      ];
-
       xwayland = {
         force_zero_scaling = true;
       };
