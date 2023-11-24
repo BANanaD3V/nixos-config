@@ -21,6 +21,13 @@ in {
         force_zero_scaling = true;
       };
 
+      monitor =
+        map
+        (
+          m: "${m.name},${m.hyprland}"
+        )
+        (config.banana-hm.displays);
+
       input = {
         kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle";

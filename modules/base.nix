@@ -63,6 +63,14 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
+    theme =
+      pkgs.fetchFromGitHub {
+        owner = "catppuccin";
+        repo = "grub";
+        rev = "803c5df0e83aba61668777bb96d90ab8f6847106";
+        sha256 = "/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
+      }
+      + "/src/catppuccin-mocha-grub-theme";
   };
 
   boot.loader.efi = {
@@ -86,6 +94,7 @@
 
   # Bash shebang
   services.envfs.enable = true;
+
   # Hardware
   hardware.opengl.enable = true;
   hardware.bluetooth = {
@@ -133,6 +142,7 @@
     wireplumber.enable = true;
     jack.enable = true; # (optional)
   };
+  programs.noisetorch.enable = true;
 
   # Locate
   services.locate = {

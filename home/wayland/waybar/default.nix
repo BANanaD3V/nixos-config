@@ -7,7 +7,7 @@
   ...
 }:
 with lib; let
-  config = import ./config.nix {inherit config lib pkgs;};
+  cfg = import ./config.nix {inherit config;};
   style = import ./style.nix;
 in {
   home.file.".config/waybar/scripts" = {
@@ -24,7 +24,7 @@ in {
   programs.waybar = {
     enable = true;
     # package = inputs.waybar.packages.${pkgs.system}.default;
-    settings = config;
+    settings = cfg;
     style = style;
   };
 }

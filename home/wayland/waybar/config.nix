@@ -1,4 +1,4 @@
-_: {
+{config}: {
   mainBar = {
     position = "top";
     layer = "top";
@@ -30,6 +30,12 @@ _: {
         active = "<span font='13' rise='-3000'>󰮯</span>";
         default = "<span font='13' rise='-3000'>󰊠</span>";
       };
+      persistent-workspaces = builtins.listToAttrs (map (m: {
+          name = m.name;
+          value = m.workspaces;
+        })
+        (config.banana-hm.displays));
+
       on-click = "activate";
       on-scroll-up = "hyprctl dispatch workspace e+1";
       on-scroll-down = "hyprctl dispatch workspace e-1";
