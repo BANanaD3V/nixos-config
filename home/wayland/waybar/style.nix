@@ -257,7 +257,12 @@
   }
 
   #privacy {
-      background-color: #FFF;
+      background-color: #1e1e2e;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
   }
 
   #wireplumber {

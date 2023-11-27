@@ -42,7 +42,6 @@
     rofi-wayland
     rofimoji
     hyprpaper
-    waybar
     wl-clipboard
     cliphist
     keepass
@@ -67,6 +66,7 @@
     chromium
     element-desktop
     discord-ptb
+    vesktop
     webcord-vencord
     telegram-desktop
     zoom-us
@@ -101,7 +101,6 @@
     conda
     youtube-dl
     tinycc
-    ngrok
     bspwm
     polybar
     sxhkd

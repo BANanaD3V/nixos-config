@@ -20,7 +20,7 @@
                   Hyprland config for the monitor, see
                   https://wiki.hyprland.org/Configuring/Monitors/
 
-                  e.g. 3440x1440@160,1440x1080,1
+                  e.g. 3440x1440@165,0x0,1.25
                 '';
               };
               workspaces = lib.mkOption {

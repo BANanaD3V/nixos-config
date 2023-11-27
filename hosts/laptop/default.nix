@@ -6,17 +6,12 @@
   imports = [
     ./hardware-configuration.nix
     ./drives.nix
-    ../../modules/drivers.nix
-    # ../../home/wayland
-    # ../../home/shell
-    # ../../home/software
+    ../../modules/nvidia.nix
   ];
 
   home-manager.users.banana.imports = [
-    ../../home
-    ../../home/wayland
-    ../../home/shell
-    ../../home/software
+    ./home.nix
+    ../../options/home
   ];
   networking.hostName = "banana-laptop"; # Define your hostname.
 
@@ -25,26 +20,9 @@
     enable = true;
   };
 
-  home-manager.users.banana.wayland.windowManager.hyprland.settings = {
-    monitor = [
-      "eDP-1,1920x1440@144,0x0,1"
-    ];
-    env = [
-      "XCURSOR_SIZE,24"
-    ];
-  };
-
-  home-manager.users.banana.programs.waybar.settings.mainBar."hyprland/workspaces".persistent_workspaces = {
-    "1" = ["eDP-1"];
-    "2" = ["eDP-1"];
-    "3" = ["eDP-1"];
-    "4" = ["eDP-1"];
-    "5" = ["eDP-1"];
-    "6" = ["eDP-1"];
-    "7" = ["eDP-1"];
-    "8" = ["eDP-1"];
-    "9" = ["eDP-1"];
-    "10" = ["eDP-1"];
+  services.xserver.displayManager.autoLogin = {
+    user = "banana";
+    enable = true;
   };
 
   environment.variables = {

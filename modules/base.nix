@@ -35,12 +35,12 @@
     };
 
     overlays = [
-      (self: super: {
-        discord-ptb = super.discord-ptb.override {
-          withOpenASAR = true;
-          withVencord = true;
-        };
-      })
+      # (self: super: {
+      #   discord-ptb = super.discord-ptb.override {
+      #     withOpenASAR = true;
+      #     withVencord = false;
+      #   };
+      # })
       (self: super: {
         steam = super.steam.override {
           extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";

@@ -60,12 +60,15 @@
 
     tray = {
       spacing = 10;
+      reverse-direction = true;
     };
 
     clock = {
       timezone = "Europe/Moscow";
       format = "<span font='14' rise='-2500' color='#b4befe'>󰥔</span> {:%I:%M %p}";
-    };
+      format-alt = "<span font='14' rise='-2500' color='#b4befe'></span> {:%a, %d %b %Y}";
+      interval = 10;
+    }; 
 
     network = {
       interface = "wlp2s0";

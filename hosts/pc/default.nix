@@ -6,7 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ./drives.nix
-    ../../modules/drivers.nix
+    ../../modules/nvidia.nix
   ];
 
   home-manager.users.banana.imports = [
@@ -17,6 +17,11 @@
 
   # Hyprland and nvidia
   programs.hyprland = {
+    enable = true;
+  };
+
+  services.xserver.displayManager.autoLogin = {
+    user = "banana";
     enable = true;
   };
 
