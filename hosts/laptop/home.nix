@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -6,6 +7,15 @@
   imports = [
     ../../home
   ];
+
+  wayland.windowManager.hyprland = {
+    enableNvidiaPatches = lib.mkForce false;
+
+    settings.env = [
+      "WLR_DRM_DEVICES,/dev/dri/card1"
+    ];
+  };
+
   banana-hm = {
     displays = [
       {

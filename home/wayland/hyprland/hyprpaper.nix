@@ -1,3 +1,4 @@
+{ lib, config, ... }:
 let
   wallpaper = "/home/banana/.config/wallpapers/invasion_of_vryn.jpg";
   # wallpaper = "/home/banana/.config/wallpapers/policia.png";
@@ -5,7 +6,10 @@ let
 in {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpaper}
-    wallpaper = DP-1,${wallpaper}
-    wallpaper = DP-3,${wallpaper}
+    ${lib.strings.concatLines(map
+        (
+          m: "wallpaper = ${m.name},${wallpaper}"
+        )
+        (config.banana-hm.displays))}
   '';
 }

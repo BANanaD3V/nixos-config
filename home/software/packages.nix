@@ -107,6 +107,7 @@
     sxhkd
     hollywood
     alejandra
+    pciutils
 
     # Dev envs
     (pkgs.buildFHSUserEnv {
