@@ -9,8 +9,6 @@
 
     (pkgs.libsForQt5.callPackage ./xwaylandvideobridge {})
 
-    (pkgs.libsForQt5.callPackage ./flashprint {})
-
     (pkgs.libsForQt5.callPackage ./sddm-theme {})
 
     (pkgs.callPackage ./wallpaperengine {})

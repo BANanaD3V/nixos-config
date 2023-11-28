@@ -116,6 +116,7 @@ in {
 
         ",PRINT, exec, grimblast --freeze copy area"
         "$mainMod, Return, exec, kitty"
+        "$mainMod, U, exec, ~/.config/hypr/scripts/uploader.sh"
         "$mainMod, N, exec, swaync-client -t"
         "$mainMod, Q, killactive,"
         "$mainMod, T, togglefloating,"

@@ -34,6 +34,7 @@
     anydesk
     gimp
     gnome.nautilus
+    gnome.gnome-disk-utility
     gnome.gnome-boxes
     kvmtool
     gtklock
@@ -120,9 +121,10 @@
         ];
     })
 
-    # 3D modeling
+    # 3D modeling and printing
     blender
     cura
+    flashprint
     openscad
 
     # Gaming

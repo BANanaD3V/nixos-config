@@ -18,12 +18,12 @@ configuration {
 	border: 0;
 	margin: 0;
 	padding: 0;
-	spacing: 0;	
+	spacing: 0;
 }
 
 window {
 	width: 820px;
-	border-radius: 0;
+	border-radius: 15;
 	border: 0;
 	padding: 0;
 	background-color: @background;
