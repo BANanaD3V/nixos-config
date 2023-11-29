@@ -1,4 +1,6 @@
-{config}: {
+{ lib, config }: let
+  nixosCfg = config.banana-hm.from-nixos;
+in {
   mainBar = {
     position = "top";
     layer = "top";
@@ -11,8 +13,10 @@
       "group/group-audio"
     ];
     modules-center = ["hyprland/workspaces"];
-    modules-right = [
-      "network"
+    modules-right =
+      (lib.optionals nixosCfg.backlight.enable ["backlight"]) ++
+      (lib.optionals nixosCfg.battery.enable ["battery"]) ++
+      [
       "cpu"
       "memory"
       "hyprland/language"
@@ -79,6 +83,22 @@
       max-length = 50;
     };
 
+    battery = {
+      format = "<span font='10' rise='0' color='#b4befe'>{icon}</span> {capacity}%";
+      format-charging =  "<span font='10' rise='0' color='#b4befe'>󰂄</span> {capacity}%";
+      format-critical = "<span font='10' rise='0' color='#11111b'>󰂃</span> {capacity}%";
+      interval = 15;
+      states = {
+        critical = 20;
+      };
+      format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+    };
+
+
+    backlight = {
+      format = "{percent}% {icon}";
+      format-icons = ["" ""];
+    };
     cpu = {
       format = "<span font='14' rise='-2500' color='#b4befe'></span> {usage}%";
       tooltip = false;

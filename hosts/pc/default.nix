@@ -25,6 +25,11 @@
     enable = true;
   };
 
+  banana = {
+    battery.enable = false;
+    backlight.enable = false;
+  };
+
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia";

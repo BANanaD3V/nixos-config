@@ -7,7 +7,7 @@
   ...
 }:
 with lib; let
-  cfg = import ./config.nix {inherit config;};
+  cfg = import ./config.nix {inherit lib config;};
   style = import ./style.nix;
 in {
   home.file.".config/waybar/scripts" = {

@@ -86,7 +86,6 @@
   }
 
   #clock,
-  #battery,
   #cpu,
   #memory,
   #disk,
@@ -103,6 +102,7 @@
   #scratchpad,
   #group-power,
   #network,
+  #battery,
   #mpd {
       border-radius: 5px;
       padding: 0 10px;
@@ -138,31 +138,13 @@
 
   }
 
-  #battery {
-      background-color: #ffffff;
-      color: #000000;
-  }
 
-  #battery.charging, #battery.plugged {
-      color: #ffffff;
-      background-color: #26A65B;
-  }
 
   @keyframes blink {
       to {
           background-color: #ffffff;
           color: #000000;
       }
-  }
-
-  #battery.critical:not(.charging) {
-      background-color: #f53c3c;
-      color: #ffffff;
-      animation-name: blink;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
   }
 
   label:focus {
@@ -181,6 +163,22 @@
 
   #network.disconnected {
       background-color: #f38ba8;
+  }
+
+  #battery {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+
+  #battery.critical:not(.charging) {
+      background-color: #f38ba8;
+      color: #1e1e2e;
   }
 
   #network {

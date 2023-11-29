@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -7,6 +8,8 @@
     ./hardware-configuration.nix
     ./drives.nix
     ../../modules/nvidia.nix
+    ../../options/nixos
+    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "banana"])
   ];
 
   home-manager.users.banana.imports = [
@@ -32,6 +35,11 @@
   #   __GL_GSYNC_ALLOWED = "1";
   #   __GL_VRR_ALLOWED = "0";
   # };
+
+  banana = {
+    battery.enable = true;
+    backlight.enable = true;
+  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

@@ -17,7 +17,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
-    
+
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
@@ -34,12 +34,16 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
-    hyprland-contrib,
+    nixos-hardware,
     self,
     ...
   } @ inputs: {
@@ -68,10 +72,12 @@
         specialArgs = inputs;
         modules = [
           ./hosts/laptop
+          ./modules
           ./modules/base.nix
           ./modules/greetd.nix
           ./modules/steam.nix
           ./pkgs
+          nixos-hardware.nixosModules.asus-battery
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
