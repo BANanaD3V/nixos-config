@@ -92,7 +92,6 @@
   #disk,
   #temperature,
   #backlight,
-  #network,
   #group-audio,
   #wireplumber,
   #custom-media,
@@ -103,6 +102,7 @@
   #idle_inhibitor,
   #scratchpad,
   #group-power,
+  #network,
   #mpd {
       border-radius: 5px;
       padding: 0 10px;
@@ -179,6 +179,21 @@
       margin-bottom: 10px;
   }
 
+  #network.disconnected {
+      background-color: #f38ba8;
+  }
+
+  #network {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+
   #memory {
       background-color: #1e1e2e;
       color: #cdd6f4;
@@ -196,14 +211,6 @@
 
   #backlight {
       background-color: #90b1b1;
-  }
-
-  #network {
-      background-color: #2980b9;
-  }
-
-  #network.disconnected {
-      background-color: #f53c3c;
   }
 
   #pulseaudio, #pulseaudio-slider {

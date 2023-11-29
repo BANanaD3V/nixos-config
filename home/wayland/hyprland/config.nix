@@ -35,7 +35,7 @@ in {
         follow_mouse = 1;
 
         touchpad = {
-          natural_scroll = "no";
+          natural_scroll = "yes";
         };
 
         sensitivity = 0.3;
@@ -91,7 +91,7 @@ in {
       };
 
       gestures = {
-        workspace_swipe = "off";
+        workspace_swipe = "on";
       };
 
       misc = {
@@ -184,30 +184,30 @@ in {
 
       # Per-monitor workspaces
 
-      # workspace = [
-      #   "1,monitor:DP-3,default:true"
-      #   "2,monitor:DP-3"
-      #   "3,monitor:DP-3"
-      #   "4,monitor:DP-3"
-      #   "5,monitor:DP-3"
-      #   "6,monitor:DP-3"
-      #   "7,monitor:DP-3"
-      #   "8,monitor:DP-3"
-      #   "9,monitor:DP-3"
-      #   "10,monitor:DP-3"
-      #
-      #   "11,monitor:DP-1,default:true"
-      #   "12,monitor:DP-1"
-      #   "13,monitor:DP-1"
-      #   "14,monitor:DP-1"
-      #   "15,monitor:DP-1"
-      #   "16,monitor:DP-1"
-      #   "17,monitor:DP-1"
-      #   "18,monitor:DP-1"
-      #   "19,monitor:DP-1"
-      #   "20,monitor-DP-1"
-      # ];
-      #
+      workspace = [
+        "1,monitor:DP-3,default:true"
+        "2,monitor:DP-3"
+        "3,monitor:DP-3"
+        "4,monitor:DP-3"
+        "5,monitor:DP-3"
+        "6,monitor:DP-3"
+        "7,monitor:DP-3"
+        "8,monitor:DP-3"
+        "9,monitor:DP-3"
+        "10,monitor:DP-3"
+
+        "11,monitor:DP-1,default:true"
+        "12,monitor:DP-1"
+        "13,monitor:DP-1"
+        "14,monitor:DP-1"
+        "15,monitor:DP-1"
+        "16,monitor:DP-1"
+        "17,monitor:DP-1"
+        "18,monitor:DP-1"
+        "19,monitor:DP-1"
+        "20,monitor-DP-1"
+      ];
+
       # Window rules
 
       windowrulev2 = [

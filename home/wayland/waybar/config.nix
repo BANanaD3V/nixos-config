@@ -68,18 +68,14 @@
       format = "<span font='14' rise='-2500' color='#b4befe'>󰥔</span> {:%I:%M %p}";
       format-alt = "<span font='14' rise='-2500' color='#b4befe'></span> {:%a, %d %b %Y}";
       interval = 10;
-    }; 
+    };
 
     network = {
       interface = "wlp2s0";
       format = "{ifname}";
-      format-wifi = "{essid} ({signalStrength}%) ";
-      format-ethernet = "󰊗 {ipaddr}/{cidr}";
+      format-wifi = "<span font='14' rise='-2500' color='#b4befe'></span> {essid} ({signalStrength}%)";
+      format-ethernet = "<span font='14' rise='-2500' color='#b4befe'>󰊗</span> {ipaddr}/{cidr}";
       format-disconnected = "";
-      tooltip-format = "󰊗 {ifname} via {gwaddr}";
-      tooltip-format-wifi = " {essid} ({signalStrength}%)";
-      tooltip-format-ethernet = " {ifname}";
-      tooltip-format-disconnected = "Disconnected";
       max-length = 50;
     };
 
