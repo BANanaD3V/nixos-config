@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ./drives.nix
     ../../modules/nvidia.nix
+    ../../options/nixos
   ];
 
   home-manager.users.banana.imports = [
