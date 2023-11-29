@@ -8,6 +8,7 @@
     ./drives.nix
     ../../modules/nvidia.nix
     ../../options/nixos
+    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "banana"])
   ];
 
   home-manager.users.banana.imports = [
