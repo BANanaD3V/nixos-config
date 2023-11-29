@@ -98,8 +98,9 @@ in {
     };
 
     backlight = {
-      format = "{percent}% {icon}";
-      format-icons = ["" ""];
+      format = "<span font='14' rise='-2500' color='#b4befe'>{icon}</span> {percent}%";
+      format-icons = ["󰃞" "󰃟" "󰃝" "󰃠"];
+      tooltip = false;
     };
     cpu = {
       format = "<span font='14' rise='-2500' color='#b4befe'></span> {usage}%";
@@ -117,6 +118,7 @@ in {
         children-class = "";
         transition-left-to-right = true;
       };
+      tooltip = false;
       modules = [
         "pulseaudio"
         "pulseaudio/slider"
@@ -129,6 +131,7 @@ in {
       format-icons = {
         default = ["" "" ""];
       };
+      tooltip = false;
       on-click = "pamixer -t";
       ignored-sinks = ["Pro X Wireless Gaming Headset" "Starship/Matisse HD Audio Controller Digital Stereo (IEC958)" "PRO X Wireless Gaming Headset Analog Stereo"];
     };
@@ -206,6 +209,7 @@ in {
       return-type = "text";
       max-length = 40;
       escape = true;
+      tooltip = false;
       exec = "$HOME/.config/waybar/scripts/spotify-now-playing.sh";
     };
 
@@ -214,6 +218,7 @@ in {
       return-type = "text";
       max-length = 40;
       escape = true;
+      tooltip = false;
       exec = "$HOME/.config/waybar/scripts/cava.sh";
     };
   };

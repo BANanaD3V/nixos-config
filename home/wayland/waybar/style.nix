@@ -165,6 +165,17 @@
       background-color: #f38ba8;
   }
 
+  #backlight {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+
   #battery {
       background-color: #1e1e2e;
       color: #cdd6f4;
@@ -205,10 +216,6 @@
 
   #disk {
       background-color: #964B00;
-  }
-
-  #backlight {
-      background-color: #90b1b1;
   }
 
   #pulseaudio, #pulseaudio-slider {
