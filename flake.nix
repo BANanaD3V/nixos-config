@@ -53,6 +53,7 @@
         specialArgs = inputs;
         modules = [
           ./hosts/pc
+          ./modules
           ./modules/base.nix
           ./modules/greetd.nix
           ./modules/steam.nix
