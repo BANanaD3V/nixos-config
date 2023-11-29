@@ -12,7 +12,7 @@
 
   home.packages = with pkgs; [
     swaynotificationcenter
-    libnotify 
+    libnotify
   ];
 
   # Import scripts

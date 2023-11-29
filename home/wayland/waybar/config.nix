@@ -1,4 +1,7 @@
-{ lib, config }: let
+{
+  lib,
+  config,
+}: let
   nixosCfg = config.banana-hm.from-nixos;
 in {
   mainBar = {
@@ -14,17 +17,17 @@ in {
     ];
     modules-center = ["hyprland/workspaces"];
     modules-right =
-      (lib.optionals nixosCfg.backlight.enable ["backlight"]) ++
-      (lib.optionals nixosCfg.battery.enable ["battery"]) ++
-      [
-      "cpu"
-      "memory"
-      "hyprland/language"
-      "clock"
-      "privacy"
-      "tray"
-      "group/group-power"
-    ];
+      (lib.optionals nixosCfg.backlight.enable ["backlight"])
+      ++ (lib.optionals nixosCfg.battery.enable ["battery"])
+      ++ [
+        "cpu"
+        "memory"
+        "hyprland/language"
+        "clock"
+        "privacy"
+        "tray"
+        "group/group-power"
+      ];
 
     "hyprland/workspaces" = {
       format = "{icon}";
@@ -85,7 +88,7 @@ in {
 
     battery = {
       format = "<span font='10' rise='0' color='#b4befe'>{icon}</span> {capacity}%";
-      format-charging =  "<span font='10' rise='0' color='#b4befe'>󰂄</span> {capacity}%";
+      format-charging = "<span font='10' rise='0' color='#b4befe'>󰂄</span> {capacity}%";
       format-critical = "<span font='10' rise='0' color='#11111b'>󰂃</span> {capacity}%";
       interval = 15;
       states = {
@@ -93,7 +96,6 @@ in {
       };
       format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
     };
-
 
     backlight = {
       format = "{percent}% {icon}";

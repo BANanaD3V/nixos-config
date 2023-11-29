@@ -1,5 +1,5 @@
-{ ... }: {
+{...}: {
   imports = [
     ./hardware.nix
   ];
-  }
+}

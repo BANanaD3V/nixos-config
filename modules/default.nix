@@ -1,4 +1,4 @@
-{ config, ... }: let
+{config, ...}: let
   hmCfg = config.home-manager.users.banana;
 in {
   imports = [
