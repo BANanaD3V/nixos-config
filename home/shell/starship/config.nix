@@ -39,7 +39,7 @@
 
       git_branch = {
         symbol = " ";
-        style = "bold yellow";
+        style = "bold blue";
       };
 
       character = {
