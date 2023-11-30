@@ -25,7 +25,7 @@
 
       hostname = {
         ssh_only = true;
-        format = "[$ssh_symbol$hostname](bold yellow) in ";
+        format = "[$hostname](bold yellow) in ";
         trim_at = ".";
         disabled = false;
       };
