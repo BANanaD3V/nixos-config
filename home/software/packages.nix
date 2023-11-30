@@ -19,7 +19,6 @@
     cava
     feh
     thefuck
-    starship
     neofetch
     unrar
     openvpn

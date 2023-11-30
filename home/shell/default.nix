@@ -8,5 +8,6 @@
     ./zsh
     ./nvim
     ./kitty
+    ./starship
   ];
 }

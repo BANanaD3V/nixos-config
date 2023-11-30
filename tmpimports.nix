@@ -10,7 +10,7 @@
   # };
 
   # Starship config
-  home.file.".config/starship.toml".source = ./dots/config/starship.toml;
+  # home.file.".config/starship.toml".source = ./dots/config/starship.toml;
 
   # Bashrc
   # home.file.".bashrc" = {
