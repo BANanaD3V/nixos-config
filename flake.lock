@@ -296,6 +296,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1701434552,
+        "narHash": "sha256-qRFWf74gTtWSd1hdEnqBsjm+89F6HA686tn/MEwFE7I=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "f662327f8e3ca15c7e38dec01a1468b2e2fbcffa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -304,6 +319,7 @@
         "nix-gaming": "nix-gaming",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
+        "nur": "nur",
         "spicetify-nix": "spicetify-nix",
         "split-monitor-workspaces": "split-monitor-workspaces",
         "xdg-desktop-portal-hyprland": "xdg-desktop-portal-hyprland"

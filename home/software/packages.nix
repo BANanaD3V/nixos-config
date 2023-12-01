@@ -99,7 +99,7 @@
     # figma-linux
     vscode
     conda
-    youtube-dl
+    yt-dlp
     tinycc
     bspwm
     polybar

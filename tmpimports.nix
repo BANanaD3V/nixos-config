@@ -65,11 +65,11 @@
   };
 
   # My scripts
-  home.file.".config/scripts" = {
-    source = ./dots/config/scripts;
-    recursive = true;
-    executable = true;
-  };
+  # home.file.".config/scripts" = {
+  #   source = ./dots/config/scripts;
+  #   recursive = true;
+  #   executable = true;
+  # };
 
   # Rofi
   home.file.".config/rofi" = {

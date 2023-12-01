@@ -38,12 +38,17 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     nixos-hardware,
+    nur,
     self,
     ...
   } @ inputs: {
@@ -55,9 +60,9 @@
           ./hosts/pc
           ./modules
           ./modules/base.nix
-          ./modules/greetd.nix
           ./modules/steam.nix
           ./pkgs
+          nur.nixosModules.nur
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -75,9 +80,9 @@
           ./hosts/laptop
           ./modules
           ./modules/base.nix
-          ./modules/greetd.nix
           ./modules/steam.nix
           ./pkgs
+          nur.nixosModules.nur
           nixos-hardware.nixosModules.asus-battery
           home-manager.nixosModules.home-manager
           {

@@ -24,29 +24,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      packageOverrides = pkgs: {
-        nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-          inherit pkgs;
-        };
-      };
-      permittedInsecurePackages = [
-        "electron-24.8.6"
-      ];
     };
-
-    overlays = [
-      # (self: super: {
-      #   discord-ptb = super.discord-ptb.override {
-      #     withOpenASAR = true;
-      #     withVencord = false;
-      #   };
-      # })
-      (self: super: {
-        steam = super.steam.override {
-          extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${nix-gaming.packages.${pkgs.system}.proton-ge}'";
-        };
-      })
-    ];
   };
 
   # User
@@ -119,6 +97,10 @@
   # X server
   services.xserver = {
     enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "tokyo-night-sddm";
+    };
     excludePackages = with pkgs; [xterm];
   };
 
