@@ -19,7 +19,6 @@
     cava
     feh
     thefuck
-    neofetch
     unrar
     openvpn
     ffmpeg-full

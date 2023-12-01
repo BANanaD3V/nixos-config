@@ -9,5 +9,6 @@
     ./nvim
     ./kitty
     ./starship
+    ./neofetch
   ];
 }

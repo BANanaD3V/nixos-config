@@ -58,12 +58,12 @@
   };
 
   # Neofetch
-  home.file.".config/neofetch" = {
-    source = ./dots/config/neofetch;
-    recursive = true;
-    executable = true;
-  };
-
+  # home.file.".config/neofetch" = {
+  #   source = ./dots/config/neofetch;
+  #   recursive = true;
+  #   executable = true;
+  # };
+  #
   # My scripts
   # home.file.".config/scripts" = {
   #   source = ./dots/config/scripts;
