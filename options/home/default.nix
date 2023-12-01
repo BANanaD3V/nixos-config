@@ -1,12 +1,6 @@
 {lib, ...}: {
   imports = [
     ./wayland.nix
+    ./hardware.nix
   ];
-
-  options.banana-hm = {
-    from-nixos = lib.mkOption {
-      type = lib.types.anything;
-      description = "Options from nixos";
-    };
-  };
 }

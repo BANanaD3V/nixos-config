@@ -1,9 +1,7 @@
 {
   lib,
   config,
-}: let
-  nixosCfg = config.banana-hm.from-nixos;
-in {
+}: {
   mainBar = {
     position = "top";
     layer = "top";
@@ -17,8 +15,8 @@ in {
     ];
     modules-center = ["hyprland/workspaces"];
     modules-right =
-      (lib.optionals nixosCfg.backlight.enable ["backlight"])
-      ++ (lib.optionals nixosCfg.battery.enable ["battery"])
+      (lib.optionals config.banana-hm.backlight.enable ["backlight"])
+      ++ (lib.optionals config.banana-hm.battery.enable ["battery"])
       ++ [
         "cpu"
         "memory"

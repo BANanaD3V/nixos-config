@@ -8,6 +8,4 @@ in {
     ./nvidia.nix
     ./hardware/default.nix
   ];
-
-  home-manager.users.banana.banana-hm.from-nixos = config.banana;
 }
