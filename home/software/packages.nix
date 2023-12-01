@@ -54,7 +54,7 @@
     imagemagick
     grim
     # inputs.watershot.packages.${pkgs.system}.default
-    slurp
+    inputs.nixpkgs-wayland.packages.${system}.slurp
     flameshot
     # dunst
     libreoffice
