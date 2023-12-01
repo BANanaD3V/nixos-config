@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-
   fileSystems."/run/media/ssd" = {
     device = "/dev/disk/by-label/1tb_ssd";
     fsType = "btrfs";

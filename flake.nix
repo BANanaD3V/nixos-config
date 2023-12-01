@@ -39,12 +39,13 @@
     self,
     ...
   } @ inputs: let
-  commonInherits = {
+    commonInherits = {
       inherit (nixpkgs) lib;
       inherit self inputs nixpkgs;
-    }; in {
+    };
+  in {
     # outputs = { self, nixpkgs, ... }@inputs: {
 
-    nixosConfigurations = import ./hosts (commonInherits);
+    nixosConfigurations = import ./hosts commonInherits;
   };
 }

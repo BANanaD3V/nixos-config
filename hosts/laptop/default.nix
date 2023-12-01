@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-
   networking.hostName = "banana-laptop"; # Define your hostname.
 
   # Hyprland and nvidia
