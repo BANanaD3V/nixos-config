@@ -23,11 +23,6 @@
     enable = true;
   };
 
-  services.xserver.displayManager.autoLogin = {
-    user = "banana";
-    enable = true;
-  };
-
   # environment.variables = {
   #   GBM_BACKEND = "nvidia-drm";
   #   LIBVA_DRIVER_NAME = "nvidia";
