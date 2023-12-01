@@ -23,10 +23,10 @@
     enable = true;
   };
 
-  services.xserver.displayManager.autoLogin = {
-    user = "banana";
-    enable = true;
-  };
+  # services.xserver.displayManager.autoLogin = {
+  #   user = "banana";
+  #   enable = true;
+  # };
 
   banana = {
     battery.enable = false;
