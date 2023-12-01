@@ -30,6 +30,15 @@
     executable = false;
   };
 
+  # Xresources
+  xresources.properties = {
+    "Xcursor.size" = 24;
+    "Xft.antialias" = 1;
+    "Xft.hinting" = 1;
+    "Xft.hintstyle" = "hintslight";
+    "Xft.rgba" = "rgb";
+  };
+
   # start swayidle as part of hyprland, not sway
   # systemd.user.services.swayidle.Install.WantedBy = lib.mkForce ["hyprland-session.target"];
 

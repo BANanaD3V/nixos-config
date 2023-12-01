@@ -22,4 +22,7 @@
     battery.enable = false;
     backlight.enable = false;
   };
+  xresources.properties = {
+    "Xft.dpi" = 120;
+  };
 }
