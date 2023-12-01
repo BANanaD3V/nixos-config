@@ -1,24 +1,45 @@
-{ inputs, pkgs, ... }: {
-  flake.nixosConfigurations = {
-    # TODO please change the hostname to your own
-    banana-pc = inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = inputs;
-      modules = [
-        ./pc
-        ./modules/base.nix
-        ./modules/steam.nix
-        ./pkgs
-        ];
-      home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+{
+  inputs,
+  lib,
+  ...
+}: let
+  mkHost = host: let
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+    homeManagerImports = [
+      ./${host}/home.nix # host specific home-manager configuration
+      ../home
+      ../options/home
+    ];
+  in
+    lib.nixosSystem {
+      specialArgs = extraSpecialArgs;
 
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
+      modules = [
+        ./${host} # host specific configuration
+        ./${host}/hardware-configuration.nix # host specific hardware configuration
+        ../modules
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+
+            inherit extraSpecialArgs;
+
+            users.banana = {
+              imports = homeManagerImports;
+              programs.home-manager.enable = true;
+            };
           };
         }
+        # alias for home-manager
+        (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "banana"])
       ];
     };
-  };
-}
+in
+  builtins.listToAttrs (map (host: {
+    name = "banana-${host}";
+    value = mkHost host;
+  }) ["pc" "laptop"])

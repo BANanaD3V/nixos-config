@@ -96,7 +96,6 @@ in {
         force_hypr_chan = false;
       };
       bindt = [
-
         # Media keys
 
         ",XF86AudioRaiseVolume,exec,pamixer -i 2"
@@ -110,7 +109,6 @@ in {
         ",XF86AudioPrev, exec, playerctl previous"
       ];
       bind = [
-
         # Other binds
 
         ",PRINT, exec, grimblast --freeze copy area"

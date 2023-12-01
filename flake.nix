@@ -46,54 +46,15 @@
 
   outputs = {
     nixpkgs,
-    home-manager,
-    nixos-hardware,
-    nur,
     self,
     ...
-  } @ inputs: {
+  } @ inputs: let
+  commonInherits = {
+      inherit (nixpkgs) lib;
+      inherit self inputs nixpkgs;
+    }; in {
     # outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      banana-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
-        modules = [
-          ./hosts/pc
-          ./modules
-          ./modules/base.nix
-          ./modules/steam.nix
-          ./pkgs
-          nur.nixosModules.nur
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-      };
 
-      banana-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
-        modules = [
-          ./hosts/laptop
-          ./modules
-          ./modules/base.nix
-          ./modules/steam.nix
-          ./pkgs
-          nur.nixosModules.nur
-          nixos-hardware.nixosModules.asus-battery
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-      };
-    };
+    nixosConfigurations = import ./hosts (commonInherits);
   };
 }
