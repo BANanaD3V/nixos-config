@@ -4,17 +4,17 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./hardware-configuration.nix
-    ./drives.nix
-    ../../modules/nvidia.nix
-    ../../options/nixos
-  ];
 
-  home-manager.users.banana.imports = [
-    ./home.nix
-    ../../options/home
-  ];
+  fileSystems."/run/media/ssd" = {
+    device = "/dev/disk/by-label/1tb_ssd";
+    fsType = "btrfs";
+  };
+
+  fileSystems."/run/media/hdd" = {
+    device = "/dev/disk/by-label/1tb_hdd";
+    fsType = "btrfs";
+  };
+
   networking.hostName = "banana-pc"; # Define your hostname.
 
   # Hyprland and nvidia

@@ -4,17 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./hardware-configuration.nix
-    ./drives.nix
-    ../../modules/nvidia.nix
-    ../../options/nixos
-  ];
 
-  home-manager.users.banana.imports = [
-    ./home.nix
-    ../../options/home
-  ];
   networking.hostName = "banana-laptop"; # Define your hostname.
 
   # Hyprland and nvidia
