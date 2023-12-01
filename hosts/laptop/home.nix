@@ -25,4 +25,13 @@
       }
     ];
   };
+  wayland.windowManager.hyprland.settings = {
+    gestures = {
+      workspace_swipe = true;
+    };
+
+    bindl = [
+      ",switch:Lid Switch, exec, gtklock"
+    ];
+  };
 }

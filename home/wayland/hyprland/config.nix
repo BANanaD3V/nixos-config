@@ -91,16 +91,12 @@ in {
         new_is_master = true;
       };
 
-      gestures = {
-        workspace_swipe = "on";
-      };
-
       misc = {
         disable_hyprland_logo = true;
         force_hypr_chan = false;
       };
+      bindt = [
 
-      bind = [
         # Media keys
 
         ",XF86AudioRaiseVolume,exec,pamixer -i 2"
@@ -112,6 +108,8 @@ in {
         ",XF86AudioPlay, exec, playerctl play-pause"
         ",XF86AudioNext, exec, playerctl next"
         ",XF86AudioPrev, exec, playerctl previous"
+      ];
+      bind = [
 
         # Other binds
 
