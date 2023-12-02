@@ -21,10 +21,12 @@
     enable = true;
   };
 
-  # services.xserver.displayManager.autoLogin = {
-  #   user = "banana";
-  #   enable = true;
-  # };
+  services.xserver.displayManager.autoLogin = {
+    user = "banana";
+    enable = true;
+  };
+  services.getty.autologinUser = "banana";
+
   banana = {
     nvidia = {
       drivers.enable = true;
