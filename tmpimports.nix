@@ -33,11 +33,11 @@
   # };
 
   # Pipewire
-  home.file.".config/pipewire" = {
-    source = ./dots/config/pipewire;
-    recursive = true;
-    executable = true;
-  };
+  # home.file.".config/pipewire" = {
+  #   source = ./dots/config/pipewire;
+  #   recursive = true;
+  #   executable = true;
+  # };
 
   home.file.".config/bspwm" = {
     source = ./dots/config/bspwm;

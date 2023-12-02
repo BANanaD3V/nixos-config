@@ -10,6 +10,7 @@
     ./gtk.nix
     ./packages.nix
     ../../tmpimports.nix
+    ./pipewire
     ./obs.nix
   ];
 }

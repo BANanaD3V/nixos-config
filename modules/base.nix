@@ -166,6 +166,7 @@
     LC_TELEPHONE = "ru_RU.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
   # Env packages
   environment.systemPackages = with pkgs; [
     git
