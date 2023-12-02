@@ -72,11 +72,11 @@
   # };
 
   # Rofi
-  home.file.".config/rofi" = {
-    source = ./dots/config/rofi;
-    recursive = true;
-    executable = true;
-  };
+  # home.file.".config/rofi" = {
+  #   source = ./dots/config/rofi;
+  #   recursive = true;
+  #   executable = true;
+  # };
   # encode the file content in nix configuration file directly
   # home.file.".xxx".text = ''
   #     xxx

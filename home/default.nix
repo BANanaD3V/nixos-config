@@ -11,7 +11,7 @@
   };
 
   imports = [
-    ./wayland
+    ./desktop
     ./shell
     ./software
   ];

@@ -8,4 +8,5 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 swaync &
 nm-applet &
 blueman-applet &
+ydotoold &
 sleep 2 && waybar &

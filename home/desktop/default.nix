@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hyprland
+    ./rofi
     ./waybar
   ];
 }

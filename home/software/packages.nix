@@ -38,7 +38,7 @@
     gtklock
     eww
     tmux
-    rofi-wayland
+    # rofi-wayland
     rofimoji
     hyprpaper
     wl-clipboard
