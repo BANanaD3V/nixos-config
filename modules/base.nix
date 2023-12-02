@@ -176,7 +176,6 @@
     jq
     polkit
     polkit_gnome
-    greetd.tuigreet
   ];
 
   # Fonts
