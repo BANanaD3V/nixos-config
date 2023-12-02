@@ -14,7 +14,7 @@
 
   # Import config
   home.file.".config/nvim" = {
-    source = ./config;
+    source = inputs.nvim-config;
     recursive = true;
     executable = true;
   };

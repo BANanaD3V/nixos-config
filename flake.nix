@@ -32,6 +32,11 @@
     nur.url = "github:nix-community/NUR";
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+    nvim-config = {
+      url = "github:bananad3v/neovim";
+      flake = false;
+    };
   };
 
   outputs = {

@@ -10,7 +10,7 @@
   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
   officialThemes = pkgs.fetchgit {
     url = "https://github.com/spicetify/spicetify-themes";
-    sha256 = "sha256-WrQ5ejqOf73TR6fbuApt6EwKsq7JkX3CDvFdbBT7UWA=";
+    sha256 = "sha256-iMRutzOrZHaKfHOr2qOM/TkTYHysFBlmunVhU65kf2k=";
   };
 in {
   imports = [spicetify-nix.homeManagerModule];
