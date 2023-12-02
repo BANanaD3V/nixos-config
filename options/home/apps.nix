@@ -9,7 +9,7 @@
     kitty.enable = lib.mkEnableOption "Kitty" // {default = isNixOS;};
     gaming = {
       enable = lib.mkEnableOption "Gaming";
-      steam.enabled = lib.mkEnableOption "Steam" // {default = true;};
+      steam.enabled = lib.mkEnableOption "Steam" // {default = config.banana-hm.gaming.enable;};
     };
   };
 }
