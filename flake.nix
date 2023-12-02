@@ -37,6 +37,11 @@
       url = "github:bananad3v/neovim";
       flake = false;
     };
+
+    catppuccin-grub = {
+      url = "github:catppuccin/grub";
+      flake = false;
+    };
   };
 
   outputs = {

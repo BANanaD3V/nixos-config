@@ -55,14 +55,7 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
-    theme =
-      pkgs.fetchFromGitHub {
-        owner = "catppuccin";
-        repo = "grub";
-        rev = "803c5df0e83aba61668777bb96d90ab8f6847106";
-        sha256 = "/bSolCta8GCZ4lP0u5NVqYQ9Y3ZooYCNdTwORNvR7M0=";
-      }
-      + "/src/catppuccin-mocha-grub-theme";
+    theme = inputs.catppuccin-grub + "/src/catppuccin-mocha-grub-theme";
   };
 
   boot.loader.efi = {
