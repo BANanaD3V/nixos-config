@@ -48,11 +48,9 @@
     keepass-diff
     keepmenu
     wl-clip-persist
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
     imagemagick
     grim
-    # inputs.watershot.packages.${pkgs.system}.default
     inputs.nixpkgs-wayland.packages.${system}.slurp
     flameshot
     # dunst

@@ -111,7 +111,7 @@ in {
       bind = [
         # Other binds
 
-        ",PRINT, exec, grimblast --freeze copy area"
+        ",PRINT, exec, ~/.config/hypr/scripts/grimblast.sh --freeze copy area"
         "$mainMod, Return, exec, kitty"
         "$mainMod, U, exec, ~/.config/hypr/scripts/uploader.sh"
         "$mainMod, N, exec, swaync-client -t"
