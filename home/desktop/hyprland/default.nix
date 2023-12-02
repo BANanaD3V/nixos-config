@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     swaynotificationcenter
     libnotify
+    xwaylandvideobridge
   ];
 
   # Import scripts
