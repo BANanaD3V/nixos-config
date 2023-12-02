@@ -16,25 +16,8 @@ in {
   imports = [spicetify-nix.homeManagerModule];
   programs.spicetify = {
     enable = true;
-    # theme = spicePkgs.themes.catppuccin-mocha;
-    theme = {
-      name = "text";
-      src = officialThemes;
-      appendName = true; # theme is located at "${src}/text" not just "${src}"
-
-      # changes to make to config-xpui.ini for this theme:
-      patches = {
-        "xpui.js_find_8008" = ",(\\w+=)56,";
-        "xpui.js_repl_8008" = ",\${1}32,";
-      };
-      injectCss = true;
-      replaceColors = true;
-      overwriteAssets = true;
-      sidebarConfig = true;
-    };
-
+    theme = spicePkgs.themes.text;
     colorScheme = "CatppuccinMocha";
-    # colorScheme = "lavender";
     enabledExtensions = with spicePkgs.extensions; [
       autoSkipVideo
       shuffle
