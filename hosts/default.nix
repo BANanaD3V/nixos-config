@@ -20,6 +20,7 @@
         ./${host} # host specific configuration
         ./${host}/hardware-configuration.nix # host specific hardware configuration
         ../modules
+        ../pkgs
         ../options/nixos
         inputs.home-manager.nixosModules.home-manager
         {
