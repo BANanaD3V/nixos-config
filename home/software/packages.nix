@@ -64,9 +64,7 @@
     firefox
     chromium
     element-desktop
-    discord-ptb
     vesktop
-    webcord-vencord
     telegram-desktop
     zoom-us
     qdirstat
