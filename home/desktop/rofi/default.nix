@@ -7,31 +7,32 @@
   ...
 }:
 with lib; let
- inherit (config.lib.formats.rasi) mkLiteral;
+  inherit (config.lib.formats.rasi) mkLiteral;
   rofi_config = import ./config.nix {inherit lib config;};
 in {
+  config = lib.mkIf config.banana-hm.rofi.enable {
+    home.file.".config/rofi/configs" = {
+      source = ./config;
+      recursive = true;
+      executable = true;
+    };
 
-  home.file.".config/rofi/configs" = {
-    source = ./config;
-    recursive = true;
-    executable = true;
-  };
+    home.file.".config/rofi/themes" = {
+      source = ./themes;
+      recursive = true;
+      executable = true;
+    };
 
-  home.file.".config/rofi/themes" = {
-    source = ./themes;
-    recursive = true;
-    executable = true;
-  };
+    home.packages = with pkgs; [
+      keepmenu
+      rofimoji
+    ];
 
-  home.packages = with pkgs; [
-    keepmenu
-    rofimoji
-  ];
-
-  programs.rofi = {
-    enable = true;
-    plugins = with pkgs; [ rofi-calc ];
-    package = pkgs.rofi-wayland;
-    theme = "~/.config/rofi/configs/config.rasi";
+    programs.rofi = {
+      enable = true;
+      plugins = with pkgs; [rofi-calc];
+      package = pkgs.rofi-wayland;
+      theme = "~/.config/rofi/configs/config.rasi";
+    };
   };
 }

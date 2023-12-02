@@ -93,9 +93,6 @@
     conda
     yt-dlp
     tinycc
-    bspwm
-    polybar
-    sxhkd
     hollywood
     alejandra
     pciutils

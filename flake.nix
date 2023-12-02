@@ -44,8 +44,12 @@
       inherit self inputs nixpkgs;
     };
   in {
-    # outputs = { self, nixpkgs, ... }@inputs: {
+    nixosConfigurations = import ./hosts (
+      commonInherits // {isNixOS = true;}
+    );
 
-    nixosConfigurations = import ./hosts commonInherits;
+    homeConfigurations = import ./hosts (
+      commonInherits // {isNixOS = false;}
+    );
   };
 }

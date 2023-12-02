@@ -24,16 +24,13 @@
         workspaces = [1 2 3 4 5 6 7 8 9 10];
       }
     ];
+    hyprland.enable = true;
+    lid.enable = true;
+    touchpad.enable = true;
     battery.enable = true;
     backlight.enable = true;
+    gaming.enable = true;
   };
   wayland.windowManager.hyprland.settings = {
-    gestures = {
-      workspace_swipe = true;
-    };
-
-    bindl = [
-      ",switch:Lid Switch, exec, gtklock"
-    ];
   };
 }

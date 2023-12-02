@@ -1,11 +1,12 @@
 {
   inputs,
+  isNixOS,
   lib,
   ...
 }: let
   mkHost = host: let
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs isNixOS;
     };
     homeManagerImports = [
       ./${host}/home.nix # host specific home-manager configuration

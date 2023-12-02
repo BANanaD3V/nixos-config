@@ -19,8 +19,12 @@
         workspaces = [11 12 13 14 15 16 17 18 19 20];
       }
     ];
+    lid.enable = false;
+    touchpad.enable = false;
+    hyprland.enable = true;
     battery.enable = false;
     backlight.enable = false;
+    gaming.enable = true;
   };
   xresources.properties = {
     "Xft.dpi" = 120;

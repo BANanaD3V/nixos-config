@@ -7,7 +7,7 @@
   inherit (default) colors;
 in {
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = config.banana-hm.hyprland.enable;
     xwayland = {
       enable = true;
       #hidpi = false;
@@ -95,6 +95,13 @@ in {
         disable_hyprland_logo = true;
         force_hypr_chan = false;
       };
+
+      gestures = {
+        workspace_swipe = config.banana-hm.touchpad.enable;
+      };
+
+      bindl = lib.optionals config.banana-hm.lid.enable [",switch:Lid Switch, exec, gtklock"];
+
       bindt = [
         # Media keys
 
@@ -108,70 +115,73 @@ in {
         ",XF86AudioNext, exec, playerctl next"
         ",XF86AudioPrev, exec, playerctl previous"
       ];
-      bind = [
-        # Other binds
+      bind =
+        [
+          # Other binds
 
-        ",PRINT, exec, ~/.config/hypr/scripts/grimblast.sh --freeze copy area"
-        "$mainMod, Return, exec, kitty"
-        "$mainMod, U, exec, ~/.config/hypr/scripts/uploader.sh"
-        "$mainMod, N, exec, swaync-client -t"
-        "$mainMod, Q, killactive,"
-        "$mainMod, T, togglefloating,"
-        "$mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/config.rasi"
-        "$mainMod SHIFT, T, pseudo, # dwindle"
-        "$mainMod, J, togglesplit,"
-        "$mainMod, F, fullscreen"
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -config  ~/.config/rofi/configs/clipboard.rasi -p '>' | cliphist decode | wl-copy"
-        # "$mainMod, V, exec, rofi -modi clipboard:~/.config/scripts/cliphist-rofi.sh -show clipboard -config ~/.config/rofi/configs/clipboard.rasi"
-        "$mainMod, period, exec, rofi -modi \"emoji:rofimoji\" -show emoji -config ~/.config/rofi/configs/config.rasi"
-        "$mainMod, C, exec, hyprpicker -a"
+          ",PRINT, exec, ~/.config/hypr/scripts/grimblast.sh --freeze copy area"
+          "$mainMod, Return, exec, kitty"
+          "$mainMod, U, exec, ~/.config/hypr/scripts/uploader.sh"
+          "$mainMod, N, exec, swaync-client -t"
+          "$mainMod, Q, killactive,"
+          "$mainMod, T, togglefloating,"
+          "$mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/config.rasi"
+          "$mainMod SHIFT, T, pseudo, # dwindle"
+          "$mainMod, J, togglesplit,"
+          "$mainMod, F, fullscreen"
+          "$mainMod, V, exec, cliphist list | rofi -dmenu -config  ~/.config/rofi/configs/clipboard.rasi -p '>' | cliphist decode | wl-copy"
+          # "$mainMod, V, exec, rofi -modi clipboard:~/.config/scripts/cliphist-rofi.sh -show clipboard -config ~/.config/rofi/configs/clipboard.rasi"
+          "$mainMod, period, exec, rofi -modi \"emoji:rofimoji\" -show emoji -config ~/.config/rofi/configs/config.rasi"
+          "$mainMod, C, exec, hyprpicker -a"
 
-        # Workspace binds
+          # Workspace binds
 
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+          "$mainMod, left, movefocus, l"
+          "$mainMod, right, movefocus, r"
+          "$mainMod, up, movefocus, u"
+          "$mainMod, down, movefocus, d"
 
-        # Switch workspaces
+          # Switch workspaces
 
-        "$mainMod, 1, exec, ~/.config/hypr/scripts/switch_workspace.sh 1"
-        "$mainMod, 2, exec, ~/.config/hypr/scripts/switch_workspace.sh 2"
-        "$mainMod, 3, exec, ~/.config/hypr/scripts/switch_workspace.sh 3"
-        "$mainMod, 4, exec, ~/.config/hypr/scripts/switch_workspace.sh 4"
-        "$mainMod, 5, exec, ~/.config/hypr/scripts/switch_workspace.sh 5"
-        "$mainMod, 6, exec, ~/.config/hypr/scripts/switch_workspace.sh 6"
-        "$mainMod, 7, exec, ~/.config/hypr/scripts/switch_workspace.sh 7"
-        "$mainMod, 8, exec, ~/.config/hypr/scripts/switch_workspace.sh 8"
-        "$mainMod, 9, exec, ~/.config/hypr/scripts/switch_workspace.sh 9"
-        "$mainMod, 0, exec, ~/.config/hypr/scripts/switch_workspace.sh 10"
+          "$mainMod, 1, exec, ~/.config/hypr/scripts/switch_workspace.sh 1"
+          "$mainMod, 2, exec, ~/.config/hypr/scripts/switch_workspace.sh 2"
+          "$mainMod, 3, exec, ~/.config/hypr/scripts/switch_workspace.sh 3"
+          "$mainMod, 4, exec, ~/.config/hypr/scripts/switch_workspace.sh 4"
+          "$mainMod, 5, exec, ~/.config/hypr/scripts/switch_workspace.sh 5"
+          "$mainMod, 6, exec, ~/.config/hypr/scripts/switch_workspace.sh 6"
+          "$mainMod, 7, exec, ~/.config/hypr/scripts/switch_workspace.sh 7"
+          "$mainMod, 8, exec, ~/.config/hypr/scripts/switch_workspace.sh 8"
+          "$mainMod, 9, exec, ~/.config/hypr/scripts/switch_workspace.sh 9"
+          "$mainMod, 0, exec, ~/.config/hypr/scripts/switch_workspace.sh 10"
 
-        # Move to workspace
+          # Move to workspace
 
-        "$mainMod SHIFT, 1, exec, ~/.config/hypr/scripts/move_window.sh 1"
-        "$mainMod SHIFT, 2, exec, ~/.config/hypr/scripts/move_window.sh 2"
-        "$mainMod SHIFT, 3, exec, ~/.config/hypr/scripts/move_window.sh 3"
-        "$mainMod SHIFT, 4, exec, ~/.config/hypr/scripts/move_window.sh 4"
-        "$mainMod SHIFT, 5, exec, ~/.config/hypr/scripts/move_window.sh 5"
-        "$mainMod SHIFT, 6, exec, ~/.config/hypr/scripts/move_window.sh 6"
-        "$mainMod SHIFT, 7, exec, ~/.config/hypr/scripts/move_window.sh 7"
-        "$mainMod SHIFT, 8, exec, ~/.config/hypr/scripts/move_window.sh 8"
-        "$mainMod SHIFT, 9, exec, ~/.config/hypr/scripts/move_window.sh 9"
-        "$mainMod SHIFT, 0, exec, ~/.config/hypr/scripts/move_window.sh 10"
+          "$mainMod SHIFT, 1, exec, ~/.config/hypr/scripts/move_window.sh 1"
+          "$mainMod SHIFT, 2, exec, ~/.config/hypr/scripts/move_window.sh 2"
+          "$mainMod SHIFT, 3, exec, ~/.config/hypr/scripts/move_window.sh 3"
+          "$mainMod SHIFT, 4, exec, ~/.config/hypr/scripts/move_window.sh 4"
+          "$mainMod SHIFT, 5, exec, ~/.config/hypr/scripts/move_window.sh 5"
+          "$mainMod SHIFT, 6, exec, ~/.config/hypr/scripts/move_window.sh 6"
+          "$mainMod SHIFT, 7, exec, ~/.config/hypr/scripts/move_window.sh 7"
+          "$mainMod SHIFT, 8, exec, ~/.config/hypr/scripts/move_window.sh 8"
+          "$mainMod SHIFT, 9, exec, ~/.config/hypr/scripts/move_window.sh 9"
+          "$mainMod SHIFT, 0, exec, ~/.config/hypr/scripts/move_window.sh 10"
 
-        "$mainMod SHIFT, Space, exec, ~/.config/hypr/scripts/move_window.sh special"
-        # Scroll through workspaces
+          "$mainMod SHIFT, Space, exec, ~/.config/hypr/scripts/move_window.sh special"
+          # Scroll through workspaces
 
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+          "$mainMod, mouse_down, workspace, e+1"
+          "$mainMod, mouse_up, workspace, e-1"
 
-        # Move windows
+          # Move windows
 
-        "$mainMod SHIFT, left, movewindow, l"
-        "$mainMod SHIFT, right, movewindow, r"
-        "$mainMod SHIFT, up, movewindow, u"
-        "$mainMod SHIFT, down, movewindow, d"
-      ];
+          "$mainMod SHIFT, left, movewindow, l"
+          "$mainMod SHIFT, right, movewindow, r"
+          "$mainMod SHIFT, up, movewindow, u"
+          "$mainMod SHIFT, down, movewindow, d"
+        ]
+        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
+
       bindm = [
         # Move / Resize windows
 
@@ -213,8 +223,17 @@ in {
       # Autostart
 
       exec-once = [
-        "~/.config/hypr/scripts/start.sh"
-      ];
+        "hyprpaper"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+        "xwaylandvideobridge"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+        "swaync"
+        "ydotoold"
+        "nm-applet"
+        "sleep 2 && waybar"
+      ]
+      ++ (lib.optionals config.banana-hm.bluetooth.enable ["blueman-applet"]);
     };
   };
 }

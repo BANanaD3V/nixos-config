@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  config = lib.mkIf config.banana.battery.enable {
+  config = lib.mkIf config.hm.banana-hm.battery.enable {
     # Better scheduling for CPU cycles
     services.system76-scheduler.settings.cfsProfiles.enable = true;
 

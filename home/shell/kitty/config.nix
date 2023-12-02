@@ -5,7 +5,7 @@
   ...
 }: {
   programs.kitty = {
-    enable = true;
+    enable = config.banana-hm.kitty.enable;
     settings = {
       scrollback_lines = 10000;
       update_check_interval = 0;

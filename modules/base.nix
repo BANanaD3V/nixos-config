@@ -100,7 +100,7 @@
     firewall.enable = false;
     extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
   };
-  services.blueman.enable = true;
+  services.blueman.enable = config.hm.banana-hm.bluetooth.enable;
 
   # XDG Desktop Portal stuff
   xdg.portal = {
