@@ -38,15 +38,12 @@
     gtklock
     eww
     tmux
-    # rofi-wayland
-    rofimoji
     hyprpaper
     wl-clipboard
     cliphist
     keepass
     keepassxc
     keepass-diff
-    keepmenu
     wl-clip-persist
     hyprpicker
     imagemagick

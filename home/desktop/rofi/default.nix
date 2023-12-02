@@ -23,10 +23,10 @@ in {
     executable = true;
   };
 
-  # home.packages = with pkgs; [
-  #   networkmanagerapplet
-  #   blueman
-  # ];
+  home.packages = with pkgs; [
+    keepmenu
+    rofimoji
+  ];
 
   programs.rofi = {
     enable = true;
