@@ -158,7 +158,7 @@ in {
         ++ builtins.map (w: "$mainMod SHIFT, ${toString w}, exec, move_window ${toString w}") (lib.range 1 9)
         ++ ["$mainMod SHIFT, 0, exec, move_window 10"]
         # Brightness bind
-        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brillo -q -U 5" ",XF86MonBrightnessUp, exec, brillo -q -A 5"]);
+        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
 
       bindm = [
         # Move / Resize windows

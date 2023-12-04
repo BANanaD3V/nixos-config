@@ -32,7 +32,7 @@
   # User
   users.users.banana = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel" "video" "networkmanager"];
     shell = pkgs.zsh;
   };
 
