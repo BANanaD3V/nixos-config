@@ -14,7 +14,6 @@ in {
     };
     # portalPackage = pkgs.xdg-desktop-portal-wlr;
     # portalPackage = pkgs.xdg-desktop-portal-hyprland;
-    enableNvidiaPatches = true;
     settings = {
       "$mainMod" = "SUPER";
 
@@ -102,7 +101,7 @@ in {
 
       bindl = lib.optionals config.banana-hm.lid.enable [",switch:Lid Switch, exec, gtklock"];
 
-      bindt = [
+      bindtei = [
         # Media keys
 
         ",XF86AudioRaiseVolume,exec,pamixer -i 2"
@@ -115,13 +114,14 @@ in {
         ",XF86AudioNext, exec, playerctl next"
         ",XF86AudioPrev, exec, playerctl previous"
       ];
+
       bind =
         [
           # Other binds
 
-          ",PRINT, exec, ~/.config/hypr/scripts/grimblast.sh --freeze copy area"
+          ",PRINT, exec, grimblast --freeze copy area"
           "$mainMod, Return, exec, kitty"
-          "$mainMod, U, exec, ~/.config/hypr/scripts/uploader.sh"
+          "$mainMod, U, exec, uploader"
           "$mainMod, N, exec, swaync-client -t"
           "$mainMod, Q, killactive,"
           "$mainMod, T, togglefloating,"
@@ -130,44 +130,16 @@ in {
           "$mainMod, J, togglesplit,"
           "$mainMod, F, fullscreen"
           "$mainMod, V, exec, cliphist list | rofi -dmenu -config  ~/.config/rofi/configs/clipboard.rasi -p '>' | cliphist decode | wl-copy"
-          # "$mainMod, V, exec, rofi -modi clipboard:~/.config/scripts/cliphist-rofi.sh -show clipboard -config ~/.config/rofi/configs/clipboard.rasi"
           "$mainMod, period, exec, rofi -modi \"emoji:rofimoji\" -show emoji -config ~/.config/rofi/configs/config.rasi"
           "$mainMod, C, exec, hyprpicker -a"
-
-          # Workspace binds
 
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
           "$mainMod, up, movefocus, u"
           "$mainMod, down, movefocus, d"
 
-          # Switch workspaces
+          "$mainMod SHIFT, Space, exec, move_window special"
 
-          "$mainMod, 1, exec, ~/.config/hypr/scripts/switch_workspace.sh 1"
-          "$mainMod, 2, exec, ~/.config/hypr/scripts/switch_workspace.sh 2"
-          "$mainMod, 3, exec, ~/.config/hypr/scripts/switch_workspace.sh 3"
-          "$mainMod, 4, exec, ~/.config/hypr/scripts/switch_workspace.sh 4"
-          "$mainMod, 5, exec, ~/.config/hypr/scripts/switch_workspace.sh 5"
-          "$mainMod, 6, exec, ~/.config/hypr/scripts/switch_workspace.sh 6"
-          "$mainMod, 7, exec, ~/.config/hypr/scripts/switch_workspace.sh 7"
-          "$mainMod, 8, exec, ~/.config/hypr/scripts/switch_workspace.sh 8"
-          "$mainMod, 9, exec, ~/.config/hypr/scripts/switch_workspace.sh 9"
-          "$mainMod, 0, exec, ~/.config/hypr/scripts/switch_workspace.sh 10"
-
-          # Move to workspace
-
-          "$mainMod SHIFT, 1, exec, ~/.config/hypr/scripts/move_window.sh 1"
-          "$mainMod SHIFT, 2, exec, ~/.config/hypr/scripts/move_window.sh 2"
-          "$mainMod SHIFT, 3, exec, ~/.config/hypr/scripts/move_window.sh 3"
-          "$mainMod SHIFT, 4, exec, ~/.config/hypr/scripts/move_window.sh 4"
-          "$mainMod SHIFT, 5, exec, ~/.config/hypr/scripts/move_window.sh 5"
-          "$mainMod SHIFT, 6, exec, ~/.config/hypr/scripts/move_window.sh 6"
-          "$mainMod SHIFT, 7, exec, ~/.config/hypr/scripts/move_window.sh 7"
-          "$mainMod SHIFT, 8, exec, ~/.config/hypr/scripts/move_window.sh 8"
-          "$mainMod SHIFT, 9, exec, ~/.config/hypr/scripts/move_window.sh 9"
-          "$mainMod SHIFT, 0, exec, ~/.config/hypr/scripts/move_window.sh 10"
-
-          "$mainMod SHIFT, Space, exec, ~/.config/hypr/scripts/move_window.sh special"
           # Scroll through workspaces
 
           "$mainMod, mouse_down, workspace, e+1"
@@ -180,7 +152,13 @@ in {
           "$mainMod SHIFT, up, movewindow, u"
           "$mainMod SHIFT, down, movewindow, d"
         ]
-        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
+        # Workspace binds
+        ++ builtins.map (w: "$mainMod, ${toString w}, exec, switch_workspace ${toString w}") (lib.range 1 9)
+        ++ ["$mainMod, 0, exec, switch_workspace 10"]
+        ++ builtins.map (w: "$mainMod SHIFT, ${toString w}, exec, move_window ${toString w}") (lib.range 1 9)
+        ++ ["$mainMod SHIFT, 0, exec, move_window 10"]
+        # Brightness bind
+        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brillo -q -U 5" ",XF86MonBrightnessUp, exec, brillo -q -A 5"]);
 
       bindm = [
         # Move / Resize windows
@@ -201,7 +179,8 @@ in {
       # Window rules
 
       windowrulev2 = [
-        "workspace 7, class:(discord)"
+        "workspace 7, class:(VencordDesktop)"
+        "workspace 6, class:(org.telegram.desktop)"
         "workspace 2, class:(firefox)"
         "workspace 4, title:Spotify"
 
@@ -222,18 +201,19 @@ in {
 
       # Autostart
 
-      exec-once = [
-        "hyprpaper"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
-        "xwaylandvideobridge"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
-        "swaync"
-        "ydotoold"
-        "nm-applet"
-        "sleep 2 && waybar"
-      ]
-      ++ (lib.optionals config.banana-hm.bluetooth.enable ["blueman-applet"]);
+      exec-once =
+        [
+          "hyprpaper"
+          "wl-paste --type text --watch cliphist store"
+          "wl-paste --type image --watch cliphist store"
+          "xwaylandvideobridge"
+          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+          "swaync"
+          "ydotoold"
+          "nm-applet"
+          "sleep 2 && waybar"
+        ]
+        ++ (lib.optionals config.banana-hm.bluetooth.enable ["blueman-applet"]);
     };
   };
 }

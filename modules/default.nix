@@ -4,7 +4,6 @@ in {
   imports = [
     ./base.nix
     ./steam.nix
-    ./nvidia.nix
-    ./hardware/default.nix
+    ./hardware
   ];
 }

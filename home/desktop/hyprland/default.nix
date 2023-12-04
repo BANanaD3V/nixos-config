@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   lib,
   pkgs,
   self,
@@ -7,6 +8,7 @@
 }: {
   imports = [
     ./config.nix
+    ./scripts
     ./hyprpaper.nix
   ];
 
@@ -15,13 +17,6 @@
     libnotify
     xwaylandvideobridge
   ];
-
-  # Import scripts
-  home.file.".config/hypr/scripts" = {
-    source = ./scripts;
-    recursive = true;
-    executable = true;
-  };
 
   # Import wallpaper
 

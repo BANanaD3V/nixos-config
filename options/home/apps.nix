@@ -9,6 +9,7 @@
     kitty.enable = lib.mkEnableOption "Kitty" // {default = isNixOS;};
     gaming = {
       enable = lib.mkEnableOption "Gaming";
+      eac-workaround.enabled = lib.mkEnableOption "Star citizen EAC workaround";
       steam.enabled = lib.mkEnableOption "Steam" // {default = config.banana-hm.gaming.enable;};
     };
   };

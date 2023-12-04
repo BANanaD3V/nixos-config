@@ -3,9 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../../home
-  ];
   banana-hm = {
     displays = [
       {
@@ -26,7 +23,7 @@
     backlight.enable = false;
     gaming.enable = true;
   };
-  xresources.properties = {
-    "Xft.dpi" = 120;
-  };
+  # xresources.properties = {
+  #   "Xft.dpi" = 120;
+  # };
 }

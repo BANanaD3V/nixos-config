@@ -208,7 +208,7 @@
       max-length = 40;
       escape = true;
       tooltip = false;
-      exec = "$HOME/.config/waybar/scripts/spotify-now-playing.sh";
+      exec = "spotify_now_playing";
     };
 
     "custom/cava" = {
@@ -217,7 +217,7 @@
       max-length = 40;
       escape = true;
       tooltip = false;
-      exec = "$HOME/.config/waybar/scripts/cava.sh";
+      exec = "cava_waybar";
     };
   };
 }

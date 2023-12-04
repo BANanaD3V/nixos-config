@@ -4,10 +4,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../../home
-  ];
-
   wayland.windowManager.hyprland = {
     enableNvidiaPatches = lib.mkForce false;
 

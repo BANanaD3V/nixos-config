@@ -5,6 +5,6 @@
   ...
 }: {
   config = lib.mkIf config.hm.banana-hm.backlight.enable {
-    environment.systemPackages = [pkgs.brightnessctl];
+    environment.systemPackages = [pkgs.brillo];
   };
 }

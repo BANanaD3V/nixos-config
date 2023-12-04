@@ -51,6 +51,10 @@
     };
   };
 
+  home.sessionVariables = {
+    GTK_THEME = "Catppuccin-Mocha-Standard-Lavender-Dark";
+  };
+
   qt = {
     enable = true;
     platformTheme = "gtk";

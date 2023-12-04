@@ -4,16 +4,18 @@
   pkgs,
   ...
 }: {
-  fileSystems."/run/media/ssd" = {
-    device = "/dev/disk/by-label/1tb_ssd";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/run/media/hdd" = {
-    device = "/dev/disk/by-label/1tb_hdd";
-    fsType = "btrfs";
-  };
-
+  # Main drive
+  #
+  # fileSystems."/run/media/ssd" = {
+  #   device = "/dev/disk/by-label/1tb_ssd";
+  #   fsType = "btrfs";
+  # };
+  #
+  # fileSystems."/run/media/hdd" = {
+  #   device = "/dev/disk/by-label/1tb_hdd";
+  #   fsType = "btrfs";
+  # };
+  #
   networking.hostName = "banana-pc"; # Define your hostname.
 
   # Hyprland and nvidia
@@ -29,8 +31,23 @@
 
   banana = {
     nvidia = {
-      drivers.enable = true;
+      drivers = {
+        version = "production";
+        enable = true;
+      };
       hyprland.enable = true;
     };
+    drives = [
+      {
+        label = "1tb_ssd";
+        mountpoint = "/run/media/ssd";
+        fstype = "btrfs";
+      }
+      {
+        label = "1tb_hdd";
+        mountpoint = "/run/media/hdd";
+        fstype = "btrfs";
+      }
+    ];
   };
 }

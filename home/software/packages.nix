@@ -26,6 +26,7 @@
     maven
 
     # Desktop stuff
+    freetube
     qbittorrent
     kdenlive
     davinci-resolve
@@ -96,6 +97,7 @@
     hollywood
     alejandra
     pciutils
+    ngrok
 
     # Dev envs
     (pkgs.buildFHSUserEnv {
