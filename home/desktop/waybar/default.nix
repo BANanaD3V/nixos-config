@@ -22,6 +22,7 @@ in {
 
     programs.waybar = {
       enable = true;
+      package = inputs.nixpkgs-wayland.packages.${pkgs.system}.waybar;
       settings = cfg;
       style = style;
     };
