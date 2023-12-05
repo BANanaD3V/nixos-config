@@ -98,6 +98,7 @@
   #keyboard-state,
   #tray,
   #mode,
+  #privacy,
   #idle_inhibitor,
   #scratchpad,
   #group-power,

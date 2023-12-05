@@ -141,24 +141,24 @@
     };
 
     privacy = {
-      icon-spacing = 4;
-      icon-size = 18;
+      icon-spacing = 10;
+      icon-size = 14;
       transition-duration = 250;
       modules = [
         {
           type = "screenshare";
           tooltip = true;
-          tooltip-icon-size = 24;
+          tooltip-icon-size = 14;
         }
         {
           type = "audio-out";
           tooltip = true;
-          tooltip-icon-size = 24;
+          tooltip-icon-size = 14;
         }
         {
           type = "audio-in";
           tooltip = true;
-          tooltip-icon-size = 24;
+          tooltip-icon-size = 14;
         }
       ];
     };
