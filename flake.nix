@@ -26,6 +26,10 @@
       url = "github:catppuccin/grub";
       flake = false;
     };
+    auto-cpufreq = {
+      url = "github:adnanhodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
