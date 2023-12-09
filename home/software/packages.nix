@@ -39,7 +39,6 @@
     kvmtool
     gtklock
     eww
-    tmux
     hyprpaper
     wl-clipboard
     cliphist

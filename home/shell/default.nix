@@ -7,6 +7,7 @@
   imports = [
     ./zsh
     ./nvim
+    ./tmux
     ./kitty
     ./starship
     ./neofetch

@@ -7,6 +7,7 @@
   options.banana-hm = {
     obs.enable = lib.mkEnableOption "OBS Studio" // {default = isNixOS;};
     kitty.enable = lib.mkEnableOption "Kitty" // {default = isNixOS;};
+    tmux.enable = lib.mkEnableOption "Tmux" // {default = true;};
     gaming = {
       enable = lib.mkEnableOption "Gaming";
       eac-workaround.enable = lib.mkEnableOption "Star citizen EAC workaround";
