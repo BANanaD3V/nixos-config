@@ -26,8 +26,14 @@
       url = "github:catppuccin/grub";
       flake = false;
     };
+
     auto-cpufreq = {
       url = "github:adnanhodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

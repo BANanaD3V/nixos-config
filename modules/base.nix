@@ -38,6 +38,8 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
   boot.loader.grub = {
     enable = lib.mkForce true;
     device = "nodev";
@@ -151,6 +153,7 @@
   # Env packages
   environment.systemPackages = with pkgs; [
     git
+    libvirt
     btrfs-progs
     btrfs-snap
     curl
@@ -164,6 +167,8 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     font-awesome
+    manrope
+    inter
     material-design-icons
     meslo-lg
     meslo-lgs-nf

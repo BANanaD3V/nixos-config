@@ -31,6 +31,7 @@
     kdenlive
     davinci-resolve
     anydesk
+    krita
     gimp
     gnome.nautilus
     gnome.gnome-disk-utility
@@ -119,6 +120,7 @@
     openscad
 
     # Gaming
+    space-station-14-launcher
     bottles
     steam
     heroic-unwrapped
