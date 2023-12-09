@@ -152,8 +152,8 @@
 
   # Env packages
   environment.systemPackages = with pkgs; [
+    virt-manager
     git
-    libvirt
     btrfs-progs
     btrfs-snap
     curl
@@ -173,6 +173,10 @@
     meslo-lg
     meslo-lgs-nf
   ];
+
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true; # virt-manager requires dconf to remember settings
 
   # Garbage collection
   nix.gc = {
