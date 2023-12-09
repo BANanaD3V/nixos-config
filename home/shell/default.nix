@@ -6,10 +6,10 @@
 }: {
   imports = [
     ./zsh
-    ./nvim
-    ./tmux
-    ./kitty
-    ./starship
+    ./nvim.nix
+    ./tmux.nix
+    ./kitty.nix
+    ./starship.nix
     ./neofetch
   ];
 }
