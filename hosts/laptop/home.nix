@@ -13,6 +13,7 @@
   };
 
   banana-hm = {
+    graphical.enable = true;
     displays = [
       {
         name = "eDP-1";

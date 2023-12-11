@@ -4,6 +4,7 @@
   ...
 }: {
   banana-hm = {
+    graphical.enable = true;
     displays = [
       {
         name = "DP-3";

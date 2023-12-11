@@ -4,6 +4,7 @@
   ...
 }: {
   banana-hm = {
+    graphical.enable = false;
     lid.enable = false;
     touchpad.enable = false;
     hyprland.enable = true;

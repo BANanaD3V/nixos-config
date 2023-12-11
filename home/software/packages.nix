@@ -90,7 +90,17 @@
     glib
     glibc
     # figma-linux
-    vscode
+    # vscode
+    (pkgs.vscode.overrideAttrs (o: let
+      version = "1.81.1";
+      plat = "linux-x64";
+    in {
+      src = pkgs.fetchurl {
+        name = "VSCode_${version}_${plat}.tar.gz";
+        url = "https://update.code.visualstudio.com/${version}/${plat}/stable";
+        sha256 = "sha256-Tqawqu0iR0An3CZ4x3RGG0vD3x/PvQyRhVThc6SvdEg=";
+      };
+    }))
     conda
     yt-dlp
     tinycc

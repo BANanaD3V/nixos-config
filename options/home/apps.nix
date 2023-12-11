@@ -5,6 +5,7 @@
   ...
 }: {
   options.banana-hm = {
+    graphical.enable = lib.mkEnableOption "Graphical environment";
     obs.enable = lib.mkEnableOption "OBS Studio" // {default = isNixOS;};
     kitty.enable = lib.mkEnableOption "Kitty" // {default = isNixOS;};
     tmux.enable = lib.mkEnableOption "Tmux" // {default = true;};

@@ -25,8 +25,8 @@ in {
 
     home.packages = with pkgs; [
       keepmenu
-      rofi-rbw 
-      rbw 
+      rofi-rbw
+      rbw
       pinentry
       rofimoji
     ];
