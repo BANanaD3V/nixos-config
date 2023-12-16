@@ -58,6 +58,7 @@
 
     # Gui apps
     firefox
+    # firefox-devedition-bin-unwrapped
     chromium
     element-desktop
     vesktop
@@ -78,6 +79,7 @@
     jetbrains.rider
     nodejs_20
     gcc
+    libstdcxx5
     gnumake
     gh
     jdk17

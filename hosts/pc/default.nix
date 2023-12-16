@@ -16,7 +16,6 @@
   #   fsType = "btrfs";
   # };
   #
-  networking.hostName = "banana-pc"; # Define your hostname.
 
   # Hyprland and nvidia
   programs.hyprland = {

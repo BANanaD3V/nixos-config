@@ -1,5 +1,6 @@
 {
   lib,
+  host,
   pkgs,
   config,
   inputs,
@@ -83,6 +84,7 @@
 
   # Networking
   networking = {
+    hostName = "banana-${host}";
     networkmanager.enable = true;
     firewall.enable = false;
     extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";

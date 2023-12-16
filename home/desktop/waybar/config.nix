@@ -131,7 +131,7 @@
       };
       tooltip = false;
       on-click = "pamixer -t";
-      ignored-sinks = ["Pro X Wireless Gaming Headset" "Starship/Matisse HD Audio Controller Digital Stereo (IEC958)" "PRO X Wireless Gaming Headset Analog Stereo"];
+      ignored-sinks = ["Pro X Wireless Gaming Headset" "Starship/Matisse HD Audio Controller Digital Stereo (IEC958)" "PRO X Wireless Gaming Headset Analog Stereo" "PRO X Wireless Gaming Headset Digital Stereo"];
     };
 
     "pulseaudio/slider" = {
