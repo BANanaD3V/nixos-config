@@ -109,7 +109,7 @@
     hollywood
     alejandra
     pciutils
-    ngrok
+    # ngrok
 
     # Dev envs
     (pkgs.buildFHSUserEnv {
