@@ -109,6 +109,7 @@
     hollywood
     alejandra
     pciutils
+    cargo
     # ngrok
 
     # Dev envs

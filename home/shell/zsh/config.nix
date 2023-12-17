@@ -15,17 +15,6 @@
       cat = "bat";
       v = "nvim";
       vim = "nvim";
-      update = ''
-        pushd /home/banana/nixos-config/ >/dev/null
-
-        untracked_files=$(git ls-files --exclude-standard --others .)
-        if [ -n \"$untracked_files\" ]; then
-          git add \"$untracked_files\" >/dev/null
-        fi
-
-        sudo nixos-rebuild switch --flake . --impure
-        popd >/dev/null
-      '';
     };
 
     history = {
