@@ -22,6 +22,8 @@
       flake = false;
     };
 
+    nixvim.url = "github:nix-community/nixvim";
+
     catppuccin-grub = {
       url = "github:catppuccin/grub";
       flake = false;

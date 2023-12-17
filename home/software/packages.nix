@@ -27,6 +27,7 @@
 
     # Desktop stuff
     freetube
+    calcure
     qbittorrent
     kdenlive
     davinci-resolve
@@ -55,6 +56,7 @@
     libreoffice
     wpsoffice
     ydotool
+    lutgen
 
     # Gui apps
     firefox

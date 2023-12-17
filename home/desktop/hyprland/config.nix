@@ -30,7 +30,7 @@ in {
 
       input = {
         kb_layout = "us,ru";
-        kb_options = "grp:alt_shift_toggle";
+        kb_options = "grp:alt_shift_toggle,ctrl:nocaps";
 
         follow_mouse = 1;
 
@@ -130,7 +130,8 @@ in {
           "$mainMod, J, togglesplit,"
           "$mainMod, F, fullscreen"
           "$mainMod, V, exec, cliphist list | rofi -dmenu -config  ~/.config/rofi/configs/clipboard.rasi -p '>' | cliphist decode | wl-copy"
-          "$mainMod, period, exec, rofi -modi \"emoji:rofimoji\" -show emoji -config ~/.config/rofi/configs/config.rasi"
+          "$mainMod, period, exec, rofi -modi \"emoji:rofimoji --action copy\" -show emoji -config ~/.config/rofi/configs/config.rasi"
+          "$mainMod, M, exec, rofi -modi \"emoji:rofimoji --action copy --files math.csv\" -show emoji -config ~/.config/rofi/configs/config.rasi"
           "$mainMod, C, exec, hyprpicker -a"
 
           "$mainMod, left, movefocus, l"
