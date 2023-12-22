@@ -542,6 +542,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1702997397,
+        "narHash": "sha256-th/EqbtB6jDFhe12kTsssDzF9Ev0p9Yq/oaiWXS3H9w=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "a04eea76ecdc42258fc3ed8391ba838145d0b96a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "nvim-config": {
       "flake": false,
       "locked": {
@@ -594,6 +609,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "nixvim": "nixvim",
+        "nur": "nur",
         "nvim-config": "nvim-config",
         "spicetify-nix": "spicetify-nix"
       }

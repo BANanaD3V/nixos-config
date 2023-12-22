@@ -25,6 +25,7 @@
           ../modules
           ../pkgs
           ../options/nixos
+          inputs.nur.nixosModules.nur
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {

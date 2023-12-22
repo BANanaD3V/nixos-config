@@ -9,6 +9,7 @@
     hyprland.enable = lib.mkEnableOption "Hyprland" // {default = isNixOS;};
     waybar.enable = lib.mkEnableOption "Waybar" // {default = config.banana-hm.hyprland.enable;};
     rofi.enable = lib.mkEnableOption "Rofi" // {default = config.banana-hm.hyprland.enable;};
+    swaync.enable = lib.mkEnableOption "Sway Notification Center" // {default = config.banana-hm.hyprland.enable;};
     displays = lib.mkOption {
       type = with lib.types;
         listOf (

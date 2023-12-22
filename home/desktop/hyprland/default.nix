@@ -13,9 +13,8 @@
   ];
 
   home.packages = with pkgs; [
-    swaynotificationcenter
-    libnotify
     xwaylandvideobridge
+    libnotify
   ];
 
   # Import wallpaper

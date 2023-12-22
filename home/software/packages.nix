@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   ...
@@ -78,6 +79,7 @@
     python3
     insomnia
     unityhub
+    godot_4
     jetbrains.rider
     nodejs_20
     gcc
@@ -137,6 +139,7 @@
     space-station-14-launcher
     bottles
     steam
+    steamcmd
     heroic-unwrapped
     gamemode
     lutris
