@@ -5,7 +5,6 @@
   config,
   inputs,
   system,
-  nix-gaming,
   ...
 }: {
   # User

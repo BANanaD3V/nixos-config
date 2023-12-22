@@ -1,8 +1,6 @@
 {
-  lib,
-  host,
   pkgs,
-  config,
+  ...
 }: let 
   update_script = pkgs.writeShellScriptBin "update" ''
       pushd /home/banana/nixos-config/ >/dev/null

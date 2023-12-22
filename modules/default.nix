@@ -3,6 +3,7 @@
 in {
   imports = [
     ./base.nix
+    ./nix.nix
     ./steam.nix
     ./hardware
   ];
