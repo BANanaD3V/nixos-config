@@ -84,6 +84,7 @@
     nodejs_20
     gcc
     libstdcxx5
+    zlib
     gnumake
     gh
     jdk17
@@ -109,6 +110,8 @@
     }))
     conda
     yt-dlp
+    vlc
+    youtube-dl
     tinycc
     hollywood
     alejandra
@@ -140,7 +143,7 @@
     bottles
     steam
     steamcmd
-    heroic-unwrapped
+    heroic
     gamemode
     lutris
     mangohud
