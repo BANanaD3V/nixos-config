@@ -40,16 +40,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     nixpkgs,
-    pre-commit-hooks,
     self,
     ...
   } @ inputs: let
@@ -72,24 +66,5 @@
     homeConfigurations = import ./hosts (
       commonInherits // {isNixOS = false;}
     );
-
-    checks = eachSystem (system: {
-      pre-commit-check = pre-commit-hooks.lib.${system}.run {
-        src = ./.;
-        hooks = {
-          alejandra.enable = true;
-          statix = {
-            enable = true;
-            excludes = [".lock"];
-          };
-          prettier = {
-            enable = false;
-            excludes = [".md"];
-          };
-        };
-      };
-    });
-
-
   };
 }
