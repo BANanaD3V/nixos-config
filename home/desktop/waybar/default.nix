@@ -12,7 +12,7 @@ with lib; let
   spotify_now_playing = import ./scripts/spotify_now_playing.nix {inherit pkgs;};
   cava_waybar = import ./scripts/cava_waybar.nix {inherit pkgs;};
 in {
-  config = lib.mkIf config.banana-hm.waybar.enable {
+  config = lib.mkIf config.home-manager.waybar.enable {
     home.packages = with pkgs; [
       networkmanagerapplet
       blueman

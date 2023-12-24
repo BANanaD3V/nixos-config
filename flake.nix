@@ -47,7 +47,7 @@
     self,
     ...
   } @ inputs: let
-    username = "BANana";
+    username = "banana";
     userfullname = "Nikita";
     useremail = "bananadev@skiff.com";
     
@@ -55,7 +55,9 @@
 
     commonInherits = {
       inherit (nixpkgs) lib;
-      inherit self inputs nixpkgs;
+      inherit self inputs;
+      inherit username userfullname useremail;
+      inherit system;
     };
     eachSystem = object: (nixpkgs.lib.genAttrs [system] object);
   in {

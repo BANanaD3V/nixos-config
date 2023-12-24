@@ -15,8 +15,8 @@
     ];
     modules-center = ["hyprland/workspaces"];
     modules-right =
-      (lib.optionals config.banana-hm.backlight.enable ["backlight"])
-      ++ (lib.optionals config.banana-hm.battery.enable ["battery"])
+      (lib.optionals config.home-manager.backlight.enable ["backlight"])
+      ++ (lib.optionals config.home-manager.battery.enable ["battery"])
       ++ [
         "cpu"
         "memory"
@@ -39,7 +39,7 @@
           name = m.name;
           value = m.workspaces;
         })
-        (config.banana-hm.displays));
+        (config.home-manager.displays));
 
       on-click = "activate";
       on-scroll-up = "hyprctl dispatch workspace e+1";

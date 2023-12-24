@@ -4,7 +4,7 @@
   isNixOS,
   ...
 }: {
-  options.banana-hm = {
+  options.home-manager = {
     graphical.enable = lib.mkEnableOption "Graphical environment";
     obs.enable = lib.mkEnableOption "OBS Studio" // {default = isNixOS;};
     kitty.enable = lib.mkEnableOption "Kitty" // {default = isNixOS;};
@@ -12,7 +12,7 @@
     gaming = {
       enable = lib.mkEnableOption "Gaming";
       eac-workaround.enable = lib.mkEnableOption "Star citizen EAC workaround";
-      steam.enable = lib.mkEnableOption "Steam" // {default = config.banana-hm.gaming.enable;};
+      steam.enable = lib.mkEnableOption "Steam" // {default = config.home-manager.gaming.enable;};
     };
   };
 }

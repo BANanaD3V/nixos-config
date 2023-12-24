@@ -1,5 +1,5 @@
-{config, ...}: let
-  hmCfg = config.home-manager.users.banana;
+{config, username, ...}: let
+  hmCfg = config.home-manager.users.${username};
 in {
   imports = [
     ./base.nix

@@ -1,5 +1,5 @@
 {lib, ...}: {
-  options.banana-hm = {
+  options.home-manager = {
     lid.enable = lib.mkEnableOption "Laptop lid";
     touchpad.enable = lib.mkEnableOption "Touchpad";
     backlight.enable = lib.mkEnableOption "Backlight";

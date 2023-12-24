@@ -13,4 +13,4 @@ pkgs.writeShellScriptBin "switch_workspace" ''${lib.concatImapStringsSep "\n" (i
           fi
       fi
     '')
-    config.banana-hm.displays}''
+    config.home-manager.displays}''

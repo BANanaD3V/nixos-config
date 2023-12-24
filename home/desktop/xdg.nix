@@ -1,6 +1,6 @@
-{config, ...}: {
+{config, username, ...}: {
   xdg.mimeApps = {
-    enable = config.banana-hm.graphical.enable;
+    enable = config.home-manager.graphical.enable;
     defaultApplications = {
       "inode/directory" = "org.gnome.nautilus.desktop";
 

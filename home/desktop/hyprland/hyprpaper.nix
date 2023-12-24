@@ -1,11 +1,10 @@
 {
   lib,
   config,
+  username,
   ...
 }: let
-  wallpaper = "/home/banana/.config/wallpapers/invasion_of_vryn.jpg";
-  # wallpaper = "/home/banana/.config/wallpapers/policia.png";
-  # wallpaper = "/home/banana/.config/wallpapers/motorcycle.jpeg";
+  wallpaper = "/home/${username}/.config/wallpapers/invasion_of_vryn.jpg";
 in {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpaper}
@@ -13,6 +12,6 @@ in {
       (
         m: "wallpaper = ${m.name},${wallpaper}"
       )
-      (config.banana-hm.displays))}
+      (config.home-manager.displays))}
   '';
 }

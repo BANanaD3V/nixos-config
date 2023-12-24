@@ -3,6 +3,7 @@
   pkgs,
   config,
   default,
+  username,
   ...
 }: let
   inherit (default) colors;
@@ -11,7 +12,7 @@
 in {
   programs.firefox = {
     enable = true;
-    profiles.banana = {
+    profiles.${username} = {
       userChrome = userchrome;
       userContent = usercontent;
       extensions = with inputs.firefox-addons.packages.${pkgs.system}; [

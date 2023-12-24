@@ -2,11 +2,12 @@
   inputs,
   isNixOS,
   lib,
+  username,
   ...
 }: let
   mkHost = host: let
     extraSpecialArgs = {
-      inherit inputs host isNixOS;
+      inherit inputs host isNixOS username;
     };
     homeManagerImports = [
       ./${host}/home.nix # host specific home-manager configuration
@@ -35,14 +36,14 @@
 
               inherit extraSpecialArgs;
 
-              users.banana = {
+              users.${username} = {
                 imports = homeManagerImports;
                 programs.home-manager.enable = true;
               };
             };
           }
           # alias for home-manager
-          (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "banana"])
+          (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" username])
         ];
       }
     else
@@ -56,6 +57,6 @@
       };
 in
   builtins.listToAttrs (map (host: {
-    name = "banana-${host}";
+    name = "${username}-${host}";
     value = mkHost host;
   }) ["pc" "laptop" "server"])

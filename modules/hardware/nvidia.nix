@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  config = lib.mkIf config.banana.nvidia.drivers.enable {
+  config = lib.mkIf config.nixos.nvidia.drivers.enable {
     # Make sure opengl is enabled
     hardware.opengl = {
       enable = true;
@@ -28,7 +28,7 @@
       # Only available on driver 515.43.04+
       open = false;
 
-      package = config.boot.kernelPackages.nvidiaPackages.${config.banana.nvidia.drivers.version}; #config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.${config.nixos.nvidia.drivers.version}; #config.boot.kernelPackages.nvidiaPackages.beta;
 
       # Enable the nvidia settings menu
       nvidiaSettings = true;
@@ -38,11 +38,11 @@
       WLR_NO_HARDWARE_CURSORS = "1";
     };
 
-    hm.wayland.windowManager.hyprland = lib.mkIf config.hm.banana-hm.hyprland.enable {
-      enableNvidiaPatches = config.banana.nvidia.hyprland.enable;
+    hm.wayland.windowManager.hyprland = lib.mkIf config.hm.home-manager.hyprland.enable {
+      enableNvidiaPatches = config.nixos.nvidia.hyprland.enable;
     };
 
-    environment.variables = lib.mkIf config.banana.nvidia.hyprland.enable {
+    environment.variables = lib.mkIf config.nixos.nvidia.hyprland.enable {
       GBM_BACKEND = "nvidia-drm";
       LIBVA_DRIVER_NAME = "nvidia";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";

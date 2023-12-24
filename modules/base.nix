@@ -5,10 +5,11 @@
   config,
   inputs,
   system,
+  username,
   ...
 }: {
   # User
-  users.users.banana = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = ["wheel" "video" "networkmanager"];
     shell = pkgs.zsh;
@@ -58,12 +59,12 @@
 
   # Networking
   networking = {
-    hostName = "banana-${host}";
+    hostName = "${username}-${host}";
     networkmanager.enable = true;
     firewall.enable = false;
     extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
   };
-  services.blueman.enable = config.hm.banana-hm.bluetooth.enable;
+  services.blueman.enable = config.hm.home-manager.bluetooth.enable;
 
   # XDG Desktop Portal stuff
   xdg.portal = {

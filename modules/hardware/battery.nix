@@ -8,7 +8,7 @@
     inputs.auto-cpufreq.nixosModules.default
   ];
 
-  config = lib.mkIf config.hm.banana-hm.battery.enable {
+  config = lib.mkIf config.hm.home-manager.battery.enable {
     # Better scheduling for CPU cycles
     services.system76-scheduler.settings.cfsProfiles.enable = true;
 

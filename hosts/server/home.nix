@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  banana-hm = {
+  home-manager = {
     graphical.enable = false;
   };
 }

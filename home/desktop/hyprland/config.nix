@@ -7,7 +7,7 @@
   inherit (default) colors;
 in {
   wayland.windowManager.hyprland = {
-    enable = config.banana-hm.hyprland.enable;
+    enable = config.home-manager.hyprland.enable;
     xwayland = {
       enable = true;
       #hidpi = false;
@@ -26,7 +26,7 @@ in {
         (
           m: "${m.name},${m.hyprland}"
         )
-        (config.banana-hm.displays);
+        (config.home-manager.displays);
 
       input = {
         kb_layout = "us,ru";
@@ -96,10 +96,10 @@ in {
       };
 
       gestures = {
-        workspace_swipe = config.banana-hm.touchpad.enable;
+        workspace_swipe = config.home-manager.touchpad.enable;
       };
 
-      bindl = lib.optionals config.banana-hm.lid.enable [",switch:Lid Switch, exec, gtklock"];
+      bindl = lib.optionals config.home-manager.lid.enable [",switch:Lid Switch, exec, gtklock"];
 
       bindtei = [
         # Media keys
@@ -159,7 +159,7 @@ in {
         ++ builtins.map (w: "$mainMod SHIFT, ${toString w}, exec, move_window ${toString w}") (lib.range 1 9)
         ++ ["$mainMod SHIFT, 0, exec, move_window 10"]
         # Brightness bind
-        ++ (lib.optionals config.banana-hm.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
+        ++ (lib.optionals config.home-manager.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
 
       bindm = [
         # Move / Resize windows
@@ -175,7 +175,7 @@ in {
         (
           m: map (w: "${toString w},monitor:${m.name}") (m.workspaces)
         )
-        (config.banana-hm.displays);
+        (config.home-manager.displays);
 
       # Window rules
 
@@ -214,7 +214,7 @@ in {
           "nm-applet"
           "sleep 2 && waybar"
         ]
-        ++ (lib.optionals config.banana-hm.bluetooth.enable ["blueman-applet"]);
+        ++ (lib.optionals config.home-manager.bluetooth.enable ["blueman-applet"]);
     };
   };
 }

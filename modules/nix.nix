@@ -1,9 +1,10 @@
 {
   pkgs,
+  username,
   ...
 }: let 
   update_script = pkgs.writeShellScriptBin "update" ''
-      pushd /home/banana/nixos-config/ >/dev/null
+      pushd /home/${username}/nixos-config/ >/dev/null
 
       untracked_files=$(git ls-files --exclude-standard --others .>/dev/null)
       if [ -n \"$untracked_files\" ]; then

@@ -2,11 +2,12 @@
   pkgs,
   lib,
   inputs,
+  username,
   ...
 }: {
   home = {
-    username = "banana";
-    homeDirectory = "/home/banana";
+    username = username;
+    homeDirectory = "/home/${username}";
     stateVersion = "23.05";
   };
 

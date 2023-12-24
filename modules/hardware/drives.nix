@@ -29,7 +29,7 @@
             };
           }
         )
-        config.banana.drives
+        config.nixos.drives
       );
     }
   ];

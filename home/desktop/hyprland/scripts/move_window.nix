@@ -21,4 +21,4 @@ pkgs.writeShellScriptBin "move_window" ''
           fi
       fi
     '')
-    config.banana-hm.displays)}''
+    config.home-manager.displays)}''

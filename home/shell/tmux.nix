@@ -4,7 +4,7 @@
   ...
 }: {
   programs.tmux = {
-    enable = config.banana-hm.tmux.enable;
+    enable = config.home-manager.tmux.enable;
     baseIndex = 1;
     extraConfig = ''
       set -g default-terminal "xterm-kitty"

@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  banana = {
+  nixos = {
     nvidia = {
       drivers.enable = true;
       hyprland.enable = false;

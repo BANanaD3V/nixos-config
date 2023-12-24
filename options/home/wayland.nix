@@ -5,11 +5,11 @@
   pkgs,
   ...
 }: {
-  options.banana-hm = {
+  options.home-manager = {
     hyprland.enable = lib.mkEnableOption "Hyprland" // {default = isNixOS;};
-    waybar.enable = lib.mkEnableOption "Waybar" // {default = config.banana-hm.hyprland.enable;};
-    rofi.enable = lib.mkEnableOption "Rofi" // {default = config.banana-hm.hyprland.enable;};
-    swaync.enable = lib.mkEnableOption "Sway Notification Center" // {default = config.banana-hm.hyprland.enable;};
+    waybar.enable = lib.mkEnableOption "Waybar" // {default = config.home-manager.hyprland.enable;};
+    rofi.enable = lib.mkEnableOption "Rofi" // {default = config.home-manager.hyprland.enable;};
+    swaync.enable = lib.mkEnableOption "Sway Notification Center" // {default = config.home-manager.hyprland.enable;};
     displays = lib.mkOption {
       type = with lib.types;
         listOf (

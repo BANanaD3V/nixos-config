@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  username,
   ...
 }: {
   # Main drive
@@ -23,12 +24,12 @@
   };
 
   services.xserver.displayManager.autoLogin = {
-    user = "banana";
+    user = username;
     enable = true;
   };
-  services.getty.autologinUser = "banana";
+  services.getty.autologinUser = username;
 
-  banana = {
+  nixos = {
     nvidia = {
       drivers = {
         version = "production";

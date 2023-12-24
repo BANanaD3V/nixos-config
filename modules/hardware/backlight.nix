@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.hm.banana-hm.backlight.enable {
+  config = lib.mkIf config.hm.home-manager.backlight.enable {
     environment.systemPackages = [pkgs.brightnessctl];
   };
 }

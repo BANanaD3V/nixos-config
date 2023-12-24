@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options.banana = {
+  options.nixos = {
     nvidia = {
       drivers = {
         enable = lib.mkEnableOption "Nvidia drivers";
@@ -12,7 +12,7 @@
           default = "production";
         };
       };
-      hyprland.enable = lib.mkEnableOption "Hyprland nvidia compatibility" // {default = config.banana-hm.hyprland.enable && config.banana.nvidia.drivers.enable;};
+      hyprland.enable = lib.mkEnableOption "Hyprland nvidia compatibility" // {default = config.home-manager.hyprland.enable && config.nixos.nvidia.drivers.enable;};
     };
 
     drives = lib.mkOption {

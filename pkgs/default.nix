@@ -1,9 +1,10 @@
 {
   config,
   pkgs,
+  username,
   ...
 }: {
-  users.users.banana.packages = with pkgs; [
+  users.users.${username}.packages = with pkgs; [
     (pkgs.callPackage ./shikimori.nix {})
     (pkgs.callPackage ./truckersmp-cli.nix {})
   ];
