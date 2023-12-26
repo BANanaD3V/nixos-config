@@ -58,7 +58,7 @@ jobs:
 
       - name: "Build NixOS config"
         run: |
-          nix build .#nixosConfigurations.pc.config.system.build.toplevel --accept-flake-config
+          nix build .#nixosConfigurations.banana-pc.config.system.build.toplevel --accept-flake-config
 
       - name: "Check NixOS flake"
         run: |
@@ -110,7 +110,7 @@ jobs:
 
       - name: "Build NixOS config"
         run: |
-          nix build .#nixosConfigurations.laptop.config.system.build.toplevel --accept-flake-config
+          nix build .#nixosConfigurations.banana-laptop.config.system.build.toplevel --accept-flake-config
 
       - name: "Check NixOS flake"
         run: |
