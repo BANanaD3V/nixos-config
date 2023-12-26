@@ -19,7 +19,7 @@
 
   # Import wallpaper
 
-  home.file.".config/wallpapers" = {
+  xdg.configFile."wallpapers" = {
     source = ./wallpapers;
     recursive = true;
     executable = false;

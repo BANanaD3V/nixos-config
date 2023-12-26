@@ -10,13 +10,13 @@
   ];
 
   # Import config
-  home.file.".config/neofetch/config.conf" = {
+  xdg.configFile."neofetch/config.conf" = {
     source = ./config.conf;
     recursive = true;
     executable = true;
   };
 
-  home.file.".config/neofetch/logo" = {
+  xdg.configFile."neofetch/logo" = {
     source = ./logo;
     recursive = true;
     executable = true;

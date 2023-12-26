@@ -11,13 +11,13 @@ with lib; let
   rofi_config = import ./config.nix {inherit lib config;};
 in {
   config = lib.mkIf config.home-manager.rofi.enable {
-    home.file.".config/rofi/configs" = {
+    xdg.configFile."rofi/configs" = {
       source = ./config;
       recursive = true;
       executable = true;
     };
 
-    home.file.".config/rofi/themes" = {
+    xdg.configFile."rofi/themes" = {
       source = ./themes;
       recursive = true;
       executable = true;

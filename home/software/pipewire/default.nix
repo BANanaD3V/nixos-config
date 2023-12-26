@@ -6,7 +6,7 @@
   default,
   ...
 }: {
-  home.file.".config/pipewire" = {
+  xdg.configFile."pipewire" = {
     source = ./config;
     recursive = true;
     executable = true;

@@ -9,12 +9,12 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "truckersmp-cli";
-  version = "0.7.2";
+  version = "0.10.1";
 
   src = fetchFromGitHub {
     repo = pname;
     owner = pname;
-    rev = "c96a44a7046498ca83359763681a20d459933bc7";
+    rev = "refs/tags/v0.10.1";
     sha256 = "sha256-GF76c7js5ytgqiY9G3xPpRqGGlL8o9dOSFr0OryDSaQ=";
   };
 

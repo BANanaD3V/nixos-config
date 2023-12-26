@@ -7,7 +7,7 @@
   ...
 }: {
   config = lib.mkIf config.home-manager.swaync.enable {
-    home.file.".config/swaync" = {
+    xdg.configFile."swaync" = {
       source = ./config;
       recursive = true;
       executable = true;

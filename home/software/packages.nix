@@ -139,6 +139,7 @@
     openscad
 
     # Gaming
+    r2modman
     space-station-14-launcher
     bottles
     steam
@@ -159,6 +160,7 @@
 
     # Sound
     pipewire
+    soundux
     wireplumber
     alsaLib
     pamixer

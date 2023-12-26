@@ -13,7 +13,7 @@
   ];
 
   # Import config
-  home.file.".config/nvim" = {
+  xdg.configFile."nvim" = {
     source = inputs.nvim-config;
     recursive = true;
     executable = true;
