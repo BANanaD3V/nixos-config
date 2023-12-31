@@ -2,20 +2,25 @@
 , fetchFromGitHub
 , python3Packages
 , SDL2
+, libGL
 , steamPackages
 , steam-run-native
 , pkgsCross
+, qt6
+, mesa
+, xorg
+, libglvnd
 }:
 
 python3Packages.buildPythonApplication rec {
   pname = "truckersmp-cli";
-  version = "0.10.1";
+  version = "0.10.2";
 
   src = fetchFromGitHub {
     repo = pname;
     owner = pname;
     rev = "a5fc6df4ac498c1b454a9305db326467b2d0906f";
-    sha256 = "sha256-GF76c7js5ytgqiY9G3xPpRqGGlL8o9dOSFr0OryDSaQ=";
+    sha256 = "sha256-5BA4+937r4+cC9Ceil6ScC6AVtnRqVTlpzBA6vNbatc=";
   };
 
   postPatch = ''
@@ -35,10 +40,14 @@ python3Packages.buildPythonApplication rec {
     
     ${pkgsCross.mingwW64.buildPackages.gcc}/bin/x86_64-w64-mingw32-gcc truckersmp-cli.c -o truckersmp_cli/truckersmp-cli.exe
   '';
-
+  LD_LIBRARY_PATH = lib.makeLibraryPath [
+    libGL
+    xorg.libXext.dev
+    xorg.libX11.dev
+  ];
   nativeBuildInputs = [ pkgsCross.mingwW64.buildPackages.gcc ];
 
-  buildInputs = [ SDL2 steamPackages.steamcmd steamPackages.steam-runtime ];
+  buildInputs = [ SDL2 steamPackages.steamcmd steamPackages.steam-runtime libGL libglvnd qt6.full ];
 
-  propagatedBuildInputs = with python3Packages; [ vdf steam-run-native ];
+  propagatedBuildInputs = with python3Packages; [ vdf steam-run-native qt6.full  ];
 }
