@@ -60,6 +60,7 @@
     lutgen
 
     # Gui apps
+    authy
     firefox
     # firefox-devedition-bin-unwrapped
     chromium
@@ -139,6 +140,8 @@
     openscad
 
     # Gaming
+    steamtinkerlaunch
+    yad
     r2modman
     space-station-14-launcher
     bottles
@@ -150,7 +153,7 @@
     mangohud
     gamescope
     prismlauncher
-    wine
+    wine-staging
     winetricks
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     dxvk
