@@ -10,6 +10,7 @@
 
     modules-left = [
       "custom/media"
+      "image/album-art"
       "custom/cava"
       "group/group-audio"
     ];
@@ -54,7 +55,12 @@
         unlocked = "";
       };
     };
-
+    "image/album-art" = {
+	path = "/tmp/cover.jpeg";
+	size = 32;
+	interval = 5;
+	  on-click = "mpc toggle";
+    };
     "hyprland/language" = {
       format = "<span font='16' rise='-2500' color='#b4befe'>󰌌</span> {}";
       format-en = "US";

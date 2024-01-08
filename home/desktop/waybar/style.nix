@@ -319,7 +319,7 @@
       margin-bottom: 10px;
       margin-right: 10px;
   }
-
+    
   #custom-media {
       background-color: #1e1e2e;
       color: #cdd6f4;
@@ -343,7 +343,7 @@
   }
 
   #custom-media.custom-spotify {
-      background-color: #66cc99;
+      background-image: url("/tmp/cover.jpeg");
   }
 
   #custom-media.custom-vlc {

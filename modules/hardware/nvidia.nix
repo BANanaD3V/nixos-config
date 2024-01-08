@@ -38,10 +38,6 @@
       WLR_NO_HARDWARE_CURSORS = "1";
     };
 
-    hm.wayland.windowManager.hyprland = lib.mkIf config.hm.home-manager.hyprland.enable {
-      enableNvidiaPatches = config.nixos.nvidia.hyprland.enable;
-    };
-
     environment.variables = lib.mkIf config.nixos.nvidia.hyprland.enable {
       GBM_BACKEND = "nvidia-drm";
       LIBVA_DRIVER_NAME = "nvidia";
