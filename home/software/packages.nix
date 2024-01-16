@@ -28,10 +28,10 @@
 
     # Desktop stuff
     freetube
-    calcure
+    # calcure
     qbittorrent
     kdenlive
-    davinci-resolve
+    # davinci-resolve
     anydesk
     krita
     gimp
@@ -135,7 +135,7 @@
 
     # 3D modeling and printing
     blender
-    cura
+    # cura
     flashprint
     openscad
 
@@ -163,7 +163,7 @@
 
     # Sound
     pipewire
-    soundux
+    # soundux
     wireplumber
     alsaLib
     pamixer

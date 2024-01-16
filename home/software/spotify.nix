@@ -16,7 +16,6 @@ in {
       autoSkipVideo
       shuffle
       playlistIcons
-      genre
       seekSong
       adblock
       fullAppDisplay

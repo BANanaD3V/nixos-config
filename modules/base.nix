@@ -134,6 +134,7 @@
   # Env packages
   environment.systemPackages = with pkgs; [ 
     virt-manager
+    gutenprint
     git
     btrfs-progs
     btrfs-snap
