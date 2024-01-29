@@ -13,6 +13,7 @@
       ./${host}/home.nix # host specific home-manager configuration
       ../home
       ../options/home
+        inputs.schizofox.homeManagerModule
     ];
   in
     if isNixOS

@@ -180,7 +180,7 @@ in {
       # Window rules
 
       windowrulev2 = [
-        "workspace 7, class:(VencordDesktop)"
+        "workspace 7, class:(vesktop)"
         "workspace 6, class:(org.telegram.desktop)"
         "workspace 2, class:(firefox)"
         "workspace 4, title:Spotify"

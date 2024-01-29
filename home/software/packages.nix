@@ -64,8 +64,9 @@
     firefox
     # firefox-devedition-bin-unwrapped
     chromium
-    element-desktop
-    vesktop
+    # element-desktop
+    cinny-desktop
+    # vesktop
     telegram-desktop
     zoom-us
     qdirstat
@@ -83,6 +84,8 @@
     godot_4
     jetbrains.rider
     nodejs_20
+    bun
+    hugo
     gcc
     libstdcxx5
     zlib
@@ -98,17 +101,17 @@
     glib
     glibc
     # figma-linux
-    # vscode
-    (pkgs.vscode.overrideAttrs (o: let
-      version = "1.81.1";
-      plat = "linux-x64";
-    in {
-      src = pkgs.fetchurl {
-        name = "VSCode_${version}_${plat}.tar.gz";
-        url = "https://update.code.visualstudio.com/${version}/${plat}/stable";
-        sha256 = "sha256-Tqawqu0iR0An3CZ4x3RGG0vD3x/PvQyRhVThc6SvdEg=";
-      };
-    }))
+    vscode
+    # (pkgs.vscode.overrideAttrs (o: let
+    #   version = "1.81.1";
+    #   plat = "linux-x64";
+    # in {
+    #   src = pkgs.fetchurl {
+    #     name = "VSCode_${version}_${plat}.tar.gz";
+    #     url = "https://update.code.visualstudio.com/${version}/${plat}/stable";
+    #     sha256 = "sha256-Tqawqu0iR0An3CZ4x3RGG0vD3x/PvQyRhVThc6SvdEg=";
+    #   };
+    # }))
     conda
     yt-dlp
     vlc
@@ -153,6 +156,7 @@
     mangohud
     gamescope
     prismlauncher
+    inputs.getchoo.packages.${pkgs.system}.modrinth-app
     wine-staging
     winetricks
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge

@@ -9,6 +9,7 @@
 
   (pkgs.callPackage ./swww.nix {})
   (pkgs.callPackage ./truckersmp-cli.nix {})
+  (pkgs.callPackage ./vesktop.nix {})
   ];
   environment.systemPackages = [(pkgs.libsForQt5.callPackage ./tokyo-night-sddm.nix {}) ];
 }

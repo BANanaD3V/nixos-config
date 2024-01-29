@@ -2,7 +2,7 @@
   pkgs,
   username,
   ...
-}: let 
+}: let
   update_script = pkgs.writeShellScriptBin "update" ''
       pushd /home/${username}/nixos-config/ >/dev/null
 
@@ -19,15 +19,17 @@ in {
   # Nix
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
-    substituters = [
+    trusted-substituters = [
       "https://nix-gaming.cachix.org"
       "https://isabelroses.cachix.org"
       "https://nixpkgs-wayland.cachix.org"
+      "https://getchoo.cachix.org"
     ];
     trusted-public-keys = [
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "isabelroses.cachix.org-1:mXdV/CMcPDaiTmkQ7/4+MzChpOe6Cb97njKmBQQmLPM="
       "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+      "getchoo.cachix.org-1:ftdbAUJVNaFonM0obRGgR5+nUmdLMM+AOvDOSx0z5tE="
     ];
   };
 
@@ -40,7 +42,7 @@ in {
       ];
     };
   };
-  
+
   # Scripts
   environment.systemPackages = [
     update_script

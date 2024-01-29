@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix.url = "github:MichaelPachec0/spicetify-nix";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
@@ -40,6 +40,13 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    getchoo = {
+      url = "github:getchoo/nix-exprs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    schizofox = {
+    url = "github:schizofox/schizofox";
+    };
   };
 
   outputs = {
@@ -50,7 +57,7 @@
     username = "banana";
     userfullname = "Nikita";
     useremail = "bananadev@skiff.com";
-    
+
     system = "x86_64-linux";
 
     commonInherits = {

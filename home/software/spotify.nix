@@ -15,6 +15,7 @@ in {
     enabledExtensions = with spicePkgs.extensions; [
       autoSkipVideo
       shuffle
+      # genre
       playlistIcons
       seekSong
       adblock
