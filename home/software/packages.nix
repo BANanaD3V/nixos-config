@@ -66,7 +66,7 @@
     chromium
     # element-desktop
     cinny-desktop
-    # vesktop
+    vesktop
     telegram-desktop
     zoom-us
     qdirstat
