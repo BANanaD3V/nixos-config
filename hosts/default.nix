@@ -2,18 +2,25 @@
   inputs,
   isNixOS,
   lib,
+  system,
   username,
   ...
 }: let
   mkHost = host: let
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     extraSpecialArgs = {
       inherit inputs host isNixOS username;
     };
+
     homeManagerImports = [
       ./${host}/home.nix # host specific home-manager configuration
       ../home
       ../options/home
-        inputs.schizofox.homeManagerModule
+      inputs.schizofox.homeManagerModule
     ];
   in
     if isNixOS

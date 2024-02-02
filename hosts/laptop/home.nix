@@ -26,6 +26,4 @@
     backlight.enable = true;
     gaming.enable = true;
   };
-  wayland.windowManager.hyprland.settings = {
-  };
 }

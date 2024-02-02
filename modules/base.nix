@@ -34,7 +34,7 @@
   };
 
   # Kernel for star citizen
-  boot.kernel.sysctl = {
+  boot.kernel.sysctl = lib.mkIf config.hm.home-manager.gaming.star-citizen.enable {
     "vm.max_map_count" = 16777216;
     "fs.file-max" = 524288;
   };
@@ -62,7 +62,7 @@
     hostName = "${username}-${host}";
     networkmanager.enable = true;
     firewall.enable = false;
-    extraHosts = "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
+    extraHosts = lib.mkIf config.hm.home-manager.gaming.star-citizen.enable "127.0.0.1 modules-cdn.eac-prod.on.epicgames.com";
   };
   services.blueman.enable = config.hm.home-manager.bluetooth.enable;
 

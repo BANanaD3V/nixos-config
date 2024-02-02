@@ -21,7 +21,7 @@ pkgs.writeShellScriptBin "cava_waybar" ''
   echo "
   [general]
   bars = 12
-  framerate = 165
+  framerate = 60
 
   [output]
   method = raw
