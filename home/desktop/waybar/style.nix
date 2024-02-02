@@ -319,7 +319,7 @@
       margin-bottom: 10px;
       margin-right: 10px;
   }
-    
+
   #custom-media {
       background-color: #1e1e2e;
       color: #cdd6f4;
