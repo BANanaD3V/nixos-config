@@ -216,6 +216,9 @@ in {
           "sleep 2 && waybar"
         ]
         ++ (lib.optionals config.home-manager.bluetooth.enable ["blueman-applet"]);
+      debug = {
+        disable_scale_checks = true;
+      };
     };
   };
 }
