@@ -44,8 +44,8 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  # Gtklock
-  security.pam.services.gtklock = {};
+  # Swaylock
+  security.pam.services.swaylock = {};
 
   # Bash shebang
   services.envfs.enable = true;
@@ -132,7 +132,7 @@
   };
 
   # Env packages
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     virt-manager
     gutenprint
     git

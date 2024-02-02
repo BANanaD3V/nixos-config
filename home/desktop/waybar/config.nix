@@ -193,7 +193,7 @@
     "custom/lock" = {
       format = "<span font='14' rise='-3000'>󰍁</span>";
       tooltip = false;
-      on-click = "gtklock";
+      on-click = "swaylock";
     };
 
     "custom/power" = {

@@ -39,7 +39,7 @@
     gnome.gnome-disk-utility
     gnome.gnome-boxes
     kvmtool
-    gtklock
+    swaylock
     eww
     hyprpaper
     wl-clipboard
@@ -156,7 +156,7 @@
     mangohud
     gamescope
     prismlauncher
-    inputs.getchoo.packages.${pkgs.system}.modrinth-app
+    # inputs.getchoo.packages.${pkgs.system}.modrinth-app
     wine-staging
     winetricks
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge

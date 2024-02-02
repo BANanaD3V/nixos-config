@@ -99,7 +99,7 @@ in {
         workspace_swipe = config.home-manager.touchpad.enable;
       };
 
-      bindl = lib.optionals config.home-manager.lid.enable [",switch:Lid Switch, exec, gtklock"];
+      bindl = lib.optionals config.home-manager.lid.enable [",switch:Lid Switch, exec, swaylock"];
 
       bindtei = [
         # Media keys
