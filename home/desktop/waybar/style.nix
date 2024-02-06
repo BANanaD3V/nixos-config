@@ -1,4 +1,4 @@
-''
+{ config, ... }: with config.colorScheme.palette; ''
   * {
       font-family: JetBrainsMono Nerd Font Mono;
       font-size: 13px;
@@ -8,7 +8,7 @@
   window#waybar {
       /* border-radius: 20px; */
       /* background-color: #11111b; */
-      background-color: rgba(17, 17, 27, 0.95);
+      background-color: #${base01};
       border-radius: 0px;
       color: #ffffff;
       transition-property: background-color;
@@ -54,17 +54,17 @@
       margin-top: 10px;
       border-radius: 5px;
       /* padding: 0px; */
-      background-color: #1e1e2e;
+      background-color: #${base00};
       padding-left: 7px;
       padding-right: 7px;
   }
   #workspaces button {
-      color: #a6e3a1;
+      color: #${base0B};
       padding: 5px;
   }
 
   #workspaces button.empty {
-      color: #cdd6f4;
+      color: #${base05};
   }
 
   #workspaces button:hover {
@@ -72,16 +72,11 @@
   }
 
   #workspaces button.active {
-      color: #f9e2af;
+      color: #${base0A};
   }
 
   #workspaces button.urgent {
-      color: #f38ba8;
-  }
-
-  #mode {
-      background-color: #64727D;
-      border-bottom:3px solid #ffffff;
+      color: #${base08};
   }
 
   #clock,
@@ -124,8 +119,8 @@
   }
 
   #clock {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       padding: 5px;
       padding-left: 10px;
       padding-right: 10px;
@@ -152,8 +147,8 @@
   }
 
   #cpu {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       padding: 2px;
       padding-left: 10px;
       padding-right: 10px;
@@ -162,12 +157,12 @@
   }
 
   #network.disconnected {
-      background-color: #f38ba8;
+      background-color: #${base08};
   }
 
   #backlight {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       padding: 5px;
       padding-left: 10px;
       padding-right: 10px;
@@ -178,7 +173,7 @@
 
   #battery {
       background-color: #1e1e2e;
-      color: #cdd6f4;
+      color: #${base05};
       padding: 5px;
       padding-left: 10px;
       padding-right: 10px;
@@ -188,13 +183,13 @@
   }
 
   #battery.critical:not(.charging) {
-      background-color: #f38ba8;
-      color: #1e1e2e;
+      background-color: #${base08};
+      color: #${base00};
   }
 
   #network {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       padding: 5px;
       padding-left: 10px;
       padding-right: 10px;
@@ -204,8 +199,8 @@
   }
 
   #memory {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       padding: 5px;
       padding-left: 10px;
       padding-right: 10px;
@@ -219,8 +214,8 @@
   }
 
   #pulseaudio, #pulseaudio-slider {
-      background-color: #1e1e2e;
-      color: #cdd6f4;
+      background-color: #${base00};
+      color: #${base05};
       border-radius: 5px;
   }
 
