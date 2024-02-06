@@ -93,7 +93,8 @@ in {
 
       misc = {
         disable_hyprland_logo = true;
-        force_hypr_chan = false;
+        disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
 
       gestures = {
