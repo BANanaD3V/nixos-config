@@ -14,7 +14,7 @@ in {
     };
     # portalPackage = pkgs.xdg-desktop-portal-wlr;
     # portalPackage = pkgs.xdg-desktop-portal-hyprland;
-    settings = {
+    settings = with config.colorScheme.palette; {
       "$mainMod" = "SUPER";
 
       xwayland = {
@@ -47,8 +47,8 @@ in {
         gaps_in = 5;
         gaps_out = 10;
         border_size = 3;
-        "col.active_border" = "rgb(b4befe) rgb(89b4fa) 45deg";
-        "col.inactive_border" = "rgb(313244)";
+        "col.active_border" = "rgb(${base07}) rgb(${base0D}) 45deg";
+        "col.inactive_border" = "rgb(${base02})";
         layout = "dwindle";
       };
 
@@ -65,7 +65,7 @@ in {
         shadow_render_power = 3;
         dim_special = 0;
         # multisample_edges = true;
-        "col.shadow" = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(${base01}ee)";
       };
 
       animations = {

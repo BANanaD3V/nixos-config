@@ -17,5 +17,7 @@
     ./software
   ];
 
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+
   programs.home-manager.enable = true;
 }

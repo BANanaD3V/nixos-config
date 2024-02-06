@@ -27,7 +27,9 @@
     maven
 
     # Desktop stuff
+    inkscape
     freetube
+    flatpak
     # calcure
     qbittorrent
     kdenlive
@@ -78,6 +80,7 @@
     obsidian
 
     # Development
+    universal-android-debloater
     python3
     insomnia
     unityhub

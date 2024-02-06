@@ -21,7 +21,8 @@
       ../home
       ../options/home
       inputs.schizofox.homeManagerModule
-    ];
+    inputs.nix-colors.homeManagerModules.default
+];
   in
     if isNixOS
     then
