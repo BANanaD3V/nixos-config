@@ -155,11 +155,23 @@ in {
           "$mainMod SHIFT, up, movewindow, u"
           "$mainMod SHIFT, down, movewindow, d"
         ]
+        ++ (
+
         # Workspace binds
-        ++ builtins.map (w: "$mainMod, ${toString w}, exec, switch_workspace ${toString w}") (lib.range 1 9)
-        ++ ["$mainMod, 0, exec, switch_workspace 10"]
-        ++ builtins.map (w: "$mainMod SHIFT, ${toString w}, exec, move_window ${toString w}") (lib.range 1 9)
-        ++ ["$mainMod SHIFT, 0, exec, move_window 10"]
+        builtins.concatLists (builtins.genList (
+            x: let
+              ws = let
+                c = (x + 1) / 10;
+              in
+                builtins.toString (x + 1 - (c * 10));
+            in [
+              "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          )
+          10)
+          )
+
         # Brightness bind
         ++ (lib.optionals config.home-manager.backlight.enable [",XF86MonBrightnessDown, exec, brightnessctl set 5%-" ",XF86MonBrightnessUp, exec, brightnessctl set +5%"]);
 

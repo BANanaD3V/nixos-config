@@ -1,6 +1,5 @@
 ''
   * {
-      /* `otf-font-awesome` is required to be installed for icons */
       font-family: JetBrainsMono Nerd Font Mono;
       font-size: 13px;
       border-radius: 0px;
