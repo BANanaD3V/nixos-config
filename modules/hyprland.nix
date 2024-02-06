@@ -1,11 +1,5 @@
 {
-lib,
-host,
-pkgs,
 config,
-inputs,
-system,
-username,
 ...
 }:
 {

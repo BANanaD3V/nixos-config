@@ -1,6 +1,4 @@
-{config, username, ...}: let
-  hmCfg = config.home-manager.users.${username};
-in {
+{config, username, ...}: {
   imports = [
     ./base.nix
     ./nix.nix

@@ -7,7 +7,6 @@
 , steam-run-native
 , pkgsCross
 , qt6
-, mesa
 , xorg
 , libglvnd
 }:

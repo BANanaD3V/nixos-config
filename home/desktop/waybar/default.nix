@@ -3,7 +3,6 @@
   lib,
   config,
   inputs,
-  default,
   ...
 }:
 with lib; let

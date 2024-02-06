@@ -1,4 +1,4 @@
-{config, username, ...}: {
+{config, ...}: {
   xdg.mimeApps = {
     enable = config.home-manager.graphical.enable;
     defaultApplications = {

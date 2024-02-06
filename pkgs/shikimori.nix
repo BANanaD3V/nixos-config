@@ -10,7 +10,6 @@
   commandLineArgs ? [],
 }: let
   pname = "shikimori";
-  version = "0.1.0";
 
   desktopItem = makeDesktopItem {
     name = pname;

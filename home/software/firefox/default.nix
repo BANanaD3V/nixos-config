@@ -1,12 +1,10 @@
 {
   inputs,
   pkgs,
-  config,
   default,
   username,
   ...
 }: let
-  inherit (default) colors;
   userchrome = import ./userchrome.nix;
   usercontent = import ./usercontent.nix;
 in {

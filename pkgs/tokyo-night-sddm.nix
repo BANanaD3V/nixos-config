@@ -1,5 +1,4 @@
 {
-  lib,
   qtbase,
   qtsvg,
   qtgraphicaleffects,

@@ -2,7 +2,6 @@
   config,
   lib,
   isNixOS,
-  pkgs,
   ...
 }: {
   options.home-manager = {

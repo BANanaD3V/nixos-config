@@ -1,7 +1,4 @@
 {
-  config,
-  default,
-  pkgs,
   ...
 }: {
   programs.starship = {

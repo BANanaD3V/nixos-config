@@ -3,9 +3,7 @@
   config,
   default,
   ...
-}: let
-  inherit (default) colors;
-in {
+}: {
   wayland.windowManager.hyprland = {
     enable = config.home-manager.hyprland.enable;
     xwayland = {

@@ -1,7 +1,5 @@
 {
   config,
-  default,
-  pkgs,
   ...
 }: {
   programs.kitty = with config.colorScheme.palette; {

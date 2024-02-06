@@ -2,14 +2,9 @@
   pkgs,
   lib,
   config,
-  inputs,
-  default,
   ...
 }:
-with lib; let
-  inherit (config.lib.formats.rasi) mkLiteral;
-  rofi_config = import ./config.nix {inherit lib config;};
-in {
+with lib; {
   config = lib.mkIf config.home-manager.rofi.enable {
     xdg.configFile."rofi/configs" = {
       source = ./config;

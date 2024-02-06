@@ -67,7 +67,6 @@
       inherit username userfullname useremail;
       inherit system;
     };
-    eachSystem = object: (nixpkgs.lib.genAttrs [system] object);
   in {
     nixosConfigurations = import ./hosts (
       commonInherits // {isNixOS = true;}

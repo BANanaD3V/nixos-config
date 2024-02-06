@@ -1,8 +1,6 @@
 {
   inputs,
-  lib,
   pkgs,
-  self,
   ...
 }: {
   home.packages = with pkgs; [

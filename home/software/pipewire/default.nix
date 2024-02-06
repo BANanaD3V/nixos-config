@@ -1,9 +1,4 @@
 {
-  pkgs,
-  lib,
-  config,
-  inputs,
-  default,
   ...
 }: {
   xdg.configFile."pipewire" = {
