@@ -2,7 +2,7 @@
   lib,
   config,
 }: {
-  mainBar = {
+  mainBar = with config.colorScheme.palette; {
     position = "top";
     layer = "top";
     height = 60;
@@ -62,7 +62,7 @@
 	  on-click = "mpc toggle";
     };
     "hyprland/language" = {
-      format = "<span font='16' rise='-2500' color='#b4befe'>󰌌</span> {}";
+      format = "<span font='16' rise='-2500' color='#${base07}'>󰌌</span> {}";
       format-en = "US";
       format-ru = "RU";
       keyboard-name = "logitech-usb-receiver-keyboard";
@@ -76,24 +76,24 @@
 
     clock = {
       timezone = "Europe/Moscow";
-      format = "<span font='14' rise='-2500' color='#b4befe'>󰥔</span> {:%I:%M %p}";
-      format-alt = "<span font='14' rise='-2500' color='#b4befe'></span> {:%a, %d %b %Y}";
+      format = "<span font='14' rise='-2500' color='#${base07}'>󰥔</span> {:%I:%M %p}";
+      format-alt = "<span font='14' rise='-2500' color='#${base07}'></span> {:%a, %d %b %Y}";
       interval = 10;
     };
 
     network = {
       interface = "wlp2s0";
       format = "{ifname}";
-      format-wifi = "<span font='14' rise='-2500' color='#b4befe'></span> {essid} ({signalStrength}%)";
-      format-ethernet = "<span font='14' rise='-2500' color='#b4befe'>󰊗</span> {ipaddr}/{cidr}";
+      format-wifi = "<span font='14' rise='-2500' color='#${base07}'></span> {essid} ({signalStrength}%)";
+      format-ethernet = "<span font='14' rise='-2500' color='#${base07}'>󰊗</span> {ipaddr}/{cidr}";
       format-disconnected = "";
       max-length = 50;
     };
 
     battery = {
-      format = "<span font='10' rise='0' color='#b4befe'>{icon}</span> {capacity}%";
-      format-charging = "<span font='10' rise='0' color='#b4befe'>󰂄</span> {capacity}%";
-      format-critical = "<span font='10' rise='0' color='#11111b'>󰂃</span> {capacity}%";
+      format = "<span font='10' rise='0' color='#${base07}'>{icon}</span> {capacity}%";
+      format-charging = "<span font='10' rise='0' color='#${base07}'>󰂄</span> {capacity}%";
+      format-critical = "<span font='10' rise='0' color='#${base01}'>󰂃</span> {capacity}%";
       interval = 15;
       states = {
         critical = 20;
@@ -102,17 +102,17 @@
     };
 
     backlight = {
-      format = "<span font='14' rise='-2500' color='#b4befe'>{icon}</span> {percent}%";
+      format = "<span font='14' rise='-2500' color='#${base07}'>{icon}</span> {percent}%";
       format-icons = ["󰃞" "󰃟" "󰃝" "󰃠"];
       tooltip = false;
     };
     cpu = {
-      format = "<span font='14' rise='-2500' color='#b4befe'></span> {usage}%";
+      format = "<span font='14' rise='-2500' color='#${base07}'></span> {usage}%";
       tooltip = false;
     };
 
     memory = {
-      format = "<span font='14' rise='-2500' color='#b4befe'></span> {}%";
+      format = "<span font='14' rise='-2500' color='#${base07}'></span> {}%";
     };
 
     "group/group-audio" = {
@@ -130,7 +130,7 @@
     };
 
     pulseaudio = {
-      format = "<span font='16' rise='-2500' color='#b4befe'>{icon}</span> {volume}%";
+      format = "<span font='16' rise='-2500' color='#${base07}'>{icon}</span> {volume}%";
       format-muted = "<span font='16' rise='-2500'>󰝟</span> Muted";
       format-icons = {
         default = ["" "" ""];
@@ -209,7 +209,7 @@
     };
 
     "custom/media" = {
-      format = "<span font='16' rise='-2500' color='#b4befe'></span> {}";
+      format = "<span font='16' rise='-2500' color='#${base07}'></span> {}";
       return-type = "text";
       max-length = 40;
       escape = true;

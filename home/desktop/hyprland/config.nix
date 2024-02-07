@@ -63,7 +63,7 @@
         shadow_render_power = 3;
         dim_special = 0;
         # multisample_edges = true;
-        "col.shadow" = "rgba(${base01}ee)";
+        "col.shadow" = "rgba(${base00}ee)";
       };
 
       animations = {

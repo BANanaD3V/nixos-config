@@ -14,11 +14,11 @@
       cursor_beam_thickness = 9;
 
       foreground = "#${base05}";
-      background = "#${base00}";
-selection_foreground = "#${base00}";
+      background = "#${base01}";
+selection_foreground = "#${base01}";
 selection_background = "#${base06}";
 cursor = "#${base06}";
-cursor_text_color = "#${base00}";
+cursor_text_color = "#${base01}";
 url_color = "#${base06}";
 
       color0 = "#${base03}";
