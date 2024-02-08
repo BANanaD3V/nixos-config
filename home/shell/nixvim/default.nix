@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
 programs.nixvim = {
     enable = true;
 
@@ -7,7 +7,7 @@ programs.nixvim = {
     #   customColorScheme = config.colorScheme.palette;
     # };
     colorscheme = "gruvbox";
-    # colorschemes.gruvbox.enable  = true;
+    colorschemes.gruvbox.enable  = true;
     plugins = {
     nvim-cmp = {
       enable = true;
