@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./zsh
-    # ./nvim.nix
+    #./nvim.nix
     ./nixvim
     ./tmux.nix
     ./kitty.nix
