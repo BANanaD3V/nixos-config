@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -42,17 +41,17 @@ in {
       # Enable the nvidia settings menu
       nvidiaSettings = true;
       prime = lib.mkIf config.hm.home-manager.battery.enable {
-       offload.enable = true;
+        offload.enable = true;
 
-       # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-       nvidiaBusId = "PCI:01:0:0";
+        # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+        nvidiaBusId = "PCI:01:0:0";
 
-       # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-       amdgpuBusId = "PCI:14:0:0";
-     };
+        # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+        amdgpuBusId = "PCI:14:0:0";
+      };
     };
     environment.sessionVariables = {
-      NIXOS_OZONE_WL= "1";
+      NIXOS_OZONE_WL = "1";
       WLR_NO_HARDWARE_CURSORS = "1";
     };
 
@@ -63,6 +62,6 @@ in {
       __GL_GSYNC_ALLOWED = "1";
       __GL_VRR_ALLOWED = "0";
     };
-    environment.systemPackages = [ nvidia-offload ];
+    environment.systemPackages = [nvidia-offload];
   };
 }

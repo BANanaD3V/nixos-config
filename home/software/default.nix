@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   imports = [
     # ./firefox
     ./spotify.nix

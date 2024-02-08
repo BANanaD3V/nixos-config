@@ -1,4 +1,4 @@
-{ ...}: {
+{...}: {
   imports = [
     ./wayland.nix
     ./hardware.nix

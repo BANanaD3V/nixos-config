@@ -13,5 +13,6 @@ in {
         m: "wallpaper = ${m.name},${wallpaper}"
       )
       (config.home-manager.displays))}
+    splash = false
   '';
 }

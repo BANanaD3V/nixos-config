@@ -39,6 +39,6 @@
       base0F = "#f2cdcd";
     };
   };
-
+  # colorScheme = inputs.nix-colors.colorSchemes.material-darker;
   programs.home-manager.enable = true;
 }

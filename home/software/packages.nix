@@ -125,19 +125,6 @@
     cargo
     # ngrok
 
-    # Dev envs
-    (pkgs.buildFHSUserEnv {
-      name = "cppfhs";
-      runScript = "zsh";
-      targetPkgs = pkgs:
-        with pkgs; [
-          clang_8
-          gdb
-          llvm_8
-          valgrind
-        ];
-    })
-
     # 3D modeling and printing
     blender
     # cura

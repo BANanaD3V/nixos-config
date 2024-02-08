@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   nixos = {
     nvidia = {
       drivers.enable = true;

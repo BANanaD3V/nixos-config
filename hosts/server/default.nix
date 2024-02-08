@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   # Main drive
   #
   # fileSystems."/run/media/ssd" = {

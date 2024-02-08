@@ -1,7 +1,4 @@
-{
-  username,
-  ...
-}: {
+{username, ...}: {
   # Hyprland and nvidia
   programs.hyprland = {
     enable = true;

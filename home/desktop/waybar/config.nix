@@ -56,10 +56,10 @@
       };
     };
     "image/album-art" = {
-	path = "/tmp/cover.jpeg";
-	size = 32;
-	interval = 5;
-	  on-click = "mpc toggle";
+      path = "/tmp/cover.jpeg";
+      size = 32;
+      interval = 5;
+      on-click = "mpc toggle";
     };
     "hyprland/language" = {
       format = "<span font='16' rise='-2500' color='#${base07}'>󰌌</span> {}";

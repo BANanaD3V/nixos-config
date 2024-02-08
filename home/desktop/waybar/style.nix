@@ -1,4 +1,5 @@
-{ config, ... }: with config.colorScheme.palette; ''
+{config, ...}:
+with config.colorScheme.palette; ''
   * {
       font-family: JetBrainsMono Nerd Font Mono;
       font-size: 13px;

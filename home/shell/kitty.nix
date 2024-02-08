@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   programs.kitty = with config.colorScheme.palette; {
     enable = config.home-manager.kitty.enable;
     settings = {
@@ -15,11 +12,11 @@
 
       foreground = "#${base05}";
       background = "#${base01}";
-selection_foreground = "#${base01}";
-selection_background = "#${base06}";
-cursor = "#${base06}";
-cursor_text_color = "#${base01}";
-url_color = "#${base06}";
+      selection_foreground = "#${base01}";
+      selection_background = "#${base06}";
+      cursor = "#${base06}";
+      cursor_text_color = "#${base01}";
+      url_color = "#${base06}";
 
       color0 = "#${base03}";
       color8 = "#${base04}";
@@ -42,6 +39,6 @@ url_color = "#${base06}";
       color6 = "#${base0C}";
       color14 = "#${base0C}";
     };
-   # theme = "Catppuccin-Mocha";
+    # theme = "Catppuccin-Mocha";
   };
 }

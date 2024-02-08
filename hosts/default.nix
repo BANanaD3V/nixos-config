@@ -21,8 +21,10 @@
       ../home
       ../options/home
       inputs.schizofox.homeManagerModule
-    inputs.nix-colors.homeManagerModules.default
-];
+      inputs.nix-colors.homeManagerModules.default
+      inputs.prism.homeModules.prism
+      inputs.nixvim.homeManagerModules.nixvim
+    ];
   in
     if isNixOS
     then

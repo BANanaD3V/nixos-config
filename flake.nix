@@ -22,8 +22,6 @@
       flake = false;
     };
 
-    nixvim.url = "github:nix-community/nixvim";
-
     catppuccin-grub = {
       url = "github:catppuccin/grub";
       flake = false;
@@ -45,10 +43,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     schizofox = {
-    url = "github:schizofox/schizofox";
+      url = "github:schizofox/schizofox";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    prism.url = "github:IogaMaster/prism";
+    nixvim = {
+    url = "github:nix-community/nixvim";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
+};
 
   outputs = {
     nixpkgs,

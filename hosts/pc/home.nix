@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   home-manager = {
     graphical.enable = true;
     displays = [
