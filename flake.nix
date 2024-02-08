@@ -48,10 +48,10 @@
     nix-colors.url = "github:misterio77/nix-colors";
     prism.url = "github:IogaMaster/prism";
     nixvim = {
-    url = "github:nix-community/nixvim";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-};
 
   outputs = {
     nixpkgs,

@@ -1,6 +1,10 @@
-{ config, pkgs, ... }: {
-  imports = [ ./plugins ];
-programs.nixvim = {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [./plugins];
+  programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
     clipboard.register = "unnamedplus";
@@ -9,8 +13,8 @@ programs.nixvim = {
       colorscheme = config.colorScheme.slug;
     };
     options = {
-            number = true;
+      number = true;
       relativenumber = true;
     };
-    };
+  };
 }

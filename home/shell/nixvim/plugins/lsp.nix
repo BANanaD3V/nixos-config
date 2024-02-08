@@ -1,16 +1,15 @@
-{ ... }: {
+{...}: {
   programs.nixvim.plugins.lsp = {
-      enable = true;
+    enable = true;
 
-      servers = {
-        tsserver.enable = true;
+    servers = {
+      tsserver.enable = true;
 
-        lua-ls = {
-          enable = true;
-          settings.telemetry.enable = false;
-        };
-        rnix-lsp.enable = true;
-
+      lua-ls = {
+        enable = true;
+        settings.telemetry.enable = false;
       };
+      rnix-lsp.enable = true;
     };
+  };
 }

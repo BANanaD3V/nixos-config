@@ -12,14 +12,13 @@ with lib; {
       executable = true;
     };
 
-    xdg.configFile."rofi/themes/colors.rasi".text = with config.colorScheme.palette;
-    ''
-    *{
-      accent: #${base07};
-	    foreground: #${base07};
-	    background: #${base00};
-	    background-alt: #${base00};
-    }
+    xdg.configFile."rofi/themes/colors.rasi".text = with config.colorScheme.palette; ''
+      *{
+        accent: #${base07};
+       foreground: #${base07};
+       background: #${base00};
+       background-alt: #${base00};
+      }
     '';
 
     home.packages = with pkgs; [

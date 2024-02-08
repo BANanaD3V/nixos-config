@@ -1,8 +1,8 @@
-{ ... }: {
-  imports = [ 
-    ./nvim-cmp.nix 
+{...}: {
+  imports = [
+    ./nvim-cmp.nix
     ./lsp.nix
-    ./alpha.nix 
+    ./alpha.nix
     ./telescope.nix
     ./neo-tree.nix
     ./persistence.nix
