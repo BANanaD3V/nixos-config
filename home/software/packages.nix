@@ -29,7 +29,7 @@
     inkscape
     freetube
     flatpak
-    # calcure
+    calcure
     qbittorrent
     kdenlive
     # davinci-resolve
@@ -78,6 +78,7 @@
     obsidian
 
     # Development
+    neovide
     universal-android-debloater
     python3
     insomnia
@@ -147,6 +148,7 @@
     # inputs.getchoo.packages.${pkgs.system}.modrinth-app
     wine-staging
     winetricks
+    inputs.game-rs.packages.x86_64-linux.default
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     dxvk
     chromedriver

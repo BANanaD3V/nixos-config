@@ -51,6 +51,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    game-rs.url = "github:amanse/game-rs";
   };
 
   outputs = {

@@ -1,12 +1,30 @@
 {...}: {
   imports = [
     ./nvim-cmp.nix
+    ./comment-nvim.nix
     ./lsp.nix
+    ./noice.nix
+    ./nvim-colorizer.nix
+    ./gitsigns.nix
     ./alpha.nix
     ./telescope.nix
+    ./fidget.nix
+    ./lualine.nix
+    ./lint.nix
+    ./undotree.nix
+    ./ultimate-autopair.nix
     ./neo-tree.nix
+    ./none-ls.nix
+    ./mini
+    ./smart-splits.nix
+    ./actions-preview.nix
+    ./guess-indent.nix
     ./persistence.nix
+    ./indent-blankline.nix
     ./toggleterm.nix
+    ./project-nvim.nix
     ./treesitter.nix
+    ./bufferline.nix
+    ./which-key.nix
   ];
 }
