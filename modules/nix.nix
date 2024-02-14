@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   username,
   ...
@@ -37,6 +38,9 @@ in {
 
   # Nixpkgs
   nixpkgs = {
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
     config = {
       allowUnfree = true;
       permittedInsecurePackages = [
@@ -48,5 +52,9 @@ in {
   # Scripts
   environment.systemPackages = [
     update_script
+  ];
+  environment.profiles = [
+    "$HOME/.local/share/flatpak/exports/share"
+    "/var/lib/flatpak/exports/share"
   ];
 }

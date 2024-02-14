@@ -78,7 +78,6 @@
     obsidian
 
     # Development
-    neovide
     universal-android-debloater
     python3
     insomnia

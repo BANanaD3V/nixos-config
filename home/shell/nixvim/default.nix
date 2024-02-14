@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -6,6 +7,7 @@
   imports = [./plugins];
   programs.nixvim = {
     enable = true;
+    package = pkgs.neovim-nightly;
     globals.mapleader = " ";
     clipboard.register = "unnamedplus";
     colorschemes.base16 = {

@@ -52,6 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     game-rs.url = "github:amanse/game-rs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {

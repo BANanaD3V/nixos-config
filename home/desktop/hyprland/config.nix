@@ -163,8 +163,8 @@
                 in
                   builtins.toString (x + 1 - (c * 10));
               in [
-                "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                "$mainMod, ${ws}, exec, switch_workspace ${toString (x + 1)}"
+                "$mainMod SHIFT, ${ws}, exec, move_window ${toString (x + 1)}"
               ]
             )
             10)
