@@ -29,7 +29,7 @@
             enable = true;
           };
           prettier = {
-            enable = true;
+            enable = false;
             withArgs = ''
               {
                 extra_args = { "--no-semi", "--single-quote" },

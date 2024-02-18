@@ -26,6 +26,7 @@
     maven
 
     # Desktop stuff
+    nom
     inkscape
     freetube
     flatpak
@@ -70,7 +71,6 @@
     telegram-desktop
     zoom-us
     qdirstat
-    jellyfin-mpv-shim
     mpv
     libreoffice
     zathura

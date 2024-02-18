@@ -4,10 +4,14 @@
   lib,
   ...
 }: {
-  imports = [./plugins];
+  imports = [
+    ./plugins
+  ];
+  home.packages = with pkgs; [
+    lazygit
+  ];
   programs.nixvim = {
     enable = true;
-    package = pkgs.neovim-nightly;
     globals.mapleader = " ";
     clipboard.register = "unnamedplus";
     colorschemes.base16 = {

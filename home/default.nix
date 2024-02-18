@@ -1,4 +1,8 @@
-{username, ...}: {
+{
+  inputs,
+  username,
+  ...
+}: {
   home = {
     username = username;
     homeDirectory = "/home/${username}";
@@ -34,6 +38,6 @@
       base0F = "#f2cdcd";
     };
   };
-  # colorScheme = inputs.nix-colors.colorSchemes.material-darker;
+  # colorScheme = inputs.nix-colors.colorSchemes.gigavolt;
   programs.home-manager.enable = true;
 }
