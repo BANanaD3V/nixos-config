@@ -1,7 +1,8 @@
 {...}: {
-  xdg.configFile."pipewire" = {
-    source = ./config;
-    recursive = true;
-    executable = true;
+  imports = [
+    ./config/config.nix
+  ];
+  xdg.configFile."pipewire/dtshx.wav" = {
+    source = ./config/dtshx.wav;
   };
 }

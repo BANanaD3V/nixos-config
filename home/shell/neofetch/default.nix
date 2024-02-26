@@ -2,13 +2,10 @@
   home.packages = with pkgs; [
     neofetch
   ];
-
+  imports = [
+    ./config.nix
+  ];
   # Import config
-  xdg.configFile."neofetch/config.conf" = {
-    source = ./config.conf;
-    recursive = true;
-    executable = true;
-  };
 
   xdg.configFile."neofetch/logo" = {
     source = ./logo;

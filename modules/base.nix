@@ -89,6 +89,9 @@
     drivers = [pkgs.epson-escpr];
   };
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   # Sound
   security.rtkit.enable = true;
   sound.enable = true;

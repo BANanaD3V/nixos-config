@@ -24,7 +24,7 @@
         (
           m: "${m.name},${m.hyprland}"
         )
-        (config.home-manager.displays);
+        config.home-manager.displays;
 
       input = {
         kb_layout = "us,ru";
@@ -184,9 +184,9 @@
       workspace =
         lib.lists.concatMap
         (
-          m: map (w: "${toString w},monitor:${m.name}") (m.workspaces)
+          m: map (w: "${toString w},monitor:${m.name}") m.workspaces
         )
-        (config.home-manager.displays);
+        config.home-manager.displays;
 
       # Window rules
 

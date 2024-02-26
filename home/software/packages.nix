@@ -26,6 +26,10 @@
     maven
 
     # Desktop stuff
+    mpd
+    mpdevil
+    ncmpcpp
+    mpc-cli
     nom
     inkscape
     freetube
