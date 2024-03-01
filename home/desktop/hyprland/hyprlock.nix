@@ -5,9 +5,9 @@
   username,
   ...
 }: let
-  wallpaper = "/home/${username}/.config/wallpapers/ship.png";
+  wallpaper = "/home/${username}/.config/wallpapers/paintings.png";
 in {
-  xdg.configFile."hypr/hyprlock.conf".text = ''
+  xdg.configFile."hypr/hyprlock.conf".text = with config.colorScheme.palette; ''
                background {
                    monitor =
                    path = ${wallpaper}
@@ -29,9 +29,9 @@ in {
         dots_size = 0.2 # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.64 # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true
-        outer_color = $color1
-        inner_color = $color0
-        font_color = $color7
+        outer_color = rgb(${base00})
+        inner_color = rgb(${base01})
+        font_color = rgb(${base05})
         fade_on_empty = true
         placeholder_text = <i>Password...</i> # Text rendered in the input box when it's empty.
         hide_input = false
@@ -43,8 +43,8 @@ in {
     # Current time
     label {
         monitor =
-        text = cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>"
-        color = $color0
+        text = cmd[update:1000] echo "<b><big> $(date +"%I:%M %p") </big></b>"
+        color = rgb(${base05})
         font_size = 64
         font_family = JetBrains Mono Nerd Font 10
         position = 0, 16
@@ -55,16 +55,16 @@ in {
 
 
     # Type to unlock
-    label {
-        monitor =
-        text = Type to unlock!
-        color = $color0
-        font_size = 16
-        font_family = JetBrains Mono Nerd Font 10
-        position = 0, 30
-        halign = center
-        valign = bottom
-    }
+    # label {
+    #     monitor =
+    #     text = Type to unlock!
+    #     color = $color0
+    #     font_size = 16
+    #     font_family = JetBrains Mono Nerd Font 10
+    #     position = 0, 30
+    #     halign = center
+    #     valign = bottom
+    # }
   '';
 
   home.packages = with pkgs; [
