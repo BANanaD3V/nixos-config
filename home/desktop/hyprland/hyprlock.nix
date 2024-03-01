@@ -5,7 +5,7 @@
   username,
   ...
 }: let
-  wallpaper = "/home/${username}/.config/wallpapers/pixel_planet.png";
+  wallpaper = "/home/${username}/.config/wallpapers/ship.png";
 in {
   xdg.configFile."hypr/hyprlock.conf".text = ''
                background {
