@@ -45,7 +45,6 @@
     gnome.nautilus
     gnome.gnome-boxes
     kvmtool
-    swaylock
     eww
     hyprpaper
     wl-clipboard
@@ -58,7 +57,19 @@
     imagemagick
     grim
     inputs.nixpkgs-wayland.packages.${system}.slurp
-    flameshot
+    (pkgs.flameshot.overrideAttrs {
+      src = pkgs.fetchFromGitHub {
+        owner = "flameshot-org";
+        repo = "flameshot";
+        rev = "fa29bcb4279b374ea7753fc4a514fd705499f7e7";
+        sha256 = "sha256-XIquratzK4qW0Q1ZYI5X6HIrnx1kTTFxeYeR7hjrpjQ=";
+      };
+      cmakeFlags = [
+        "-DUSE_WAYLAND_GRIM=True"
+        "-DUSE_WAYLAND_CLIPBOARD=1"
+      ];
+      buildInputs = with pkgs; [libsForQt5.kguiaddons];
+    })
     # dunst
     libreoffice
     wpsoffice
@@ -152,7 +163,7 @@
     # inputs.getchoo.packages.${pkgs.system}.modrinth-app
     wine-staging
     winetricks
-    inputs.game-rs.packages.x86_64-linux.default
+    # inputs.game-rs.packages.x86_64-linux.default
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     dxvk
     chromedriver

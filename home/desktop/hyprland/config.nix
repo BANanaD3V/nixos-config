@@ -100,7 +100,7 @@
         workspace_swipe = config.home-manager.touchpad.enable;
       };
 
-      bindl = lib.optionals config.home-manager.lid.enable [",switch:Lid Switch, exec, swaylock"];
+      bindl = lib.optionals config.home-manager.lid.enable [",switch:Lid Switch, exec, hyprlock"];
 
       bindtei = [
         # Media keys
@@ -126,6 +126,7 @@
           "$mainMod, N, exec, swaync-client -t"
           "$mainMod, Q, killactive,"
           "$mainMod, T, togglefloating,"
+          "$mainMod, L, exec, hyprlock"
           "$mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/config.rasi"
           "$mainMod SHIFT, T, pseudo, # dwindle"
           "$mainMod, J, togglesplit,"

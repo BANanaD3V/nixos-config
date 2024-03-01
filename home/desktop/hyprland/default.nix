@@ -2,6 +2,7 @@
   imports = [
     ./config.nix
     ./scripts
+    ./hyprlock.nix
     ./hyprpaper.nix
   ];
 

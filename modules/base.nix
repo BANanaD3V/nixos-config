@@ -44,9 +44,6 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  # Swaylock
-  security.pam.services.swaylock = {};
-
   # Bash shebang
   services.envfs.enable = true;
 
@@ -162,6 +159,7 @@
 
   # Virtualization
   virtualisation.libvirtd.enable = true;
+  virtualisation.waydroid.enable = true;
   programs.dconf.enable = true; # virt-manager requires dconf to remember settings
 
   # Garbage collection

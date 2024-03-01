@@ -2,7 +2,7 @@
   imports = [
     ./lsp.nix
     ./lint.nix
-    ./none-ls.nix
+    # ./none-ls.nix
     ./nvim-cmp.nix
     ./treesitter.nix
     ./conform-nvim.nix
