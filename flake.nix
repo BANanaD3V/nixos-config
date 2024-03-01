@@ -52,6 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     game-rs.url = "github:amanse/game-rs";
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = {

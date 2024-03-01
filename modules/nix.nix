@@ -46,6 +46,11 @@ in {
     };
   };
 
+  # Nix-ld
+  programs.nix-ld = {
+    enable = true;
+  };
+
   # Scripts
   environment.systemPackages = [
     update_script

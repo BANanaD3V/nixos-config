@@ -137,6 +137,7 @@
   # Env packages
   environment.systemPackages = with pkgs; [
     virt-manager
+    gnome.gnome-disk-utility
     gutenprint
     git
     btrfs-progs

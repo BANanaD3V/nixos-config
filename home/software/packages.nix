@@ -28,6 +28,7 @@
     # Desktop stuff
     mpd
     mpdevil
+
     ncmpcpp
     mpc-cli
     nom
@@ -42,7 +43,6 @@
     krita
     gimp
     gnome.nautilus
-    gnome.gnome-disk-utility
     gnome.gnome-boxes
     kvmtool
     swaylock
@@ -82,6 +82,7 @@
     obsidian
 
     # Development
+    inputs.nix-alien.packages.${system}.nix-alien
     universal-android-debloater
     python3
     insomnia
@@ -129,7 +130,7 @@
     # ngrok
 
     # 3D modeling and printing
-    blender
+    # blender
     # cura
     flashprint
     openscad
