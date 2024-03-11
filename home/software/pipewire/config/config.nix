@@ -90,7 +90,7 @@
         # scheduling.
         { name = libpipewire-module-rt
             args = {
-                nice.level    = -11
+                nice.level    = -19
                 #rt.prio      = 88
                 #rt.time.soft = -1
                 #rt.time.hard = -1

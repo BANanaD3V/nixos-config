@@ -94,6 +94,7 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
+        mouse_move_enables_dpms = false;
       };
 
       gestures = {
@@ -135,6 +136,14 @@
           "$mainMod, period, exec, rofi -modi \"emoji:rofimoji --action copy\" -show emoji -config ~/.config/rofi/configs/config.rasi"
           "$mainMod, M, exec, rofi -modi \"emoji:rofimoji --action copy --files math.csv\" -show emoji -config ~/.config/rofi/configs/config.rasi"
           "$mainMod, C, exec, hyprpicker -a"
+
+          # Gammarelay
+          "$mainMod CTRL, 9,exec,busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3000"
+          "$mainMod CTRL, 0,exec,busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500"
+          "$mainMod CTRL, KP_Add, exec,busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q +250"
+          "$mainMod CTRL, KP_Subtract, exec,busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q -250"
+
+          # Focus
 
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
@@ -224,6 +233,7 @@
           "swaync"
           "ydotoold"
           "nm-applet"
+          "wl-gammarelay-rs"
           "sleep 2 && waybar"
         ]
         ++ (lib.optionals config.home-manager.bluetooth.enable ["blueman-applet"]);

@@ -25,6 +25,7 @@
         "clock"
         "privacy"
         "tray"
+        "custom/wl-gammarelay-temperature"
         "group/group-power"
       ];
 
@@ -224,6 +225,13 @@
       escape = true;
       tooltip = false;
       exec = "cava_waybar";
+    };
+
+    "custom/wl-gammarelay-temperature" = {
+      format = "{} ";
+      exec = "wl-gammarelay-rs watch {t}";
+      on-scroll-up = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+      on-scroll-down = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
     };
   };
 }

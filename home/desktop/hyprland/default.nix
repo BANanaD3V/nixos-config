@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     xwaylandvideobridge
     libnotify
+    wl-gammarelay-rs
   ];
 
   # Import wallpaper

@@ -38,7 +38,6 @@
     calcure
     qbittorrent
     kdenlive
-    # davinci-resolve
     anydesk
     krita
     gimp
@@ -57,28 +56,14 @@
     imagemagick
     grim
     inputs.nixpkgs-wayland.packages.${system}.slurp
-    (pkgs.flameshot.overrideAttrs {
-      src = pkgs.fetchFromGitHub {
-        owner = "flameshot-org";
-        repo = "flameshot";
-        rev = "fa29bcb4279b374ea7753fc4a514fd705499f7e7";
-        sha256 = "sha256-XIquratzK4qW0Q1ZYI5X6HIrnx1kTTFxeYeR7hjrpjQ=";
-      };
-      cmakeFlags = [
-        "-DUSE_WAYLAND_GRIM=True"
-        "-DUSE_WAYLAND_CLIPBOARD=1"
-      ];
-      buildInputs = with pkgs; [libsForQt5.kguiaddons];
-    })
-    # dunst
     libreoffice
-    wpsoffice
     ydotool
     lutgen
 
     # Gui apps
     authy
     firefox
+    tor-browser
     # firefox-devedition-bin-unwrapped
     chromium
     # element-desktop
@@ -93,6 +78,9 @@
     obsidian
 
     # Development
+    go
+    android-studio
+    bubblewrap
     inputs.nix-alien.packages.${system}.nix-alien
     universal-android-debloater
     python3
@@ -160,7 +148,7 @@
     mangohud
     gamescope
     prismlauncher
-    # inputs.getchoo.packages.${pkgs.system}.modrinth-app
+    inputs.getchoo.packages.${pkgs.system}.modrinth-app
     wine-staging
     winetricks
     # inputs.game-rs.packages.x86_64-linux.default

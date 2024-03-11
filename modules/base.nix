@@ -11,7 +11,7 @@
   # User
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = ["wheel" "video" "networkmanager"];
+    extraGroups = ["wheel" "video" "networkmanager" "adbusers"];
     shell = pkgs.zsh;
   };
 
@@ -53,6 +53,9 @@
     enable = true;
     powerOnBoot = true;
   };
+
+  # Adb
+  programs.adb.enable = true;
 
   # Networking
   networking = {

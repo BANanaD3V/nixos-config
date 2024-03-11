@@ -8,8 +8,8 @@
       drivers = {
         enable = lib.mkEnableOption "Nvidia drivers";
         version = lib.mkOption {
-          type = lib.types.enum ["stable" "production" "beta"];
-          default = "production";
+          type = lib.types.enum ["latest" "stable" "production" "beta"];
+          default = "latest";
         };
       };
       hyprland.enable = lib.mkEnableOption "Hyprland nvidia compatibility" // {default = config.home-manager.hyprland.enable && config.nixos.nvidia.drivers.enable;};

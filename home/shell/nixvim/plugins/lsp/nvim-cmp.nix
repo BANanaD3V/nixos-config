@@ -1,27 +1,26 @@
 {config, ...}: {
-  programs.nixvim.plugins.nvim-cmp = {
+  programs.nixvim.plugins.cmp = {
     enable = true;
     autoEnableSources = true;
-    sources = [
-      {name = "nvim_lsp";}
-      {name = "path";}
-      {name = "buffer";}
-      {name = "luasnip";}
-    ];
+    settings = {
+      sources = [
+        {name = "nvim_lsp";}
+        {name = "path";}
+        {name = "buffer";}
+        {name = "luasnip";}
+      ];
 
-    mapping = {
-      "<CR>" = "cmp.mapping.confirm({ select = true })";
-      "<Tab>" = {
-        action = ''
+      mapping = {
+        "<CR>" = "cmp.mapping.confirm({ select = true })";
+        "<Tab>" = ''
           function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             else
               fallback()
             end
-          end
+          end, {'i', 's'}
         '';
-        modes = ["i" "s"];
       };
     };
   };
