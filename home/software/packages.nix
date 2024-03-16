@@ -79,6 +79,8 @@
 
     # Development
     go
+    # cz-cli
+    commitizen
     android-studio
     bubblewrap
     inputs.nix-alien.packages.${system}.nix-alien
