@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./plugins
+    ./misc
   ];
   home.packages = with pkgs; [
     lazygit
