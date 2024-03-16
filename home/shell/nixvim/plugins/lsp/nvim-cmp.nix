@@ -13,13 +13,13 @@
       mapping = {
         "<CR>" = "cmp.mapping.confirm({ select = true })";
         "<Tab>" = ''
-          function(fallback)
+          cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             else
               fallback()
             end
-          end, {'i', 's'}
+          end, {'i', 's'})
         '';
       };
     };
