@@ -38,6 +38,9 @@ in {
 
   # Nixpkgs
   nixpkgs = {
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
     config = {
       allowUnfree = true;
       permittedInsecurePackages = [

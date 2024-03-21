@@ -48,6 +48,7 @@
         "col.active_border" = "rgb(${base07}) rgb(${base0D}) 45deg";
         "col.inactive_border" = "rgb(${base02})";
         layout = "dwindle";
+        allow_tearing = true;
       };
 
       decoration = {
@@ -212,6 +213,7 @@
         "noanim,class:^(xwaylandvideobridge)$"
         "nofocus,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"
+        "immediate, class:^(star-citizen)$"
       ];
 
       # Layer rules
@@ -219,6 +221,12 @@
       layerrule = [
         "blur, waybar"
         "blur, kitty"
+      ];
+
+      # Tearing
+
+      env = [
+        "WLR_DRM_NO_ATOMIC,1"
       ];
 
       # Autostart

@@ -6,9 +6,6 @@
         fzf-native = {
           enable = true;
         };
-        project-nvim = {
-          enable = true;
-        };
       };
       keymaps = {
         "<leader>ff" = {

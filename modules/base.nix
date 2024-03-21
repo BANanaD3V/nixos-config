@@ -17,9 +17,9 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.kernelModules = ["v4l2loopback"];
+  # boot.kernelModules = ["v4l2loopback"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
   boot.loader.grub = {
     enable = lib.mkForce true;
     device = "nodev";
@@ -46,6 +46,11 @@
 
   # Bash shebang
   services.envfs.enable = true;
+
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "amd";
+  };
 
   # Hardware
   hardware.opengl.enable = true;

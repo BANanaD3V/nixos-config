@@ -16,20 +16,14 @@
             };
           };
           nil_ls.enable = true;
-          tsserver = {
+          emmet_ls = {
             enable = true;
-            filetypes = ["javascript" "javascriptreact" "typescript" "typescriptreact"];
-            extraOptions.typescript.inlayHints = {
-              includeInlayEnumMemberValueHints = true;
-              includeInlayFunctionLikeReturnTypeHints = true;
-              includeInlayFunctionParameterTypeHints = true;
-              includeInlayParameterNameHints = "all";
-              includeInlayParameterNameHintsWhenArgumentMatchesName = true;
-              includeInlayPropertyDeclarationTypeHints = true;
-              includeInlayVariableTypeHints = true;
-              includeInlayVariableTypeHintsWhenTypeMatchesName = true;
-            };
+            filetypes = [ "css" "eruby" "html" "javascript" "javascriptreact" "less" "sass" "scss" "svelte" "pug" "typescriptreact" "vue" ];
           };
+          tsserver = {
+          enable = true;
+          };
+        eslint = {enable = true;};
         };
       };
       which-key.registrations = {

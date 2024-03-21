@@ -7,6 +7,7 @@
       bash
       python
       typescript
+      # tsx-grammar
       javascript
     ];
   };

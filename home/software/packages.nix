@@ -66,8 +66,8 @@
     tor-browser
     # firefox-devedition-bin-unwrapped
     chromium
-    # element-desktop
-    cinny-desktop
+    element-desktop
+    # cinny-desktop
     telegram-desktop
     zoom-us
     qdirstat
