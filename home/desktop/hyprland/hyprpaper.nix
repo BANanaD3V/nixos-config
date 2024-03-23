@@ -4,7 +4,7 @@
   username,
   ...
 }: let
-  wallpaper = "/home/${username}/.config/wallpapers/ship.png";
+  wallpaper = "/home/${username}/.config/wallpapers/rocket.png";
 in {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpaper}
