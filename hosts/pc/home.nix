@@ -1,6 +1,7 @@
 {...}: {
   home-manager = {
     graphical.enable = true;
+    colorscheme = "biscuit";
     displays = [
       {
         name = "DP-3";
