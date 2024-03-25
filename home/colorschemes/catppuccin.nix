@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf (config.colorscheme
+  config = lib.mkIf (config.home-manager.colorscheme
     == "catppuccin") {
     colorScheme = {
       slug = "catppuccin-mocha";
@@ -28,5 +28,6 @@
         base0F = "#f2cdcd";
       };
     };
+    home-manager.wallpaper = "ship.png";
   };
 }

@@ -18,7 +18,7 @@
     clipboard.register = "unnamedplus";
     colorschemes.base16 = {
       enable = true;
-      customColorScheme =
+      colorscheme =
         lib.concatMapAttrs (name: value: {
           ${name} = "#${value}";
         })

@@ -6,6 +6,7 @@
   };
 
   home-manager = {
+    colorscheme = "biscuit";
     graphical.enable = true;
     displays = [
       {
